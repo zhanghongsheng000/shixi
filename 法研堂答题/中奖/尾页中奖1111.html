@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>尾页</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<script>
+	;(function(win,doc){
+		function change(){
+			doc.documentElement.style.fontSize=20*doc.documentElement.clientWidth/320+'px';
+		}
+		change();
+		win.addEventListener('resize',change,false);
+	})(window,document);
+	</script>
+	<style>
+		.content{
+			margin-left: 0.45rem;
+		}
+		.round2{
+	width: 5.4rem;
+	margin-left: 4.2rem;
+	margin-top: 2.6rem;
+}
+
+.start1{
+	width: 1.7rem;
+    position: absolute;
+    margin-left: 6rem;
+    margin-top: -8.2rem;
+}
+.nav-text{
+	color: black;
+	display: block;
+    font-size: 0.5rem;
+    transform: rotateZ(-54deg);
+}
+
+.menu1{
+	transform: rotate(30deg);
+	-ms-transform: rotate(30deg);		/* IE 9 */
+	-webkit-transform: rotate(30deg);	/* Safari and Chrome */
+	-o-transform: rotate(30deg);		/* Opera */
+	-moz-transform: rotate(30deg);		/* Firefox */
+	margin-top: -2.8rem;
+	margin-left: 6.4rem;
+}
+.menu2{
+	transform: rotate(100deg);
+	-ms-transform: rotate(100deg);		/* IE 9 */
+	-webkit-transform: rotate(100deg);	/* Safari and Chrome */
+	-o-transform: rotate(100deg);		/* Opera */
+	-moz-transform: rotate(100deg);		/* Firefox */
+	margin-top: 6.2rem;
+	margin-left: 0.2rem;
+}
+.menu3{
+	transform: rotate(180deg);
+	-ms-transform: rotate(180deg);		/* IE 9 */
+	-webkit-transform: rotate(180deg);	/* Safari and Chrome */
+	-o-transform: rotate(180deg);		/* Opera */
+	-moz-transform: rotate(180deg);		/* Firefox */
+	position: absolute;
+	margin-top: -5.4rem;
+	margin-left: 6rem;
+}
+.menu4{
+	transform: rotate(250deg);
+	-ms-transform: rotate(250deg);		/* IE 9 */
+	-webkit-transform: rotate(250deg);	/* Safari and Chrome */
+	-o-transform: rotate(250deg);		/* Opera */
+	-moz-transform: rotate(250deg);		/* Firefox */
+	position: absolute;
+	margin-top: -6.55rem;
+	margin-left: 4.2rem;
+}
+.menu5{
+	transform: rotate(320deg);
+	-ms-transform: rotate(320deg);		/* IE 9 */
+	-webkit-transform: rotate(320deg);	/* Safari and Chrome */
+	-o-transform: rotate(320deg);		/* Opera */
+	-moz-transform: rotate(320deg);		/* Firefox */
+	position: absolute;
+	margin-top: -8.7rem;
+	margin-left: 4.7rem;
+}
+.weiye_container{
+	background: url(images/index_bg.jpg);
+	background-size: 100% 100%;
+	width: 16rem;
+	height: 100%;
+	height: 28.4rem;
+}
+.result{
+	padding: 1rem 0.45rem 0 0.45rem;
+}
+.result table{
+	background: #fffbe8;
+	width: 15.2rem;
+	border-radius: 0.2rem;
+}
+.result table tr{
+	text-align: center;
+	font-size: 0.6rem;
+}
+.result table tr td{
+	line-height: 1.2rem;
+}
+.re_hear td{
+	color: #d21323;
+}
+.re_bodytd{
+	color: #333333;
+}
+.re_bottom td{
+	font-size: 0.45rem;
+	color: #666666;
+}
+.pingjia{
+	margin-top: 0.5rem;
+	background: #FFFBE8;
+	border-radius: 0.2rem;
+}
+.pingjia img{
+	width: 14rem;
+	height: 7.375rem;
+	padding: 0.375rem 0.65rem;
+}
+.pingjia p{
+	font-size: 0.6rem;
+	line-height: 1.2rem;
+	margin-left: 1.2rem;
+	color: #666666;
+	padding-bottom: 0.3rem;
+}
+.choujiang{
+	margin-top: 0.8rem;
+	background: url(images/choujiang.png);
+	background-size: 15.1rem 8.1rem;
+	width: 15.1rem;
+	height: 8.1rem;
+	background-repeat: no-repeat;
+	padding-left: 0.6rem;
+	margin-bottom: 1rem;
+}
+.click{
+	width: 4.55rem;
+	height: 4.375rem;
+	padding-top: 3.5rem;
+}
+
+.round{
+	width: 5rem;
+	height: 5rem;
+	padding-top: 2.9rem;
+	padding-left: 4.3rem;
+}
+
+.gua{
+	width: 7.925rem;
+	height: 4.425rem;
+	padding-top: 3.2rem;
+	padding-left: 3rem;
+}
+.backgrd{
+	width: 100%;
+	height: 100%;
+	width: 16rem;
+	background: rgba(0,0,0,0.4);
+	height: 28.4rem;
+	position: absolute;
+	margin-top: -28.4rem;
+}
+	</style>
+	</head>
+	<body>
+		<div class="weiye_container">
+			<div class="result">
+				<table>
+					<tr class="re_hear">
+						<td>100</td>
+						<td>2</td>
+						<td>100%</td>
+						<td>1</td>
+					</tr>
+					<tr class="re_body">
+						<td>成绩</td>
+						<td>耗时秒数</td>
+						<td>打败人数</td>
+						<td>当前排名</td>
+					</tr>
+					<tr class="re_bottom">
+						<td colspan="4">点击右上角菜单可分享战绩</td>
+					</tr>
+				</table>
+				<div class="pingjia">
+					<img src="images/chengji.png" />
+					<p>你是人才啊！</p>
+				</div>
+				<div class="choujiang">
+					<img src="images/dan1.png"  class="click"/>
+					<img src="images/dan1.png"  class="click"/>
+					<img src="images/dan1.png"  class="click"/>
+				</div>
+				<div class="butt">
+					<button class="start">再来一次</button>
+					<button class="paiming">排行榜</button>
+				</div>
+			</div>
+		</div>
+		<!--10月23日添加-->
+		<div class="none backgrd">
+			<div class="content">
+				<!--<img src="images/zhongjiang.png" class="zhongjiang"/>
+				<p class="huojiang">恭喜您获得一等奖</p>
+				<img src="images/jiangpin.png" class="jiangpin"/>
+				<div class="tianxie_addres">
+					<p class="center1"><a href="#">填写地址</a></p>
+				</div>-->
+				<div class="choujiang">
+					<div id="outercont" >
+						<div id="outer-cont" >
+							<div id="outer">
+								<img src="images/round2.png" class="round2">
+								<div class="nav-item">
+									<span class="nav-text menu1">谢谢参与</span>
+								</div>
+								<div class="nav-item">
+									<span class="nav-text menu2">谢谢参与</span>
+								</div>
+								<div class="nav-item">
+									<span class="nav-text menu3">谢谢参与</span>
+								</div>
+								<div class="nav-item">
+									<span class="nav-text menu4">谢谢参与</span>
+								</div>
+								<div class="nav-item">
+									<span class="nav-text menu5">谢谢参与</span>
+								</div>
+							</div>
+						</div>
+						<div id="inner-cont">
+							<div id="inner">
+								<img  src="images/start.png" class="start1">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

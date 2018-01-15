@@ -1,0 +1,179 @@
+﻿html{font-size: 20px;}
+.fr{
+	float: right;
+}
+.fl{
+	float: left;
+}
+
+/***********投票***************/
+.book{
+	width: 16rem;
+}
+.zongshu{
+	background: #f6f6f6;
+	height: 2.6rem;
+}
+.zongshu1{
+	padding-top: 0.45rem;
+	width: 0.375rem;
+	height: 0.45rem;
+	display: inline;
+}
+.toupiao1{
+	padding-top: 0.4rem;
+	width: 0.65rem;
+	height: 0.625rem;
+	display: inline;
+}
+.fangwen1{
+	padding-top: 0.55rem;
+	width: 0.5rem;
+	height: 0.35rem;
+	display: inline;
+}
+.zongshu_sort{
+	margin-top: 0.4rem;
+	width: 33.2%;
+	border-right: 1px solid #e5e5e5;
+	text-align: center;
+}
+.zongshu_sort span{
+	font-size: 0.45rem;
+	line-height: 1.2rem;
+}
+.zongshu_sort p{
+	font-size: 0.5rem;
+	color: #ff0000;
+}
+.bt_title{
+	text-align: center;
+}
+.bt_title h5{
+	font-size: 0.65rem;
+	line-height: 1.2rem;
+	color:#000000 ;
+	margin-top: 0.2rem;
+}
+.biaoti_sousuo{
+	padding: 0 0.45rem;
+}
+.bt_sousuo input{
+	border: 1px solid #e5e5e5;
+	margin-top: 0.8rem;
+	width: 13rem;
+	height: 1.2rem;
+	border-radius: 5px;
+	font-size: 0.45rem;
+	padding-left: 1rem;
+	
+}
+.bt_serch{
+	width: 0.475rem;
+	height: 0.475rem;
+	position: absolute;
+	margin-top: 1.2rem;
+	margin-left: 0.3rem;
+}
+.bt_sousuo span{
+	font-size: 0.45rem;
+	line-height: 1.2rem;
+	color: #999999;
+	margin-left: -2rem;
+	padding-right: 0.8rem;
+}
+.bt_sousuo span label{
+	position: absolute;
+	margin-top: 0.92rem;
+	font-size: 0.8rem;
+	display: inline-block;
+	margin-left: -1rem;
+	padding-right: 0.8rem;
+	color: #e5e5e5;
+}
+.zuowen_left{
+	width: 7.45rem;
+	height: 8rem;
+	border: 1px solid #eeeeee;
+	border-bottom: 1px solid #c8c6c7;
+	border-radius: 5px;
+}
+.zuowen{
+	padding-left: 0.45rem;
+	margin-top: 0.45rem;
+}
+.zuowen_img{
+	padding-top: 0.3rem;
+	text-align: center;
+}
+.zuowen_img img{
+	width:  7.15rem;
+	height: 4.2rem;
+}
+.bianhao{
+	font-size: 0.5rem;
+	line-height: 1.2rem;
+	color: #FF0000;
+}
+.zuowen_title{
+	font-size: 0.55rem;
+	color: #333333;
+}
+.deipiaoshu{
+	margin-left: .2rem;
+	margin-top: 0.3rem;
+}
+.deipiaoshu span{
+	font-size: 0.55rem;
+	line-height: 1.2rem;
+	color: #000000;
+}
+.zuowen_toupiao{
+	margin-top: -1.8rem;
+	margin-right: 0.2rem;
+	width:1.67rem ;
+	height: 1.67rem;
+	background: url(../images/toupiao.png);
+	background-size: 1.675rem 1.675rem;
+}
+.zuowen_toupiao p{
+	font-size: 0.4rem;
+	color: #cb0e11;
+	padding:0.6rem 0 0 0.45rem;
+}
+.about_zuowen{
+	margin-left: 0.2rem;
+}
+.zuowen_right{
+	margin-right: 0.4rem;
+	width: 7.45rem;
+	height: 8rem;
+	border: 1px solid #eeeeee;
+	border-bottom: 1px solid #c8c6c7;
+	border-radius: 5px;
+}
+.paihangbang{
+	margin-left: 25%;
+	margin-top: 0.35rem;
+	text-align: center;
+	width: 8rem;
+	height: 1.8rem;
+	background: url(../images/paihangbang.png);
+	background-size: 8rem 1.8rem;
+}
+.paihangbang p{
+	font-size: 0.75rem;
+	line-height: 1.6rem;
+	color: #FFFFFF;
+}
+.paihangbang p span{
+	line-height: 1.6rem;
+	margin: 0rem 0.5rem;
+}
+.foot1{
+	margin-top: 0.4rem;
+	font-size: 0.45rem;
+	text-align: center;
+	color: #666666;
+	margin-bottom: 0.4rem;
+}

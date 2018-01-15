@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>尾页</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<script>
+	;(function(win,doc){
+		function change(){
+			doc.documentElement.style.fontSize=20*doc.documentElement.clientWidth/320+'px';
+		}
+		change();
+		win.addEventListener('resize',change,false);
+	})(window,document);
+	</script>
+	</head>
+	<body>
+		<div class="weiye_container">
+			<div class="result">
+				<table>
+					<tr class="re_hear">
+						<td>100</td>
+						<td>2</td>
+						<td>100%</td>
+						<td>1</td>
+					</tr>
+					<tr class="re_body">
+						<td>成绩</td>
+						<td>耗时秒数</td>
+						<td>打败人数</td>
+						<td>当前排名</td>
+					</tr>
+					<tr class="re_bottom">
+						<td colspan="4">点击右上角菜单可分享战绩</td>
+					</tr>
+				</table>
+				<div class="pingjia">
+					<img src="images/chengji.png" />
+					<p>你是人才啊！</p>
+				</div>
+				<div class="choujiang">
+					<img src="images/dan1.png"  class="click"/>
+					<img src="images/dan1.png"  class="click"/>
+					<img src="images/dan1.png"  class="click"/>
+				</div>
+				<div class="butt">
+					<button class="start">再来一次</button>
+					<button class="paiming">排行榜</button>
+				</div>
+			</div>
+		</div>
+		<!--10月23日添加-->
+		<div class="none backgrd">
+			<div class="content1">
+				<img src="images/weizhongjiang.png" class="weizhongjiang" />
+				<img src="images/weizhongjiang1.png" class="weizhongjiang1"/>
+				<p class="center"><a href="#">确定</a></p>
+			</div>
+		</div>
+	</body>
+
+</html>
+

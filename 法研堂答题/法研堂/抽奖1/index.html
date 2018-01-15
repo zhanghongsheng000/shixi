@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>首页</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<script>
+	;(function(win,doc){
+		function change(){
+			doc.documentElement.style.fontSize=20*doc.documentElement.clientWidth/320+'px';
+		}
+		change();
+		win.addEventListener('resize',change,false);
+	})(window,document);
+	</script>
+	</head>
+	<body>
+		<div class="index_container">
+			<div class="index_content">
+				<div class="num">
+					<span>参与人数：<label>10223</label></span>
+					<span>过关人数：<label>10000</label></span>
+				</div>
+			</div>
+			<img src="images/banner.png" class="banner"/>
+			<img src="images/music.png" style="position:absolute;top: 7%;right: 12%;">
+			<div class="index_text">
+				<h2>答题抽奖活动标题</h2>
+				<ul>
+					<li class="form_head">最新获奖列表</li>
+					<li class="form_body"><span>王子林 </span><span>二等奖</span><label >180****1235</label></li>
+					<li class="form_body"><span>王子林 </span><span>二等奖</span><label >180****1235</label></li>
+					<li class="form_body form_bottom"><span>王子林 </span><span>二等奖</span><label >180****1235</label></li>
+				</ul>
+				<div class="hdsm">
+					<p>活动说明：</p>
+					<p>1.这里是活动说明，试一下转盘抽奖的效果</p>
+					<p>2.活动时间：2017年1月1日-2月31日</p>
+					<p>主办单位：</p>
+					<p>河北鹏翔科技有限公司</p>
+				</div>
+				<div class="butt">
+					<button class="start">开始答题(<span id='numDiv'>10</span>)</button>
+					<button class="paiming">排行榜</button>
+				</div>
+				<div class="share">
+					<p>微信分享后可多3次参与机会！</p>
+					<img src="images/share_weixin.png"/>
+				</div>
+			</div>
+			<div class="foot">
+				<p>本活动由 鹏翔科技  提供 ，尽吾之力，成子之意</p>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var num=10;
+			var interval=setInterval(function(){
+			if(num==0){
+				clearInterval(interval);
+			}
+			numDiv.innerHTML=num--;
+			},1000);
+			 window.history.back(-1);
+		</script>
+	</body>
+</html>
+
