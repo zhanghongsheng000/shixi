@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<!-- Bootstrap core CSS -->
+		<link href="public/bootstrap.min.css" title="" rel="stylesheet" />
+		<link rel="stylesheet" href="css/plugins/toastr/toastr.min.css" />
+		<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+		<link href="public/animate.css" rel="stylesheet">
+		<link rel="stylesheet" href="public/inspinia.css" />
+		<link rel="stylesheet" href="css/my_TiBaoJiLu.css" />
+			<!-- Data Tables -->
+		<link href="css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+		<link href="css/plugins/dataTables/dataTables.responsive.css" rel="stylesheet">
+		<link href="css/plugins/dataTables/dataTables.tableTools.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/dataTable.css" />
+		
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		    <script src="public/html5shiv.min.js"></script>
+		    <script src="public/respond.min.js"></script>
+		<![endif]-->
+		<title>进展时效统计表</title>
+		<style>
+			table tr,th{
+				text-align: center;
+			}
+			.sele_person{
+				position: absolute;
+				z-index: 1100000000;
+			}
+			.sele_person{
+				border: 1px solid #d2d2d2;
+				background: #FFFFFF;
+			}
+			.sele_person li{
+				list-style: none;
+			}
+			.se_salemen{
+				display: block;
+				border: 1px solid #d2d2d2;
+				width: 200px;
+				height: 30px;
+			}
+			.se_salemen span{
+				display: inline-block;
+				padding: 5px 0 0 5px;
+			}
+			.sele_person li{
+				margin-top: 10px;
+			}
+			.sele_person li span{
+				margin-right: 10px;
+			}
+			.center-bl{
+				background: #1c84c6;
+				color: #FFFfff;
+				padding: 5px 6px;
+				border-radius: 5px;
+			}
+			.none{
+				display: none;
+			}
+			
+			.active1{
+				display:inline-table;
+			}
+			#ctrol>thead>tr>th{
+				cursor: pointer;
+			}
+			.uname{
+				margin-top: 10px;
+				position: relative;
+    			overflow: auto;
+    			width: 100%;
+   			 	height: 120px;
+   			 	padding-left: 10px;
+			}
+			.form-control.itemshort {
+    			display: inline-block;
+   			 	width: 45%;
+    			float: left;
+    			padding: 6px;
+			}
+			.zhi{
+				display: inline-block;
+    			width: 10%;
+			    float: left;
+			    text-align: center;
+			    line-height: 34px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="wrapper" class="container">
+			<!--标编辑-->
+			<div id="biaobj" class=" wrapper wrapper-content animated fadeInRight">
+				<h3>进展时效统计表</h3>
+				<div class="right_box" id="right_box">
+					<form action="" class="form-horizontal">
+						<div class="form-group" >
+							<div class="col-lg-3 col-md-3 col-sm-3">
+								<label for="" class="col-lg-3 col-md-3 col-sm-3 control-label">业务员</label>
+								<div class="col-lg-9 col-md-9 col-sm-9">
+									<div class="se_salemen"><span>全部</span></div>
+										<ul class="sele_person none" style="width: 200px;">
+											<li>
+												<span><a id="selAll" href="#">全选</a></span>
+												<span><a id="noSel" href="#">全不选</a></span>
+												<span><a id="queding" href="#" class="center-bl">确定</a></span>
+											</li>
+											<div class="uname">
+												<li><input type="checkbox"><span> 张三</span></li>
+												<li><input type="checkbox"><span> 李四</span></li>
+												<li><input type="checkbox"><span> 王喜平</span></li>
+												<li><input type="checkbox"><span> 张三</span></li>
+												<li><input type="checkbox"><span> 李四</span></li>
+												<li><input type="checkbox"><span> 王喜平</span></li>
+												<li><input type="checkbox"><span> 张三</span></li>
+												<li><input type="checkbox"><span> 李四</span></li>
+												<li><input type="checkbox"><span> 王喜平</span></li>
+												<li><input type="checkbox"><span> 张三</span></li>
+												<li><input type="checkbox"><span> 李四</span></li>
+												<li><input type="checkbox"><span> 王喜平</span></li>
+											</div>
+										</ul>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-3">
+								<label for="" class="col-lg-3 col-md-3 col-sm-3 control-label">经销商：</label>
+								<div class="col-lg-9 col-md-9 col-sm-9">
+									<select class="select2_demo_1 form-control">
+										<option value="2">藁城恒生汽贸</option>
+										<option value="3">鹿泉旭尊汽车</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-3">
+								<label for="" class="col-lg-3 col-md-3 col-sm-3 control-label">贷款银行：</label>
+								<div class="col-lg-9 col-md-9 col-sm-9">
+									<select class="select2_demo_1 form-control">
+										<option value="2">中国银行</option>
+										<option value="3">工商银行</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-3">
+								<label for="" class="col-lg-3 col-md-3 col-sm-3 control-label">汽车品牌：</label>
+								<div class="col-lg-9 col-md-9 col-sm-9">
+									<input type="text" placeholder="汽车品牌" class="form-control" />
+								</div>
+							</div>
+							
+							
+						</div>
+					</form>
+					<form action="" class="form-horizontal">
+						<div class="form-group">
+							<div class="col-lg-3 col-md-3 col-sm-3">
+								<label for="" class="col-lg-3 col-md-3 col-sm-3 control-label">贷款金额：</label>
+								<div class="col-lg-9 col-md-9 col-sm-9">
+									<input type="text" class="form-control itemshort" />
+									<span class="zhi">至</span>
+									<input type="text" class="form-control itemshort" />
+								</div>
+							</div>
+							
+							
+						
+							
+							
+							
+							
+							<button onclick="alert_t()" style="width:82px;height:34px; float: right;margin-right: 20px;" type="button" class="col-lg-3 btn btn-success">搜索</button>
+						</div>
+					</form>
+
+					<!--表格部分-->
+					<div class="ibox-content">
+						<label for="">汇总统计</label>
+						<button type="button" class="btn btn-w-m btn-success bright" style="float: right;">批量导出</button>
+						<div class="row" style="margin-top: 30px;">
+							<div class="col-sm-12">
+								<table class="table table-striped table-bordered table-hover dataTables-example" id="ctrol">
+									<thead>
+										<tr>
+											<th></th>
+											<th>内勤受理卷</th>
+											<th>审核未通过</th>
+											<th>审核通过</th>
+											<th>审核通过未提车</th>
+											<th>垫资未收押</th>
+											<th>交押未放贷</th>
+											<th>垫资未回款</th>
+											<th>收押未上交</th>
+											<th>逾期交押</th>
+											<th>问题卷宗</th>
+											<th>上一日交押</th>
+											<th>下一日放贷</th>
+											<th>已完成</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>数量</td>
+											<td>58</td>
+											<td>3</td>
+											<td>267</td>
+											<td>1</td>
+											<td>6</td>
+											<td>3</td>
+											<td>6</td>
+											<td>1</td>
+											<td>2</td>
+											<td>1</td>
+											<td>5</td>
+											<td>5</td>
+											<td>61</td>
+										</tr>
+										<tr>
+											<td>金额</td>
+											<td class="tableshow1">1,345,645</td>
+											<td class="tableshow2">1,345,645</td>
+											<td>1,345,645</td>
+											<td>1,345,645</td>
+											<td>1,345,645</td>
+											<td>1,345,645</td>
+											<td>1,345,645</td>
+											<td>1,345,645</td>
+											<td>1,345,645</td>
+											<td>1,345,645</td>
+											<td>1,345,645</td>
+											<td>1,345,645</td>
+											<td>1,345,645</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					
+					<div class="ibox-content" style="padding-top:10px;">
+						<label for="">明细记录</label>
+						<button type="button" class="btn btn-w-m btn-success bright" style="float: right;">批量导出</button>
+						<div class="row" style="margin-top: 30px;">
+							<div class="col-sm-12 tablehide">
+								<table class="table table-striped table-bordered table-hover" id="one">
+									<thead>
+										<tr>
+											<th><input type="checkbox" /></th>
+											<th>业务员</th>
+											<th>经销商</th>
+											<th>贷款银行</th>
+											<th>到货日期</th>
+											<th>报单日期</th>
+											<th>客户信息</th>
+											<th>品牌型号</th>
+											<th>车牌号</th>
+											<th>审核进度</th>
+											<th>车架</th>
+											<th>贷款金额</th>
+											<th>内勤受理日期</th>
+											<th>卡通过日期</th>
+											<th>卷通过日期</th>
+											<th>可以提车日期</th>
+											<th>实际打款日期</th>
+											<th>登记证书日期</th>
+											<th>收押日期</th>
+											<th>交押品日期</th>
+										</tr>
+									</thead>
+								</table>
+								<table class="table table-striped table-bordered table-hover none ">
+									<thead>
+										<tr>
+											<th><input type="checkbox" /></th>
+											<th>业务员</th>
+											<th>经销商</th>
+											<th>贷款银行</th>
+											<th>到货日期</th>
+											<th>报单日期</th>
+											<th>客户信息</th>
+											<th>品牌型号</th>
+											<th>车牌号</th>
+											<th>审核进度</th>
+											<th>车架</th>
+											<th>贷款金额</th>
+											<th>内勤受理日期</th>
+											<th>卡通过日期</th>
+											<th>卷通过日期</th>
+											<th>可以提车日期</th>
+											<th>实际打款日期</th>
+											<th>登记证书日期</th>
+											<th>收押日期</th>
+											<th>交押品日期</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input type="checkbox" /></td>
+											<td>王</td>
+											<td>藁城恒生汽贸</td>
+											<td>中国银行</td>
+											<td></td>
+											<td>2017-11-15</td>
+											<td><a onclick="javascript:r_swiper(this)" style="color:#0D8DDB !important;" href="javascript:void(0)">刘海涛201711159853</a></td>
+											<td>东风起亚k3</td>
+											<td></td>
+											<td>内勤受理</td>
+											<td>123900</td>
+											<td>56000</td>
+											<td>2017-11-16</td>
+											<td>2017-11-16</td>
+											<td>2017-11-16</td>
+											<td>2017-11-16</td>
+											<td>2017-11-16</td>
+											<td>2017-11-16</td>
+											<td>2017-11-16</td>
+											<td>2017-11-16</td>
+										</tr>
+										<tr>
+											<td><input type="checkbox" /></td>
+											<td>王喜平</td>
+											<td>藁城恒生汽贸</td>
+											<td>中国银行</td>
+											<td></td>
+											<td>2017-11-15</td>
+											<td><a onclick="javascript:r_swiper(this)" style="color:#0D8DDB !important;" href="javascript:void(0)">刘海涛201711159853</a></td>
+											<td>东风起亚k3</td>
+											<td></td>
+											<td>内勤受理</td>
+											<td>123900</td>
+											<td>56000</td>
+											<td>2017-11-16</td>
+											<td>2017-11-16</td>
+											<td>2017-11-16</td>
+											<td>2017-11-16</td>
+											<td>2017-11-16</td>
+											<td>2017-11-16</td>
+											<td>2017-11-16</td>
+											<td>2017-11-16</td>
+										</tr>
+									</tbody>
+								</table>
+								<table class="table table-striped table-bordered table-hover none ">
+									<thead>
+										<tr>
+											<th><input type="checkbox" /></th>
+											<th>业务员</th>
+											<th>经销商</th>
+											<th>贷款银行</th>
+											<th>到货日期</th>
+											<th>报单日期</th>
+											<th>客户信息</th>
+											<th>品牌型号</th>
+											<th>车牌号</th>
+											<th>审核进度</th>
+											<th>车架</th>
+											<th>贷款金额</th>
+											<th>内勤受理日期</th>
+											<th>卡通过日期</th>
+											<th>卷通过日期</th>
+											<th>可以提车日期</th>
+											<th>实际打款日期</th>
+											<th>登记证书日期</th>
+											<th>收押日期</th>
+											<th>交押品日期</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input type="checkbox" /></td>
+											<td>王</td>
+											<td>藁城恒生汽贸</td>
+											<td>中国银行</td>
+											<td></td>
+											<td>2017-11-15</td>
+											<td><a onclick="javascript:r_swiper(this)" style="color:#0D8DDB !important;" href="javascript:void(0)">刘海涛201711159853</a></td>
+											<td>东风起亚k3</td>
+											<td></td>
+											<td>内勤受理</td>
+											<td>123900</td>
+											<td>56000</td>
+											<td>2017-11-16</td>
+											<td>2017-11-16</td>
+											<td>2017-11-16</td>
+											<td>2017-11-16</td>
+											<td>2017-11-16</td>
+											<td>2017-11-16</td>
+											<td>2017-11-16</td>
+											<td>2017-11-16</td>
+										</tr>
+										<tr>
+											<td><input type="checkbox" /></td>
+											<td>王喜平</td>
+											<td>藁城恒生汽贸</td>
+											<td>中国银行</td>
+											<td></td>
+											<td>2017-11-15</td>
+											<td><a onclick="javascript:r_swiper(this)" style="color:#0D8DDB !important;" href="javascript:void(0)">刘海涛201711159853</a></td>
+											<td>东风起亚k3</td>
+											<td></td>
+											<td>内勤受理</td>
+											<td>123900</td>
+											<td>56000</td>
+											<td>2017-11-16</td>
+											<td>2017-11-16</td>
+											<td>2017-11-16</td>
+											<td>2017-11-16</td>
+											<td>2017-11-16</td>
+											<td>2017-11-16</td>
+											<td>2017-11-16</td>
+											<td>2</td>
+										</tr>
+									</tbody>
+								</table>
+								<table class="table table-striped table-bordered table-hover none">
+									<thead>
+										<tr>
+											<th><input type="checkbox" /></th>
+											<th>业务员</th>
+											<th>经销商</th>
+											<th>贷款银行</th>
+											<th>到货日期</th>
+											<th>报单日期</th>
+											<th>客户信息</th>
+											<th>品牌型号</th>
+											<th>车牌号</th>
+											<th>审核进度</th>
+											<th>车架</th>
+											<th>贷款金额</th>
+											<th>内勤受理日期</th>
+											<th>卡通过日期</th>
+											<th>卷通过日期</th>
+											<th>可以提车日期</th>
+											<th>实际打款日期</th>
+											<th>登记证书日期</th>
+											<th>收押日期</th>
+											<th>交押品日期</th>
+										</tr>
+									</thead>
+								</table>
+								<table class="table table-striped table-bordered table-hover none">
+									<thead>
+										<tr>
+											<th><input type="checkbox" /></th>
+											<th>业务员</th>
+											<th>经销商</th>
+											<th>贷款银行</th>
+											<th>到货日期</th>
+											<th>报单日期</th>
+											<th>客户信息</th>
+											<th>品牌型号</th>
+											<th>车牌号</th>
+											<th>审核进度</th>
+											<th>车架</th>
+											<th>贷款金额</th>
+											<th>内勤受理日期</th>
+											<th>卡通过日期</th>
+											<th>卷通过日期</th>
+											<th>可以提车日期</th>
+											<th>实际打款日期</th>
+											<th>登记证书日期</th>
+											<th>收押日期</th>
+											<th>交押品日期</th>
+										</tr>
+									</thead>
+								</table>
+								<table class="table table-striped table-bordered table-hover none" >
+									<thead>
+										<tr>
+											<th><input type="checkbox" /></th>
+											<th>业务员</th>
+											<th>经销商</th>
+											<th>贷款银行</th>
+											<th>到货日期</th>
+											<th>报单日期</th>
+											<th>客户信息</th>
+											<th>品牌型号</th>
+											<th>车牌号</th>
+											<th>审核进度</th>
+											<th>车架</th>
+											<th>贷款金额</th>
+											<th>内勤受理日期</th>
+											<th>卡通过日期</th>
+											<th>卷通过日期</th>
+											<th>可以提车日期</th>
+											<th>实际打款日期</th>
+											<th>登记证书日期</th>
+											<th>收押日期</th>
+											<th>交押品日期</th>
+										</tr>
+									</thead>
+								</table>
+								<table class="table table-striped table-bordered table-hover none">
+									<thead>
+										<tr>
+											<th><input type="checkbox" /></th>
+											<th>业务员</th>
+											<th>经销商</th>
+											<th>贷款银行</th>
+											<th>到货日期</th>
+											<th>报单日期</th>
+											<th>客户信息</th>
+											<th>品牌型号</th>
+											<th>车牌号</th>
+											<th>审核进度</th>
+											<th>车架</th>
+											<th>贷款金额</th>
+											<th>内勤受理日期</th>
+											<th>卡通过日期</th>
+											<th>卷通过日期</th>
+											<th>可以提车日期</th>
+											<th>实际打款日期</th>
+											<th>登记证书日期</th>
+											<th>收押日期</th>
+											<th>交押品日期</th>
+										</tr>
+									</thead>
+								</table>
+								<table class="table table-striped table-bordered table-hover none">
+									<thead>
+										<tr>
+											<th><input type="checkbox" /></th>
+											<th>业务员</th>
+											<th>经销商</th>
+											<th>贷款银行</th>
+											<th>到货日期</th>
+											<th>报单日期</th>
+											<th>客户信息</th>
+											<th>品牌型号</th>
+											<th>车牌号</th>
+											<th>审核进度</th>
+											<th>车架</th>
+											<th>贷款金额</th>
+											<th>内勤受理日期</th>
+											<th>卡通过日期</th>
+											<th>卷通过日期</th>
+											<th>可以提车日期</th>
+											<th>实际打款日期</th>
+											<th>登记证书日期</th>
+											<th>收押日期</th>
+											<th>交押品日期</th>
+										</tr>
+									</thead>
+								</table>
+								<table class="table table-striped table-bordered table-hover none">
+									<thead>
+										<tr>
+											<th><input type="checkbox" /></th>
+											<th>业务员</th>
+											<th>经销商</th>
+											<th>贷款银行</th>
+											<th>到货日期</th>
+											<th>报单日期</th>
+											<th>客户信息</th>
+											<th>品牌型号</th>
+											<th>车牌号</th>
+											<th>审核进度</th>
+											<th>车架</th>
+											<th>贷款金额</th>
+											<th>内勤受理日期</th>
+											<th>卡通过日期</th>
+											<th>卷通过日期</th>
+											<th>可以提车日期</th>
+											<th>实际打款日期</th>
+											<th>登记证书日期</th>
+											<th>收押日期</th>
+											<th>交押品日期</th>
+										</tr>
+									</thead>
+								</table>
+								<table class="table table-striped table-bordered table-hover none">
+									<thead>
+										<tr>
+											<th><input type="checkbox" /></th>
+											<th>业务员</th>
+											<th>经销商</th>
+											<th>贷款银行</th>
+											<th>到货日期</th>
+											<th>报单日期</th>
+											<th>客户信息</th>
+											<th>品牌型号</th>
+											<th>车牌号</th>
+											<th>审核进度</th>
+											<th>车架</th>
+											<th>贷款金额</th>
+											<th>内勤受理日期</th>
+											<th>卡通过日期</th>
+											<th>卷通过日期</th>
+											<th>可以提车日期</th>
+											<th>实际打款日期</th>
+											<th>登记证书日期</th>
+											<th>收押日期</th>
+											<th>交押品日期</th>
+										</tr>
+									</thead>
+								</table>
+								<table class="table table-striped table-bordered table-hover none">
+									<thead>
+										<tr>
+											<th><input type="checkbox" /></th>
+											<th>业务员</th>
+											<th>经销商</th>
+											<th>贷款银行</th>
+											<th>到货日期</th>
+											<th>报单日期</th>
+											<th>客户信息</th>
+											<th>品牌型号</th>
+											<th>车牌号</th>
+											<th>审核进度</th>
+											<th>车架</th>
+											<th>贷款金额</th>
+											<th>内勤受理日期</th>
+											<th>卡通过日期</th>
+											<th>卷通过日期</th>
+											<th>可以提车日期</th>
+											<th>实际打款日期</th>
+											<th>登记证书日期</th>
+											<th>收押日期</th>
+											<th>交押品日期</th>
+										</tr>
+									</thead>
+								</table>										
+							</div>
+						</div>
+						<!--<div class="row">
+							<div class="col-sm-5">
+								<div class="dataTables_info" id="editable_info" role="status" aria-live="polite">显示从1到8，总8条</div>
+							</div>
+							<div style="height:27px;" class="col-sm-7">
+								<div class="dataTables_paginate paging_simple_numbers" id="editable_paginate">
+									<ul class="pagination pull-right" style="margin:-3px 0;">
+										<li class="paginate_button previous" id="editable_previous">
+											<a href="#" aria-controls="editable" data-dt-idx="0" tabindex="0">上一页</a>
+										</li>
+										<li class="paginate_button previous" id="editable_previous">
+											<a href="#" aria-controls="editable" data-dt-idx="0" tabindex="1">1</a>
+										</li>
+										<li class="paginate_button previous" id="editable_previous">
+											<a href="#" aria-controls="editable" data-dt-idx="0" tabindex="2">2</a>
+										</li>
+										<li class="paginate_button previous" id="editable_previous">
+											<a href="#" aria-controls="editable" data-dt-idx="0" tabindex="3">3</a>
+										</li>
+										<li class="paginate_button previous" id="editable_previous">
+											<a href="#" aria-controls="editable" data-dt-idx="0" tabindex="4">4</a>
+										</li>
+										<li class="paginate_button previous" id="editable_previous">
+											<a href="#" aria-controls="editable" data-dt-idx="0" tabindex="5">下一页</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>-->
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<iframe id="ifr" src="Tab_swiper.html" frameborder="no" scrolling="no" width="780px" height="100%" allowtransparency="true"></iframe>
+		
+		<script src="public/jquery-1.11.3.js"></script>
+		<script src="public/bootstrap.min.js" type="text/javascript"></script>
+		<script src="js/plugins/lhgdialog/lhgdialog.js"></script>
+		<!-- 弹出警示框 -->
+		<script src="js/plugins/toastr/toastr.min.js"></script>
+		<!-- 弹出确认框 -->
+		<script src="public/artDialog4.1.7/artDialog.js?skin=blue"></script>
+    	<script src="public/artDialog4.1.7/plugins/iframeTools.js"></script>
+    	<!-- Data Tables -->
+			<script src="js/plugins/dataTables/jquery.dataTables.js"></script>
+			<script src="js/plugins/dataTables/dataTables.bootstrap.js"></script>
+			<script src="js/plugins/dataTables/dataTables.responsive.js"></script>
+			<script src="js/plugins/dataTables/dataTables.tableTools.min.js"></script>
+    	
+    	<script src="js/templet_form.js"></script>
+    	<script>
+    		$(".se_salemen").click(function(){
+    			if($(".sele_person").css('display','none')){
+    				$(".sele_person").show();	
+    			}else{
+    				$(".sele_person").hide();
+    			}
+    		});
+    		$('#selAll').click(function(){
+				$(this).parents('li').siblings().find('input').prop('checked',true);
+    		});
+    		$('#noSel').click(function(){
+				$(this).parents('li').siblings().find('input').prop('checked',false);	
+    		}) ;
+    		$('#queding').click(function(){
+    			var lis = $(this).parents('li').parent('ul').find('.uname').children('li');
+    			var inner='';
+    			for(var i=0;i<lis.length;i++){
+    				if($(lis[i]).find('input').prop('checked')){
+    					inner += $(lis[i]).find('span').html();
+    				}
+    			}
+    			$(this).parents('.sele_person').siblings('.se_salemen').find('span').html(inner);
+    			$(this).parents('.sele_person').hide();
+    		});
+    	</script>
+    	<script>
+			$('#ctrol>thead>tr>th').click(function() {
+				//$(this).addClass('select_tab').siblings().removeClass('select_tab');
+				var index = $(this).index();
+				
+				if($(this).index!=0){
+					$('#one').hide();
+				}
+				$('.tablehide>table:eq(' + index + ')').addClass('active1').siblings().removeClass('active1');
+			});
+		</script>
+		<!--datetable-->
+		<script>
+			/*清楚第一行class名为last的th后面所有的兄弟元素*/
+			$('#editable thead tr th.last').nextAll().remove();
+				var str;
+				for(var k = 1; k <= 30; k++) {
+					str += '<th><p class="week"></p><p class="date">' + k + '</p></th>';
+				}
+				$('#editable thead tr th.last').after(str);
+
+				var trs = $('#editable tbody tr');
+					for(var j = 0; j < trs.length; j++) {
+						$(trs[j]).find('td.last').nextAll().remove();
+						for(var z = 1; z <= 30; z++) {
+							var str2 = "<td></td>";
+							$(trs[j]).find('td.last').after(str2);
+						}
+
+					}
+					var span = '<span></span>';
+					$('#editable tbody tr:eq(0)').find('td.last').next().append(span);
+					/********************/
+					$('#editable').dataTable({
+						"bPaginate": true, //翻页功能
+						"bLengthChange": false, //改变每页显示数据数量
+						"bFilter": false, //过滤功能
+						"bSort": false, //排序功能
+						"bInfo": true, //页脚信息
+						"bAutoWidth": true, //自动宽度
+						"scrollY": "120px",
+						"sEmptyTable":"",
+						"scrollX": true,
+						"oLanguage": {
+							"sLengthMenu": "每页显示 _MENU_ 条记录",
+							"sZeroRecords": "对不起，查询不到任何相关数据",
+							"sInfo": "当前显示 _START_ 到 _END_ 条，共 _TOTAL_ 条记录",
+							"sInfoEmtpy": "找不到相关数据",
+							"sInfoFiltered": "数据表中共为 _MAX_ 条记录)",
+							"sProcessing": "正在加载中...",
+							"sSearch": "搜索",
+							"sUrl": "", //多语言配置文件，可将oLanguage的设置放在一个txt文件中，例：Javascript/datatable/dtCH.txt
+							"oPaginate": {
+								"sFirst": "第一页",
+								"sPrevious": " 上一页 ",
+								"sNext": " 下一页 ",
+								"sLast": " 最后一页 "
+							}
+						}, //多语言配置
+					});
+					trs = $('.DTFC_LeftBodyLiner table tbody tr');
+		</script>
+	</body>
+</html>
