@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>在线调查</title>
+		<link rel="stylesheet" href="public/public.css" />
+		<link rel="stylesheet" href="css/new_xiangqing.css" />
+		<link rel="stylesheet" href="css/allcss.css" />
+		<script src="js/PCASClass.js"></script>
+		<script src="js/jquery.js"></script>
+		<style>
+			.textarea{
+				width:765px;
+				height: 80px;
+				margin-top: 12px;
+				margin-left: 30px;
+				padding-left: 10px;
+				line-height: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="top"></div>
+			<div class="header">
+				<div class="right">
+					<ul class="denglu">
+						<li><a href="#">登录</a></li> |
+						<li><a href="#">注册</a></li> 
+						
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="header1">
+				<div class="minqing">
+					<img src="images/yunpingtai.png" class="yunpingtai"/>
+					<img src="images/timinqing.png"  class="right timinqing"/>
+					<div class="right sousuo">
+						<input type="text" class="search" />
+						<img src="images/shousuo.png" class="search1" />
+						<span class="zhanneisousuo"><a href="#">站内搜索</a></span>
+					</div>
+				</div>	
+			</div>
+			<div class="daohang">
+				<div class="nav">
+  					<ul>
+  						<li><a href="#">网站首页</a></li>
+  						<!--<img src="images/daohanxian.png" />-->
+    					<li><a href="#">民调中心</a>
+      						<ul>
+        						<li><a href="#">政府工作民调</a></li>
+        						<li><a href="#">社会服务民调</a></li>
+        						<li><a href="#">企业服务民调</a></li>
+       							<li><a href="#">专用民调</a></li>
+      						</ul>
+    					</li>
+    					<li><a href="#">热点关注</a></li>
+    					<li><a href="#">政策解读</a></li>
+    					<li><a href="#">公益捐赠</a></li>
+    					<li><a href="#">在线调查</a></li>
+    					<li><a href="#">我要留言</a>
+      						<ul>
+        						<li><a href="#">突发事件</a></li>
+        						<li><a href="#">百姓呼声</a></li>
+       							<li><a href="#">建言献策</a></li>
+        						<li><a href="#">代表直通车</a></li>
+      						</ul>
+    					</li>
+    					<li><a href="#">注册加入</a>
+      						<ul>
+       				 			<li><a href="#">企业加入</a></li>
+        						<li><a href="#">个人加入</a></li>
+        					
+      						</ul>
+    					</li>
+    					<li><a href="#">联系我们</a></li>
+  					</ul>
+				</div>
+			</div>
+		</header>
+		<div class="content">
+			<div class="left_top left">
+				<ul>
+					<li class="list1"><a href="#" class="mindiao1">爱心捐赠</a>
+						<hr class="hrr" />
+						<ul id="mindiao">
+							<li class="list on"><a href="#" class="mindiao2">爱心点点</a></li>
+							<hr class="hrr"/>
+							<li class="list"><a href="#" class="mindiao2">公益活动</a></li>
+							<hr class="hrr"/>
+							<li class="list"><a href="#" class="mindiao2">紧急救援</a></li>
+							<hr class="hrr"/>
+							<li class="list"><a href="#" class="mindiao2">助学圆梦</a></li>
+							<hr class="hrr"/>
+						</ul>
+					</li>
+				</ul>
+				<ul>
+					<li class="list1 history"><a href="#" class="mindiao1">历史新闻</a></li>
+				</ul>
+				<hr class="hr"/>
+				<!--9月8日改  加了class=year1-->
+				<div class="year">
+					<span class="on1"><a href="#" class="year1">2017</a></span>|
+					<span><a href="#" class="year1">2016</a></span>|
+					<span><a href="#" class="year1">2015</a></span>
+					<br />
+					<span><a href="#" class="year1">2014</a></span>|
+					<span><a href="#" class="year1">2013</a></span>|
+					<span><a href="#" class="year1">2012</a></span>
+					<br />
+					<span><a href="#" class="year1">2011</a></span>|
+					<span><a href="#" class="year1">2010</a></span>|
+					<span><a href="#" class="year1">2009</a></span>
+				</div>
+			</div>
+			
+			<div class="right">
+				<div class="new_xq">
+					<div class="right_content">
+						<span class="mindiao"><img src="images/list-style.png"/>&nbsp;&nbsp;&nbsp;在线调查</span>
+						<div class="bread right">
+							<ul>
+								<li><a href="#">首页</a></li> -
+								<li><a href="#">在线调查</a></li> 
+							</ul>
+						</div>
+					</div>
+					<hr class="hr1" />
+					<div class="new_xiangqing">
+						<h2>关于河北省大众对转基因农产品认知情况的调查</h2>
+						<h3>发布时间：2017-07-23</h3>
+						<ul class="diaocha">
+							<li><span>Q1：</span>您所在的城市是：</li>
+							<select name="province" class="province" style="margin-left: 30px;"></select><label>&nbsp;省 &nbsp;</label><select name="city" class="city"></select><label>&nbsp;市 &nbsp;</label><select name="area" class="area"></select><label>&nbsp;区/县</label>
+							<li><span>Q2：</span>您的性别：</li>
+							<label class="radio"><input name="xingbie" type="radio" value="" />男 </label> 
+							<label ><input name="xingbie" type="radio" value="" />女 </label> 
+							<li><span>Q3：</span>您的年龄层次：</li>
+							<label class="radio"><input name="age" type="radio" value="" />15岁以下</label> 
+							<label class="radio"><input name="age" type="radio" value="" />16岁~35岁 </label>
+							<label class="radio"><input name="age" type="radio" value="" />36岁~60岁</label> 
+							<label class="radio"><input name="age" type="radio" value="" />60岁以上 </label> 
+							<li><span>Q4：</span>您的受教育程度：</li>
+							<label class="radio"><input name="edu" type="radio" value="" />小学及以下</label> 
+							<label class="radio"><input name="edu" type="radio" value="" />初中 </label>
+							<label class="radio"><input name="edu" type="radio" value="" />高中或中专</label> 
+							<label class="radio"><input name="edu" type="radio" value="" />大专或本科 </label>
+							<label class="radio"><input name="edu" type="radio" value="" />研究生以上 </label> 
+							<li><span>Q5：</span>您的所学专业/从事专业领域：</li>
+							<label class="radio"><input name="work" type="radio" value="" />理工类</label> 
+							<label class="radio"><input name="work" type="radio" value="" />农林类 </label>
+							<label class="radio"><input name="work" type="radio" value="" />人文类</label> 
+							<label class="radio"><input name="work" type="radio" value="" />医学类 </label>
+							<label class="radio"><input name="work" type="radio" value="" />艺术类 </label>
+							<label class="radio"><input name="work" type="radio" value="" />其他 </label> 
+							<li><span>Q6：</span>您目前所从事职业：</li>
+							<label class="radio"><input name="job" type="radio" value="" />农民</label> 
+							<label class="radio"><input name="job" type="radio" value="" />工人 </label>
+							<label class="radio"><input name="job" type="radio" value="" />学生</label> 
+							<label class="radio"><input name="job" type="radio" value="" />企业职员</label>
+							<label class="radio"><input name="job" type="radio" value="" />个体经营者</label>
+							<label class="radio"><input name="job" type="radio" value="" />其他 </label> 
+							<li><span>Q7：</span>您经常关注的领域：（可多选）：</li>
+							<label class="radio"><input name="view" type="checkbox" value="" />教育</label> 
+							<label class="radio"><input name="view" type="checkbox" value="" />医疗 </label>
+							<label class="radio"><input name="view" type="checkbox" value="" />农业</label> 
+							<label class="radio"><input name="view" type="checkbox" value="" />城市建设</label>
+							<label class="radio"><input name="view" type="checkbox" value="" />人文艺术</label>
+							<label class="radio"><input name="view" type="checkbox" value="" />其他 </label>
+							<li><span>Q8：</span>您对社会治安有什么建议(请简述，50个字之内)</li>
+							<textarea class="textarea"></textarea>
+						</ul>
+						<h4><input type="button" value="提交"></h4>
+					</div>
+				</div>
+			</div>
+		
+			
+			
+			
+			
+			<div class="clear"></div>
+		
+		</div>
+		<div class="foot" >
+			<div class="footer">
+				<p>河北省社情民意云平台（www.hebsqmy.cn）＊2017 版权所有 All Rights Reserved.</p>
+				<p>主办单位名称：河北省社情民意研究会   网站备案号：冀ICP备123456789号</p>
+			</div>
+		</div>
+	</body>
+	<script> 
+    	$('#mindiao').children('.list').click(function () {
+      		$('#mindiao').children('.list').removeClass('on');
+       	 	$(this).addClass('on');
+       		
+        	$('.content').find('.new_xq').hide();
+        	$('.content').find('.new_xq').eq($(this).index()/2).show();
+    	 });
+		//   年份
+		$('.year').children('span').click(function(){
+			$('.year').children('span').removeClass('on1');
+			$(this).addClass('on1');
+		});
+		
+	</script>
+	<script language="javascript" defer>
+		new PCAS("province","city","area"," "," "," ");
+	</script>
+	
+</html>

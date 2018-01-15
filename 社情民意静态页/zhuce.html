@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>注册</title>
+		<link rel="stylesheet" href="public/public.css" />
+		<script src="js/jquery.js"></script>
+		<script src="js/PCASClass.js"></script>
+		<link rel="stylesheet" href="css/allcss.css" />
+	</head>
+	<body>
+		<header>
+			<div class="top"></div>
+			<div class="header">
+				<div class="right">
+					<ul class="denglu">
+						<li><a href="#">登录</a></li> |
+						<li><a href="#">注册</a></li> 
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="header1">
+				<div class="minqing">
+					<img src="images/yunpingtai.png" class="yunpingtai"/>
+					<img src="images/timinqing.png"  class="right timinqing"/>
+					<div class="right sousuo">
+						<input type="text" class="search" />
+						<img src="images/shousuo.png" class="search1" />
+						<span class="zhanneisousuo"><a href="#">站内搜索</a></span>
+					</div>
+				</div>	
+			</div>
+			<div class="daohang">
+				<div class="nav">
+  					<ul>
+  						<li><a href="#">网站首页</a></li>
+    					<li><a href="#">民调中心</a>
+      						<ul>
+        						<li><a href="#">政府工作民调</a></li>
+        						<li><a href="#">社会服务民调</a></li>
+        						<li><a href="#">企业服务民调</a></li>
+       							<li><a href="#">专用民调</a></li>
+      						</ul>
+    					</li>
+    					<li><a href="#">热点关注</a></li>
+    					<li><a href="#">政策解读</a></li>
+    					<li><a href="#">公益捐赠</a></li>
+    					<li><a href="#">在线调查</a></li>
+    					<li><a href="#">我要留言</a>
+      						<ul>
+        						<li><a href="#">突发事件</a></li>
+        						<li><a href="#">百姓呼声</a></li>
+       							<li><a href="#">建言献策</a></li>
+        						<li><a href="#">代表直通车</a></li>
+      						</ul>
+    					</li>
+    					<li><a href="#">注册加入</a>
+      						<ul>
+       				 			<li><a href="#">企业加入</a></li>
+        						<li><a href="#">个人加入</a></li>
+        					
+      						</ul>
+    					</li>
+    					<li><a href="#">联系我们</a></li>
+  					</ul>
+				</div>
+			</div>
+		</header>
+		<div class="content">
+			<div class="container">
+				<div class="zhaohuimima">
+					<span >立即注册</span>
+					<label class="right">已有账户，直接<a href="#">登录</a></label>
+					<hr class="hr2" />
+				</div>
+				<div class="zhuce">
+					<span class="personal active1">个人注册</span>
+					<span class="company">企业注册</span>
+				</div>
+				<div class="zhucegeren">
+					<div class="gerenzhuce">
+						<span class="queren">* <label> 登录名称：</label></span>&nbsp;<input type="text" name="登录名称" class="newpw">
+						<br />
+						<br />
+						<span class="queren">* <label> 所在地区：</label></span>
+						<select name="province" class="province"></select><label>&nbsp;省 &nbsp;</label><select name="city" class="city"></select><label>&nbsp;市 &nbsp;</label><select name="area" class="area"></select><label>&nbsp;县/区</label>
+						<br />
+						<br />
+						<span class="xingming">* <label> 姓名：</label></span>&nbsp;<input type="text" name="姓名" class="xingming1">
+						<br />
+						<br />
+						<span class="phonenum">* <label> 手机号：</label></span>&nbsp;<input type="text" name="手机号" class="xingming1">
+						<br />
+						<br />
+						<span class="email"> <label> 邮箱：</label></span>&nbsp;<input type="text" name="邮箱" class="email1" placeholder="您可以通过邮箱找回密码">
+						<br />
+						<br />
+						<span class="xingming">* <label> 密码：</label></span>&nbsp;<input type="text" name="密码" class="xingming1">
+						<br />
+						<br />
+						<span class="queren">* <label> 重复密码：</label></span>&nbsp;<input type="text" name="重复密码" class="newpw">
+						<br />
+						<br />
+						<span class="phonenum"> &nbsp; <label> 推荐人：</label></span>&nbsp;<input type="text" name="推荐人" class="xingming1">
+						<br />
+						<br />
+						<span>* <label> 验证码：</label></span>&nbsp;<input type="text" name="验证码" class="yanzhengm">
+						<img src="images/yanzhengma.jpg" />
+						<span class="change"><a href="#">看不清楚？换一张</a></span>
+					</div>
+					<div class="lijizhuce">
+						<div class="lijizhuce1">
+							<p><a href="#">立即注册</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="qiyezhuce hide">
+					<div class="gerenzhuce">
+						<span class="queren">* <label> 登录名称：</label></span>&nbsp;<input type="text" name="登录名称" class="newpw">
+						<br />
+						<br />
+						<span class="queren">* <label> 公司名称：</label></span>&nbsp;<input type="text" name="公司名称" class="newpw">
+						<br />
+						<br />
+						<span class="queren">* <label> 所在地区：</label></span>
+						<select name="province1" class="province"></select><label>&nbsp;省 &nbsp;</label><select name="city1" class="city"></select><label>&nbsp;市 &nbsp;</label><select name="area1" class="area"></select><label>&nbsp;县/区</label>
+						<br />
+						<br />
+						<span class="queren">* <label> 法人代表：</label></span>&nbsp;<input type="text" name="法人代表" class="newpw">
+						<br />
+						<br />
+						<span class="email"> <label> 邮箱：</label></span>&nbsp;<input type="text" name="邮箱" class="email1" placeholder="您可以通过">
+						<br />
+						<br />
+						<span class="phonenum">* <label> 联系人：</label></span>&nbsp;<input type="text" name="手机号" class="xingming1">
+						<br />
+						<br />
+						<span class="email"> <label> 职位：</label></span>&nbsp;<input type="text" name="职位" class="email1" placeholder="您可以通过">
+						<br />
+						<br />
+						<span class="phonenum">* <label> 手机号：</label></span>&nbsp;<input type="text" name="手机号" class="xingming1">
+						<br />
+						<br />
+						<span class="queren">* <label> 企业简介：</label></span>&nbsp;<input type="text" name="法人代表" class="newpw">
+						<br />
+						<br />
+						<span class="xingming">* <label> 密码：</label></span>&nbsp;<input type="text" name="密码" class="xingming1">
+						<br />
+						<br />
+						<span class="queren">* <label> 重复密码：</label></span>&nbsp;<input type="text" name="重复密码" class="newpw">
+						<br />
+						<br />
+						<span class="phonenum"><label> 推荐单位：</label></span>&nbsp;<input type="text" name="推荐人" class="xingming1">
+						<br />
+						<br /><span class="phonenum"> &nbsp; <label> 推荐人：</label></span>&nbsp;<input type="text" name="推荐人" class="xingming1">
+						<br />
+						<br />
+						<span>* <label> 验证码：</label></span>&nbsp;<input type="text" name="验证码" class="yanzhengm">
+						<img src="images/yanzhengma.jpg" />
+						<span class="change"><a href="#">看不清楚？换一张</a></span>
+					</div>
+					<div class="lijizhuce">
+						<div class="lijizhuce1">
+							<p><a href="#">立即注册</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+		</div>
+		<div class="foot">
+			<div class="footer">
+				<p>河北省社情民意云平台（www.hebsqmy.cn）＊2017 版权所有 All Rights Reserved.</p>
+				<p>主办单位名称：河北省社情民意研究会   网站备案号：冀ICP备123456789号</p>
+			</div>
+		</div>
+	</body>
+	<!--三级联动-->
+	<script language="javascript" defer>
+		new PCAS("province","city","area"," "," "," ");
+		new PCAS("province1","city1","area1"," "," "," ");
+	</script>
+	<script>
+		$('.company').click(function(){
+			$(this).addClass('active1');
+			$('.personal').removeClass('active1')
+			$('.zhucegeren').hide();
+			$('.qiyezhuce').show();
+		});
+		$('.personal').click(function(){
+			$(this).addClass('active1');
+			$('.company').removeClass('active1')
+			$('.qiyezhuce').hide();
+			$('.zhucegeren').show();
+		});
+	</script>
+	
+</html>

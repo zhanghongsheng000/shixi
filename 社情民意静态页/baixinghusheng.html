@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>百姓呼声</title>
+		<link rel="stylesheet" href="public/public.css" />
+		<script src="js/jquery.js"></script>
+		<link rel="stylesheet" href="css/allcss.css" />
+	</head>
+	<body>
+		<header>
+			<div class="top"></div>
+			<div class="header">
+				<div class="right">
+					<ul class="denglu">
+						<li><a href="#">登录</a></li> |
+						<li><a href="#">注册</a></li> 
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="header1">
+				<div class="minqing">
+					<img src="images/yunpingtai.png" class="yunpingtai"/>
+					<img src="images/timinqing.png"  class="right timinqing"/>
+					<div class="right sousuo">
+						<input type="text" class="search" />
+						<img src="images/shousuo.png" class="search1" />
+						<span class="zhanneisousuo"><a href="#">站内搜索</a></span>
+					</div>
+				</div>	
+			</div>
+			<div class="daohang">
+				<div class="nav">
+  					<ul>
+  						<li><a href="#">网站首页</a></li>
+  						<!--<img src="images/daohanxian.png" />-->
+    					<li><a href="#">民调中心</a>
+      						<ul>
+        						<li><a href="#">政府工作民调</a></li>
+        						<li><a href="#">社会服务民调</a></li>
+        						<li><a href="#">企业服务民调</a></li>
+       							<li><a href="#">专用民调</a></li>
+      						</ul>
+    					</li>
+    					<li><a href="#">热点关注</a></li>
+    					<li><a href="#">政策解读</a></li>
+    					<li><a href="#">公益捐赠</a></li>
+    					<li><a href="#">在线调查</a></li>
+    					<li><a href="#">我要留言</a>
+      						<ul>
+        						<li><a href="#">突发事件</a></li>
+        						<li><a href="#">百姓呼声</a></li>
+       							<li><a href="#">建言献策</a></li>
+        						<li><a href="#">代表直通车</a></li>
+      						</ul>
+    					</li>
+    					<li><a href="#">注册加入</a>
+      						<ul>
+       				 			<li><a href="#">企业加入</a></li>
+        						<li><a href="#">个人加入</a></li>
+        					
+      						</ul>
+    					</li>
+    					<li><a href="#">联系我们</a></li>
+  					</ul>
+				</div>
+			</div>
+		</header>
+		<div class="content">
+			<div class="container">
+				<div class="zhaohuimima">
+					<span >
+						百姓呼声
+					</span>
+					
+					<hr class="hr2" />
+				</div>
+				<div class="liuyan1">
+					<span>* <label> 留言人：</label></span>&nbsp;<input type="text" name="留言人" class="liuyanren">
+					<br />
+					<br />
+					<span >* <label> 电 &nbsp;&nbsp; 话：</label></span>&nbsp;<input type="text" name="电话" class="liuyanren">
+					<br />
+					<br />
+					<span class="ages"> <label>  年 &nbsp;&nbsp; 龄 ：</label></span>
+					<select class="select1">
+						<option value ="20"></option>
+  						<option value ="20">20</option>
+  						<option value ="21">21</option>
+  						<option value="22">22</option>
+  						<option value="23">23</option>
+					</select>
+					<br />
+					<br />
+					<span> <label> 公司名称：</label></span>&nbsp;<input type="text" name="公司名称" class="compname">
+					<br />
+					<br />
+					<span class="ages"> <label> 职 &nbsp;&nbsp; 务 ：</label></span>&nbsp;<input type="text" name="职务" class="zhiwu">
+					<br />
+					<br />
+					<span class="suoshuleib">* <label>所属机构：</label></span>
+					<select class="select1">
+						<option value ="20"></option>
+  						<option value ="20">20</option>
+  						<option value ="21">21</option>
+  						<option value="22">22</option>
+  						<option value="23">23</option>
+					</select>
+					<br />
+					<br />
+					<span class="suoshuleib">* <label>所属类别：</label></span>
+					<select class="select1">
+						<option value ="20"></option>
+  						<option value ="20">20</option>
+  						<option value ="21">21</option>
+  						<option value="22">22</option>
+  						<option value="23">23</option>
+					</select>
+					<br />
+					<br />
+					<span class="suoshuleib">* <label>事件标题：</label></span>
+					<select class="select1">
+						<option value ="20"></option>
+  						<option value ="20">20</option>
+  						<option value ="21">21</option>
+  						<option value="22">22</option>
+  						<option value="23">23</option>
+					</select>
+					<br />
+					<br />
+					<span class="suoshuleib">* <label>留言内容：</label></span>&nbsp;
+					<textarea class="liuyannr" placeholder="留言内容……"></textarea>
+				
+					<br />
+					<div class="ziliaoshangchuan">
+						<span>* <label>资料上传：</label></span>&nbsp;<input type="file" name="资料上传"  class="ziliaosc hide" id="File">
+						<img src="images/shangchuan.jpg" class = "clp" onclick = "clp();">
+					
+						<b>（可上传视频，图片，文件等。）</b>
+					</div>
+				</div>
+				<div class="liuyanshuoming">
+					<hr class="hr2" />
+					<div class="shuoming">
+						<h2>留言说明</h2>
+						<p> 欢迎您为河北的发展建言献策，通过平台留言向各级党政机关反映问题、提出意见建议是您的合法权利，请遵守有关法律法规，倡导网络文明。</p>
+						<p>一、如何进行留言</p>
+						<p>  选择“所在地区”确认留言的地区，选择《类别》确认留言类别，填写留言人名称、联系方式、留言内容（字数不得超过1000字）等信息后，选择《提交》即可完成留言。</p>
+						<p>二、留言提示</p>
+						<p>为了及时、有效的处理您反映的问题，请写清楚事件发生的时间、地点及主要事实和证据，并尽量留下您的真实姓名和电话，以便在核实情况时与您取得联系。</p>
+						<p>三、哪些留言不予接受</p>
+						<p> 本着知民意、解民忧、汇民智、聚民心的原则，社情民意云平台全面接受涉及河北省范围内的问题反映、政策咨询、意见建议。以下情况不予接受：</p>
+						<p>（1） 已经过诉讼程序的涉法、涉诉问题。包括执法机关按照国家法律、法规已处理的问题或需执法机关按照国家法律、法规裁定的问题。</p>
+						<p>（2） 公民、法人间的民事纠纷问题；</p>
+						<p>（3） 问题涉及军队；</p>
+						<p>（4）诉求、咨询内容模糊不详，无从调查的；</p>
+						<p>（5）其他超出权责范围的问题。</p>
+						<h3><a href="#">提交</a></h3>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<footer>
+			<div class="footer">
+				<p>河北省社情民意云平台（www.hebsqmy.cn）＊2017 版权所有 All Rights Reserved.</p>
+				<p>主办单位名称：河北省社情民意研究会   网站备案号：冀ICP备123456789号</p>
+			</div>
+		</footer>
+	</body>
+	<script>
+		function clp(){
+			return  $("#File").click();
+		};
+		$('.clp').click(function(){
+			$('.ziliaosc').show();
+		})
+</script>
+</html>

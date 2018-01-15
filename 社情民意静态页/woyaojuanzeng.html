@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>我要捐赠</title>
+		<link rel="stylesheet" href="public/public.css" />
+		<script src="js/jquery.js"></script>
+		<script src="js/PCASClass.js"></script>
+		<link rel="stylesheet" href="css/allcss.css" />
+	</head>
+	<body>
+		<header>
+			<div class="top"></div>
+			<div class="header">
+				<div class="right">
+					<ul class="denglu">
+						<li><a href="#">登录</a></li> |
+						<li><a href="#">注册</a></li> 
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="header1">
+				<div class="minqing">
+					<img src="images/yunpingtai.png" class="yunpingtai"/>
+					<img src="images/timinqing.png"  class="right timinqing"/>
+					<div class="right sousuo">
+						<input type="text" class="search" />
+						<img src="images/shousuo.png" class="search1" />
+						<span class="zhanneisousuo"><a href="#">站内搜索</a></span>
+					</div>
+				</div>	
+			</div>
+			<div class="daohang">
+				<div class="nav">
+  					<ul>
+  						<li><a href="#">网站首页</a></li>
+    					<li><a href="#">民调中心</a>
+      						<ul>
+        						<li><a href="#">政府工作民调</a></li>
+        						<li><a href="#">社会服务民调</a></li>
+        						<li><a href="#">企业服务民调</a></li>
+       							<li><a href="#">专用民调</a></li>
+      						</ul>
+    					</li>
+    					<li><a href="#">热点关注</a></li>
+    					<li><a href="#">政策解读</a></li>
+    					<li><a href="#">公益捐赠</a></li>
+    					<li><a href="#">在线调查</a></li>
+    					<li><a href="#">我要留言</a>
+      						<ul>
+        						<li><a href="#">突发事件</a></li>
+        						<li><a href="#">百姓呼声</a></li>
+       							<li><a href="#">建言献策</a></li>
+        						<li><a href="#">代表直通车</a></li>
+      						</ul>
+    					</li>
+    					<li><a href="#">注册加入</a>
+      						<ul>
+       				 			<li><a href="#">企业加入</a></li>
+        						<li><a href="#">个人加入</a></li>
+        					
+      						</ul>
+    					</li>
+    					<li><a href="#">联系我们</a></li>
+  					</ul>
+				</div>
+			</div>
+		</header>
+		<div class="content">
+			<div class="container">
+				<div class="zhaohuimima">
+					<span >我要参与</span>
+					<hr class="hr2" />
+				</div>
+				
+				<div class="zhucegeren">
+					<div class="gerenzhuce">
+						<span class="phonenum">* <label>  姓 &nbsp;&nbsp;名 ：</label></span>&nbsp;<input type="text" name="登录名称" class="newpw">
+						<br />
+						<br />
+						<span class="phonenum">* <label> 手机号：</label></span>&nbsp;<input type="text" name="手机号" class="xingming1">
+						<br />
+						<br />
+						<span class="ages"> <label>  年 &nbsp;&nbsp;龄 ：</label></span>
+						<select class="select1">
+							<option value ="20"></option>
+  							<option value ="20">20</option>
+  							<option value ="21">21</option>
+  							<option value="22">22</option>
+  							<option value="23">23</option>
+						</select>
+						<br />
+						<br />
+						<span class="queren">&nbsp;<label> 公司名称：</label></span>&nbsp;<input type="text" name="公司名称" class="newpw">
+						<br />
+						<br />
+						<span class="ages"> <label>  职 &nbsp;&nbsp;位 ： </label></span><input type="text" name="职位" class="newpw">
+						<br />
+						<br />
+						<span class="queren">* <label> 所在地区：</label></span>
+						<select name="province" class="province"></select><label>&nbsp;省 &nbsp;</label><select name="city" class="city"></select><label>&nbsp;市 &nbsp;</label><select name="area" class="area"></select><label>&nbsp;县/区</label>
+						<br />
+						<br />
+						<span class="queren"><label style="margin-left: -15px;"> 扶贫项目名称：</label></span>&nbsp;<input type="text" name="捐赠金额" class="newpw">
+						<br />
+						<br />
+						<span class="queren">* <label>留言内容：</label></span>&nbsp;
+						<textarea class="liuyannr" placeholder="留言内容……"></textarea>
+					</div>
+					<div class="top1"></div>
+					<div class="tijiao">
+						<div class="tijiao1">
+							<p><a href="#">提交</a></p>
+						</div>
+					</div>
+				</div>
+			
+			</div>
+			
+			
+		</div>
+		<div class="foot">
+			<div class="footer">
+				<p>河北省社情民意云平台（www.hebsqmy.cn）＊2017 版权所有 All Rights Reserved.</p>
+				<p>主办单位名称：河北省社情民意研究会   网站备案号：冀ICP备123456789号</p>
+			</div>
+		</div>
+	</body>
+	<!--三级联动-->
+	<script language="javascript" defer>
+		new PCAS("province","city","area"," "," "," ");
+		
+	</script>
+	<script>
+		$('.company').click(function(){
+			$(this).addClass('active1');
+			$('.personal').removeClass('active1')
+			$('.zhucegeren').hide();
+			$('.qiyezhuce').show();
+		});
+		$('.personal').click(function(){
+			$(this).addClass('active1');
+			$('.company').removeClass('active1')
+			$('.qiyezhuce').hide();
+			$('.zhucegeren').show();
+		});
+	</script>
+	
+</html>
+

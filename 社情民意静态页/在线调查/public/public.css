@@ -1,0 +1,65 @@
+* { margin:0; padding:0;font-family: "微软雅黑";}
+ul, li { list-style:none;}
+a{ text-decoration:none;}
+.top{width:100%;min-width: 1200px;height: 8px;background: rgb(209,9,9);}
+.header{width: 1200px;height: 30px;margin: 0 auto;}
+.right{float: right;}
+.left{float: left;}
+.denglu{margin:7px 0px;}
+.denglu li{display: inline;margin-left: 5px;margin-right:5px;}
+.denglu li a{color: #4a4a4a;font-size: 16.35px;font-family: "宋体";}
+.clear{clear: both;}
+.header1{background: url(../images/header_bg.jpg) center;width: 100%;min-width: 1200px;height: 143px;margin-top: 5px;}
+.minqing{width: 1200px;margin: 0 auto;}
+.yunpingtai{
+	margin: 54px 0 0 210px;
+}
+.timinqing{margin-top: 30px;}
+/*9.4日改*/
+.sousuo{margin-top: -9px;}
+
+.search{
+	width: 258px;
+	height: 32px;
+	padding-left: 40px;
+	line-height: 30px;
+}
+.search1{
+	position: absolute;
+	margin-left: -290px;
+	margin-top: 18px;
+	padding-top: 5px;
+}
+.zhanneisousuo a{
+	font-size: 12px;
+	line-height: 60px;
+	color: #FFFFFF;
+}
+.zhanneisousuo{background: url(../images/zhanneisousuo_bg.png);width: 76px;height: 28px;padding: 2px 12px 6px 16px;}
+.daohang{width:100%;min-width:1200px;margin: 0 auto;background: url(../images/daohang1.jpg) center;height: 57px;}
+.nav {width:1200px;margin:0 auto; overflow:hidden;}
+.nav ul li { float:left;margin-top: -1px;}
+.nav ul li a { width:130px; height:52px; text-align:center; line-height:40px; display:block;color:#FFFFFF;font-size: 18px;margin:0 1.5px;padding-top: 5px;}
+.nav ul li:hover{background: rgb(168,8,8); }
+.nav ul li ul { position:absolute; display:none;}
+.nav ul li ul li { float:none;height: 38px;}
+.nav ul li ul li a { border-right:none; border-top:1px dotted #ccc; background:rgb(215,17,17);font-size: 16px;padding-top: 0px;height: 38px;}
+.nav ul li:hover ul{ display:block; z-index: 999999999;}
+.foot{
+	background:#be1203;
+	width: 100%;
+	min-width: 1200px;
+	margin-top: 34px;
+	height: 118px;
+}
+.footer{
+	padding-top: 37px;
+	width: 1200px;
+	margin: 0 auto;
+}
+.footer p{
+	font-size: 12px;
+	line-height: 26px;
+	text-align: center;
+	color:#FFFFFF;
+}
