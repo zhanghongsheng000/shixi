@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="swiper.min.css" />
+		<link rel="stylesheet" href="animate.min.css" />
+		<script type="text/javascript" src="jquery-2.1.0.js"></script>
+		<script type="text/javascript" src="swiper.min.js"></script>
+		<script type="text/javascript" src="swiper.animate1.0.2.min.js"></script>
+	</head>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			border: 0;	
+		}
+		body,html{
+			height: 100%;
+			font-size: 12px;
+		}
+		.swiper-container{
+			width: 100%;
+			height: 100%;
+		}
+		ul,li{
+			list-style: none;
+			width: 100%;
+			height: 100%;
+			position: relative;
+		}
+		li{
+			background-size: 100% 100%;
+			position: relative;
+		}
+		.img1{
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: 10rem;
+			width: 7rem;
+		}
+		.img2{
+			position: fixed;
+			top: 1%;
+			right: 1%;
+			width: 10rem;
+			background: rgba(0,0,0,0.4);
+			border-radius: 50%;
+			animation: move 2s infinite linear;
+			z-index: 10;
+		}
+		@keyframes move{
+			to{transform: rotate(360deg);}
+		}
+		.li1{
+			background-image: url(img/1.jpg);
+		}
+		.li2{
+			background-image: url(img/2.jpg);
+		}
+		.li3{
+			background-image: url(img/3.jpg);
+		}
+		.li4{
+			background-image: url(img/4.jpg);
+		}
+		.li5{
+			background-image: url(img/5.jpg);
+		}
+		li p{
+			width: 95%;
+			line-height: 10rem;
+			font-size: 5rem;
+			text-align: center;
+			position: absolute;
+			top: 10%;
+			left: 2.5%;
+			background: rgba(255,255,255,0.5);
+		}
+		.swiper-pagination-progress .swiper-pagination-progressbar{
+			background: black;
+		}
+		.main{
+			width: 70%;
+			height: 40%;
+			position: absolute;
+			top: 35%;
+			font-size: 3rem;
+			left: 15%;
+			background: rgba(255,255,255,0.1);
+		}
+		.hr{
+			position: absolute;
+			bottom: 25%;
+			right: 1rem;
+			width: 90%;
+			height: 5px;
+			background: black;
+		}
+		.one{
+			bottom: 70%;
+		}
+		.main2{
+			width: 30%;
+			height: 60%;
+			background: rgba(255,255,255,0.1);
+			position: absolute;
+			top: 20%;
+			right: 20%;
+			font-size: 3rem;
+			overflow: hidden;
+		}
+		.hr2{
+			width: 5px;
+			height: 60%;
+			right: 55%;
+			top:20%;
+		}
+		.main3{
+			width: 80%;
+			height: 10%;
+			font-size: 3rem;
+			position: absolute;
+			top: 30%;
+			left: 10%;
+			background: rgba(255,255,255,0.2);
+		}
+		.two{
+			top: 45%;
+		}
+		.three{
+			top: 60%;
+		}
+		.hr3{
+			bottom: 73%;
+		}
+		.main4{
+			width: 80%;
+			height: 10%;
+			position: absolute;
+			top: 50%;
+			left: 10%;
+			font-size: 3rem;
+			background: rgba(255,255,255,0.2);
+		}
+	</style>
+
+	<body>
+		
+	<div class="swiper-container">
+	
+		
+			<ul class="swiper-wrapper">
+				
+			<li class="swiper-slide li1">
+					<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.3s">
+						梦を见たんだよ　生まれた时のこ
+					</p>
+					<div class="ani main" swiper-animate-effect="rollIn" swiper-animate-duration="1s" swiper-animate-delay="1.5s">
+						梦を见たんだよ　生まれた时のこと
+						我做了个梦 那是诞生之时的事
+						美しくいきてね　子宫の街　仆ら手を叩いて笑ったんだ
+						要美丽的活下去  子宮的城镇 我们拍手大笑
+						絵の具を饮み干した　虹の色変わった
+						吸尽所有颜料  彩虹变了色
+						抱きしめられたくなった　ひとりじゃもう歩けなくなった
+						渴望被你紧拥 一个人走不下去了
+						笑いあっていたんだよ
+						我们一路相视而笑
+						おもちゃに爱を捧げて
+						把爱献予玩具
+						触れられざる子供たちを
+						好想用简单的话语毁掉
+						简単な言叶で壊したい！
+						那些不能触碰的孩子们！
+					</div>
+					<span  class="ani hr one" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="1s"></span>
+					<span  class="ani hr" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="1s"></span>					
+					<img src="456.png" class="ani infinite img1" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.5s" swiper-animate-delay="0.3s" />
+				</li>
+				
+				<li class="swiper-slide li2">
+					<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.3s">
+						吐き気をのみこんだ　鉄の雨降り
+					</p>
+					<img src="456.png" class="ani infinite img1" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.5s" swiper-animate-delay="0.3s" />
+					<div class="ani main2" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="1.5s">
+						梦を见たんだよ　生まれた时のこと
+						我做了个梦 那是诞生之时的事
+						美しくいきてね　子宫の街　仆ら手を叩いて笑ったんだ
+						要美丽的活下去  子宮的城镇 我们拍手大笑
+						絵の具を饮み干した　虹の色変わった
+						吸尽所有颜料  彩虹变了色
+						抱きしめられたくなった　ひとりじゃもう歩けなくなった
+						渴望被你紧拥 一个人走不下去了
+						笑いあっていたんだよ
+						我们一路相视而笑
+						おもちゃに爱を捧げて
+						把爱献予玩具
+						触れられざる子供たちを
+						好想用简单的话语毁掉
+						简単な言叶で壊したい！
+						那些不能触碰的孩子们！
+					</div>
+					<span  class="ani hr hr2" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="1s" swiper-animate-delay="1s"></span>	
+					
+				</li>
+			
+				<li class="swiper-slide li3">
+					<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.3s">
+						笑いあっていたんだよ
+					</p>
+					<img src="456.png" class="ani infinite img1" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.5s" swiper-animate-delay="0.3s" />
+					<div class="ani main3" swiper-animate-effect="zoomIn" swiper-animate-duration="1s" swiper-animate-delay="1s">
+						おもちゃに爱を捧げて
+						把爱献予玩具
+						触れられざる子供たちを
+						好想用简单的话语毁掉
+						简単な言叶で壊したい！
+						那些不能触碰的孩子们！
+					</div>
+					<div class="ani main3 two" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="1.5s">
+						おもちゃに爱を捧げて
+						把爱献予玩具
+						触れられざる子供たちを
+						好想用简单的话语毁掉
+						简単な言叶で壊したい！
+						那些不能触碰的孩子们！
+					</div>
+					<div class="ani main3 three" swiper-animate-effect="zoomInLeft" swiper-animate-duration="1s" swiper-animate-delay="2s">
+						おもちゃに爱を捧げて
+						把爱献予玩具
+						触れられざる子供たちを
+						好想用简单的话语毁掉
+						简単な言叶で壊したい！
+						那些不能触碰的孩子们！
+					</div>
+					<span  class="ani hr hr3" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="1s" swiper-animate-delay="1s"></span>
+				</li>
+				
+				<li class="swiper-slide li4">
+					<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.3s">
+						造花に水を注いで
+					</p>
+					<img src="456.png" class="ani infinite img1" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.5s" swiper-animate-delay="0.3s" />
+					<div class="ani main4" swiper-animate-effect="rollIn" swiper-animate-duration="1s" swiper-animate-delay="1.5s">
+						おもちゃに爱を捧げて
+						把爱献予玩具
+						触れられざる子供たちを
+						好想用简单的话语毁掉
+						简単な言叶で壊したい！
+						那些不能触碰的孩子们！
+					</div>
+					<span  class="ani hr" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="1s" swiper-animate-delay="1s"></span>
+				</li>
+				
+				
+				
+				
+				<li class="swiper-slide li5">
+					<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.3s">
+						抱きしめられたくなった
+					</p>
+					<img src="456.png" class="ani infinite img1" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.5s" swiper-animate-delay="0.3s" />
+					<div class="ani main2" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="1.5s">
+						梦を见たんだよ　生まれた时のこと
+						我做了个梦 那是诞生之时的事
+						美しくいきてね　子宫の街　仆ら手を叩いて笑ったんだ
+						要美丽的活下去  子宮的城镇 我们拍手大笑
+						絵の具を饮み干した　虹の色変わった
+						吸尽所有颜料  彩虹变了色
+						抱きしめられたくなった　ひとりじゃもう歩けなくなった
+						渴望被你紧拥 一个人走不下去了
+						笑いあっていたんだよ
+						我们一路相视而笑
+						おもちゃに爱を捧げて
+						把爱献予玩具
+						触れられざる子供たちを
+						好想用简单的话语毁掉
+						简単な言叶で壊したい！
+						那些不能触碰的孩子们！
+					</div>
+				</li>
+				
+			</ul>
+			<div class="swiper-pagination"></div>
+			<img src="img/musicBtn.png" class="img2"  />
+			<audio src="osterreic.mp3" autoplay="autoplay" loop="loop" class="mis"></audio>
+	</div>	
+
+
+	</body>
+	<script>
+		var flag=false;
+		$(".img2").click(function(){
+			
+			if(flag){
+				$(".mis").get(0).play();
+				$(".img2").css("animation","move 2s infinite linear").attr("src","img/musicBtn.png");
+				flag=false;
+			}else{
+				$(".mis").get(0).pause();
+				$(".img2").css("animation","_move").attr("src","img/musicBtnOff.png");
+				flag=true;
+			}
+			
+		})
+		
+	
+		var b = new Swiper(".swiper-container", {
+			autoplay:5000,
+			loop:true,
+			speed:800,
+			direction:"vertical",
+			autoplayDisableOnInteraction:false,
+			pagination : '.swiper-pagination',
+			paginationType:"progress",
+			mousewheelControl:true,
+		
+			onInit: function(swiper) { //Swiper2.x的初始化是onFirstInit
+				swiperAnimateCache(swiper); //隐藏动画元素 
+				swiperAnimate(swiper); //初始化完成开始动画
+			},
+			onSlideChangeEnd: function(swiper) {
+				swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+			}
+			
+			
+		});
+	</script>
+
+</html>
