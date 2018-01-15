@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			header.mui-bar a {
+				color: #333;
+			}
+			.content{
+				margin-top:10px;
+				padding:0 10px;
+			}
+			.content *{
+				font-size: 15px !important;
+				line-height: 25px;
+				color:#333;
+				margin:0 !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">服务协议</h1>
+		</header>
+		<div class="mui-content">
+		    <div class="content">
+		    	
+		    </div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/mui_use.js"></script>
+		<script src="js/md5.js"></script>
+		<script src="js/globals.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			plusLoad();
+			function plusLoad(){
+				var success = function(response){
+					console.log("服务协议："+JSON.stringify(response));
+					$('.content').html(response.content);
+				}
+				var data = {
+					contractId : 19
+				}
+				ajax(ApiUrl + global_ajaxObject.agreement,data, success);
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			header.mui-bar a {
+				color: #333;
+			}
+			.mui-content p{
+				margin:0;
+				padding:0;
+			}
+			body {
+				background-color: #fff;
+			}
+			
+			.mui-content {
+				background-color: #fff;
+			}
+			
+			.mui-content p {
+				margin: 10px 15px;
+				line-height: 28px;
+				color: rgb(51, 51, 51);
+			}
+			
+			.biaoti {
+				text-align: center;
+				margin-top: 10px;
+			}
+			
+			.biaoti span {
+				font-size: 15px;
+			}
+			
+			.biaoti label {
+				font-size: 12px;
+				color: #797979;
+			}
+			
+			.data-content {
+				padding: 0 10px;
+				text-align: center;
+			}
+			.data-content img{
+				display: inline-block;
+				width: 90%;
+				margin:0 10px !important;
+			}
+			.submit_sq{
+				background: #fff;
+				margin-bottom: 10px;
+				width: 100%;
+				display: none;
+			}
+			.submit_sq.active{
+				display: block;
+			}
+			.submit_sq button{
+				width: 90%;
+				background:#FF6633;
+				border:1px solid #FF6633;
+				color:#fff;
+				text-align: center;
+				left:5%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title"></h1>
+		</header>
+		<div class="mui-content">
+			<div class="biaoti">
+				<span class="data-title"></span>
+				<br />
+				<label class="data-date"></label>
+			</div>
+			<div class="data-content">
+				
+			</div>
+			<div class="submit_sq">
+				<button id="ApplyBtn" type="button" class="mui-btn regBtn">立即申请</button>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/mui_use.js"></script>
+		<script src="js/md5.js"></script>
+		<script src="js/globals.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			firstLoad();
+			function firstLoad() { //打开页面时触发(不能触发plus的项)
+				
+				Basics(); //基础配置
+				DataLoad(); //数据加载
+			}
+			function Basics() { //基础配置
+			}
+			//需要加载的数据
+			function DataLoad() {
+				$('.mui-title').html(localStorage.getItem("ItemsDetailName"));
+					
+				NewsItem(); //新闻详情
+			}
+			//新闻详情
+			function NewsItem() {
+				
+				var success = function(response) {
+					console.log('新闻详情：' + JSON.stringify(response));
+					
+					$('.data-date').html(response.date);
+					
+					$('.data-content').html(response.content);
+					var result=response.result;
+					if(result=='1'){
+						$('.submit_sq').addClass('active');
+						$('#ApplyBtn').on('tap',function(){
+							localStorage.setItem("dkName",$('.mui-title').html());
+							MuiUse.openWindow('LoanApplication.html');
+						})
+					}else if(result=='0'){
+						$('.submit_sq').removeClass('active');
+					}
+				}
+
+				var data = {
+					newsId: localStorage.getItem("ItemsDetailConId")
+				}
+
+				ajax(ApiUrl + global_ajaxObject.newsDetail, data, success);
+			}
+		</script>
+	</body>
+
+</html>

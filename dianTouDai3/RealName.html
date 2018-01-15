@@ -1,0 +1,300 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			header.mui-bar a {
+				color: #333;
+			}
+			
+			.phone {
+				padding: 15px;
+				margin-top: 20px;
+				background-color: #fff;
+				border-bottom-color: black;
+			}
+			
+			.phone span {
+				display: inline-block;
+				width: 25%;
+				font-size: 15px;
+			}
+			
+			.phone input,
+			.phone select {
+				width: 40%;
+				border-style: none;
+				margin-left: 10px;
+				font-size: 15px;
+				margin-top: 10px;
+			}
+			
+			.phone select {
+				margin: 0;
+				padding: 0 10px;
+			}
+			
+			.mui-btn {
+				clear: both;
+				width: 100%;
+				background-color: rgb(254, 107, 56);
+				color: #fff;
+				padding: 10px;
+				font-size: 15px;
+				margin-top: 200px
+			}
+			
+			.button {
+				margin: 0 10px;
+			}
+			
+			.hr {
+				height: 1px;
+				border: none;
+				background-color: rgb(229, 229, 229);
+			}
+			
+			.yanzhengma {
+				float: right;
+				width: 90px;
+				padding: 5px 0px;
+				text-align: center;
+				color: rgb(255, 161, 120);
+				border-radius: 5px;
+				border: 1px solid rgb(255, 161, 120);
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">实名认证</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-row" style="height: 300px;">
+				<div class="phone" style="margin-bottom: 50px;">
+					<span>姓名</span>
+					<input id="rzName" />
+					<hr class="hr" />
+					<span>身份证号</span>
+					<input style="width:70%!important" id="rzCardNumber" />
+					<hr class="hr" />
+					<span>选择银行</span>
+					<select id="bank" name="orgCode">
+						<option value="">请选择</option>
+						<option value="0102">工商银行</option>
+						<option value="0103">农业银行</option>
+						<option value="0104">中国银行</option>
+						<option value="0105">建设银行</option>
+						<option value="0403">邮政储蓄银行</option>
+						<option value="0307">平安银行</option>
+						<option value="0305">民生银行</option>
+						<option value="0303">光大银行</option>
+						<option value="0306">广发银行</option>
+						<option value="0302">中信银行</option>
+						<option value="0309">兴业银行</option>
+						<option value="0304">华夏银行</option>
+						<option value="0308">招商银行</option>
+						<option value="0310">浦发银行</option>
+						<option value="0301">交通银行</option>
+					</select>
+					<hr class="hr" />
+					<span>所在省</span>
+					<select id="Province" name="orgCode" style="width:70%!important">
+						<option value="">请选择</option>
+					</select>
+					<hr class="hr" />
+					<span>所在市</span>
+					<select id="City" style="width:70%!important" name="orgCode">
+						<option value="">请选择</option>
+					</select>
+					<hr class="hr" />
+					<span>银行卡号</span>
+					<input id="BankCardNo" style="width:70%;"/>
+					<hr class="hr" />
+					<span>手机号码</span>
+					<input id="PhoneNo"  style="margin-left: 10px;" value="" />
+					<!--<button id="getCode" class="yanzhengma">发送验证码</button>-->
+					<!--<hr class="hr" />
+					<span>手机验证码</span>
+					<input id="Yzm" placeholder="" style="margin-left: 28px;" />-->
+				</div>
+			</div>
+			<div class="button" style="position: fixed;bottom: 10px;width:100%;">
+				<button id="QueDing" type="button" style="margin: 0 auto;width: 90%;" class="mui-btn">确定</button>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/mui_use.js"></script>
+		<script src="js/md5.js"></script>
+		<script src="js/globals.js"></script>
+		<script type="text/javascript">
+			mui.init({
+				beforeback: function() {
+					plus.webview.close('register.html', 'none');
+					return true;
+				}
+			});
+			var registerPhone;
+			firstLoad();
+
+			function firstLoad() { //打开页面时触发(不能触发plus的项)
+				Basics(); //基础配置
+				ResetData(); //重置数据
+			}
+
+			function Basics() { //基础配置
+				
+				//实名认证
+				$('#QueDing').on('tap', function() {
+					RealName();
+				})
+				//选择市区
+				$('#Province').change(function() {
+					if($(this).find('option:checked').val() !== '') {
+						var inner = $(this).find('option:checked').val();
+						var success = function(response) {
+							var data = response.list;
+							var citystr = '';
+							$('#City').find('option:eq(0)').nextAll().remove();
+							for(var i = 0; i < data.length; i++) {
+								citystr += '<option value="' + data[i].AreaCode + '">' + data[i].City + '</option>'
+							}
+							$('#City').append(citystr);
+						}
+						console.log(inner);
+						var data = {
+							province: inner
+						};
+						ajax(ApiUrl + global_ajaxObject.getCity, data, success);
+					}
+				})
+			}
+			//重置数据
+			function ResetData() {
+				GetProvince(); //获取身份
+				GetUserInfo(); //获取用户信息
+			}
+
+			function GetProvince() {
+				var success = function(response) {
+					var data = response.list;
+					var str = '';
+					$('#Province').find('option:eq(0)').nextAll().remove();
+					for(var i = 0; i < data.length; i++) {
+						str += '<option value="' + data[i].Province + '">' + data[i].Province + '</option>'
+					}
+					$('#Province').append(str);
+				}
+				var data = {}
+
+				ajax(ApiUrl + global_ajaxObject.getProvince, data, success);
+			}
+			//获取用户信息
+			function GetUserInfo() {
+				var success = function(response) {
+					console.log('获取用户信息：' + JSON.stringify(response));
+					$('#PhoneNo').val(response.tel);
+					registerPhone = response.tel;
+				}
+
+				var data = {
+					userId: localStorage.getItem(global_localStorage.UserId)
+				}
+
+				ajax(ApiUrl + global_ajaxObject.UserInfo, data, success);
+			}
+			//实名认证
+			function RealName() {
+
+				var rzName = $("#rzName").val().trim();
+				var rzCardNumber = $("#rzCardNumber").val().trim();
+				var orgCode = $('#bank').find('option:checked').attr('value');
+				var AreaCode = $('#City').find('option:checked').attr('value');
+				var BankCardNo = $('#BankCardNo').val().trim();
+				var PhoneNo = $('#PhoneNo').val().trim();
+//				var Yzm = $('#Yzm').val().trim();
+				if(rzName == "") {
+					mui.toast('请输入姓名');
+					return false;
+				}
+				if(rzCardNumber == "") {
+					mui.toast('请输入身份证号');
+					return false;
+				}
+				if(checkCard(rzCardNumber) == false) {
+					mui.toast('身份证号格式不正确');
+					return false;
+				}
+				if(orgCode == "") {
+					mui.toast('请选择银行');
+					return false;
+				}
+
+				if(AreaCode == "") {
+					mui.toast('请选择所在省市');
+					return false;
+				}
+				if(BankCardNo == "") {
+					mui.toast('请输入银行卡号');
+					return false;
+				}
+				if(PhoneNo == "") {
+					mui.toast('请输入手机号');
+					return false;
+				}
+//				if(Yzm == "") {
+//					mui.toast('请输入验证码');
+//					return false;
+//				}
+				var success = function(response) {
+					console.log('实名认证：' + JSON.stringify(response));
+					mui.toast(response.msg);
+					if(response.result == '1') {
+						if(localStorage.getItem(global_localStorage.UserName) != null) {
+							var Index_MainHTML;
+							Index_MainHTML || (Index_MainHTML = plus.webview.getWebviewById('UserIndex.html'));
+							Index_MainHTML.evalJS("ResetData()");
+						}
+						mui.back();
+					}
+				}
+
+				var data = {
+					realName: rzName,
+					idCard: rzCardNumber,
+					bankCardNum: BankCardNo,
+					tel: registerPhone,
+					newtel:PhoneNo,
+					type: 'APP',
+					orgCode: orgCode,
+					AreaCode: AreaCode
+				}
+
+				ajax(ApiUrl + global_ajaxObject.verifyPerson, data, success);
+			}
+			//验证手机号
+			function checkPhone(Iphone) {
+				var phone = Iphone;
+				if(!(/^1[34578]\d{9}$/.test(phone))) {
+					//alert("手机号码有误，请重填");  
+					return false;
+				}
+			}
+			//验证省份证号
+			function checkCard(CardNo) {
+				var idCard = CardNo;
+				if(!(/(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(idCard))) {
+					return false;
+				}
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/animate.min.css" />
+		<style>
+			header.mui-bar a {
+				color: #333;
+			}
+			
+			.nav {
+				padding: 15px 0 15px 10px;
+			}
+			
+			body {
+				background: #fff;
+			}
+			
+			.nav span {
+				color: rgb(250, 100, 37);
+			}
+			
+			.content {
+				background: #fff;
+			}
+			
+			ul,
+			li,
+			p {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			.content ul li {
+				padding: 0px 15px;
+				border-bottom: 1px solid #ddd;
+				overflow: hidden;
+			}
+			
+			.content ul li p {
+				overflow: hidden;
+				margin: 10px 0;
+			}
+			
+			.content ul li p:first-child {
+				color: #333;
+			}
+			
+			span.left_title,
+			span.left_date {
+				float: left;
+			}
+			
+			span.right_num,
+			span.right_content {
+				float: right;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">资金明细</h1>
+		</header>
+		<div class="mui-content">
+			<div class="nav">
+				<span>您的账户余额：</span>
+				<span class="balance"></span>
+			</div>
+			<div class="content">
+				<ul class="mingXiList sclist">
+					<!--<li>
+						<p>
+							<span class="left_title">提现</span>
+							<span class="right_num">-100元</span>
+						</p>
+						<p>
+							<span class="left_date">2017-07-09 11:09</span>
+							<span class="right_content">账户提现</span>
+						</p>
+					</li>-->
+				</ul>
+				<div class="BottomMsg" style="text-align: center;border-top: 0px solid #FA6425;height: 50px;line-height: 50px;">加载中...</div>
+			</div>
+
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/mui_use.js"></script>
+		<script src="js/md5.js"></script>
+		<script src="js/globals.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			var _self;
+			if(window.plus) {
+				plusReady();
+			} else {
+				document.addEventListener("plusready", function() {
+					plusReady();
+				}, false);
+			}
+
+			function plusReady() {
+				_self = plus.webview.currentWebview(); //下拉刷新
+				_self.setPullToRefresh({
+					support: true,
+					height: '50px',
+					range: '100px',
+					style: 'circle',
+					offset: '1px'
+				}, pulldownRefresh);
+
+				document.addEventListener("plusscrollbottom", onScrollToBottom, false); //上拉刷新
+				Basics();
+				DataLoad();
+			}
+			// 处理滚动到窗口底部事件
+			function onScrollToBottom() {
+				$('.BottomMsg').show();
+				if(totalPage < page && totalPage != -1) {
+					$('.BottomMsg').html('没有更多数据了');
+				} else {
+					BidList();
+				}
+			}
+			//重置数据
+			function ResetData() {
+				page = 1;
+				totalPage = -1;
+				$('.BottomMsg').show();
+				$('.BottomMsg').html('加载中...');
+				BidList();
+			}
+			/**
+			 * 下拉刷新具体业务实现
+			 */
+			function pulldownRefresh() {
+				setTimeout(function() {
+					ResetData();
+					_self.endPullToRefresh();
+				}, 1500);
+			}
+
+			function Basics() { //基础配置
+
+				//切换选项卡
+				$('.mui-scroll a').on('tap', function() {
+					$('.mui-scroll a').removeClass('mui-active');
+					$(this).addClass('mui-active');
+					ResetData();
+				});
+			}
+			//需要加载的数据
+
+			function DataLoad() {
+				BidList(); //列表信息
+			}
+
+			var pageSize = 10;
+			var page = 1;
+			var totalPage = -1;
+			//列表信息
+			function BidList() {
+				if(totalPage == -1) { $('.sclist').empty(); }
+				var success = function(response) {
+					console.log('列表信息：' + JSON.stringify(response));
+					//$('.BottomMsg').hide();
+					//if(response.result == 1) {
+					totalPage = response.totalPage;
+					page++;
+					$('span.balance').html(response.balance);
+					for(var i = 0; i < response.list.length; i++) {
+						var Item = response.list[i];
+						var TempleteHtml = '<li class="animated bounceInRight" style="-webkit-animation-delay: ' + (0.3 + 0.2 * i) + 's;"><p><span class="left_title">' + Item.title + '</span>';
+						TempleteHtml += '<span class="right_num">' + Item.amount + '</span></p>';
+						TempleteHtml += '<p><span class="left_date">' + Item.date + '</span></p>';
+						TempleteHtml += '<p><span class="left_date">' + Item.content + '</span></p></li>';
+						$('.sclist').append(TempleteHtml);
+					}
+
+					if(page > response.totalPage) {
+						$('.BottomMsg').show();
+						$('.BottomMsg').html(response.totalPage == 0 ? "暂无收藏" : "没有更多数据了");
+						//$('.BottomMsg').html('没有更多数据了');
+					}
+				}
+
+				var data = {
+					userId: localStorage.getItem(global_localStorage.UserId),
+					pagesize: pageSize,
+					page: page
+				}
+
+				ajax(ApiUrl + global_ajaxObject.transactionList, data, success);
+			}
+		</script>
+	</body>
+
+</html>

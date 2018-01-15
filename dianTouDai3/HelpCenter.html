@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			body {
+				background: #fff;
+			}
+			ul,li{
+				margin:0;
+				padding:0;
+				list-style: none;
+			}
+			#more_box{
+				background:#fff;
+			}
+			#more_box ul li.Platform{
+				background: url(img/gonggao1.png) no-repeat 18px 15px;
+				background-size: 22px;
+			}
+			#more_box ul li.News{
+				background: url(img/news.png) no-repeat 18px 15px;
+				background-size: 22px;
+			}
+			#more_box ul li.introduce{
+				background: url(img/jieshao.png) no-repeat 18px 15px;
+				background-size: 22px;
+			}
+			#more_box ul li.service{
+				background: url(img/zaixiankefu.png) no-repeat 18px 15px;
+				background-size: 22px;
+			}
+			#more_box ul li a{
+				padding-left: 20px;
+			}
+			#more_box ul li{
+				border-bottom: 1px solid #ddd;
+				padding:15px 15px;
+				position: relative;
+			}
+			#more_box ul li a{
+				color:#333;
+				font-size: 16px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">帮助中心</h1>
+		</header>
+		<div class="mui-content">
+			<div id="more_box">
+				<ul>
+					<li class="Goto"  data-type="16" data-url="BasicKnow.html">
+						<a class="mui-navigate-right">
+							基础知识
+						</a>
+					</li>
+					<li class="Goto" data-type="17" data-url="SiteRule.html">
+						<a class="mui-navigate-right">
+							网站规则
+						</a>
+					</li>
+					<li class="">
+						<a class="mui-navigate-right">
+							新手指南
+						</a>
+					</li>
+					<li class="">
+						<a class="mui-navigate-right">
+							操作指引
+						</a>
+					</li>
+					<li class="">
+						<a class="mui-navigate-right">
+							常见问题
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/mui_use.js"></script>
+		<script src="js/md5.js"></script>
+		<script src="js/globals.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			firstLoad();
+
+			function firstLoad() { //打开页面时触发(不能触发plus的项)
+				Basics(); //基础配置
+			}
+
+			function Basics() { //基础配置
+				//跳转页面
+				$('.Goto').on('tap', function() {
+					if($(this).attr('data-url') == undefined) {
+						mui.toast('暂无页面');
+						return false;
+					}
+					localStorage.setItem(global_localStorage.NewsTypeName,$(this).find('p').html());
+					localStorage.setItem(global_localStorage.NewsTypeId,$(this).attr('data-type'));
+					MuiUse.openWindow($(this).attr('data-url'));
+				})
+				//拨打电话
+				$('.CellPhone').on('tap', function() {
+					if($(this).attr('data-phone') == undefined || $(this).attr('data-phone') == '') {
+						mui.toast('暂无电话');
+					} else {
+						window.location.href = "tel:" + $(this).attr('data-phone');
+					}
+				})
+			}
+		</script>
+	</body>
+
+</html>

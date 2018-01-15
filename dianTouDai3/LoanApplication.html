@@ -1,0 +1,240 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			header.mui-bar a {
+				color: #333;
+			}
+			body{
+				background:#fff;
+			}
+			ul,li{
+				margin:0;
+				padding:0;
+				list-style: none;
+			}
+			.form_box{
+				padding:10px 0;
+				background:#fff;
+			}
+			.form_box ul li{
+				overflow: hidden;
+				margin-bottom: 10px;
+				border-bottom: 1px solid #ddd;
+				padding:0 10px;
+			}
+			.form_box ul li span{
+				display: inline-block;
+				width: 30%;
+				font-size: 13px;
+				float: left;
+				line-height: 36px;
+				text-align: left;
+			}
+			.form_box ul li input,.form_box ul li select{
+				display: inline-block;
+				width: 69%;
+				float: left;
+				font-size: 13px;
+				margin-bottom: 0;
+				padding:5px 15px;
+				height:36px;
+				border:none;
+			}
+			.submit_sq{
+				background: #fff;
+				position: fixed;
+				bottom: 10px;
+				width: 100%;
+			}
+			.submit_sq button{
+				width: 90%;
+				background:#FF6633;
+				border:1px solid #FF6633;
+				color:#fff;
+				text-align: center;
+				left:5%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">借款申请</h1>
+		</header>
+		<div class="mui-content">
+			<div class="form_box" style="margin-bottom: 30px;">
+				<ul>
+					<li>
+						<span>借款类型:</span>
+						<input id="LoanType" type="text" readonly="readonly"/>
+					</li>
+					<li>
+						<span><b class="star">*</b>借款标题:</span>
+						<input id="LoanApplication" type="text" placeholder="例：融资用于扩大经营" />
+					</li>
+					<li>
+						<span><b class="star">*</b>借款人手机号:</span>
+						<input id="LoanPhone" type="text" placeholder="请输入您的手机号，方便我们与您联系" />
+					</li>
+					<li>
+						<span><b class="star">*</b>借款总金额(元):</span>
+						<input id="LoanNum" type="text" placeholder="1000元起，金额为100的整数倍"/>
+					</li>
+					<li>
+						<span>借款期限(天):</span>
+						<select name="" id="LoanTerm">
+							<option value="0">30天以内</option>
+							<option value="1">30天~90天</option>
+							<option value="2">90天~180天</option>
+							<option value="3">180天~365天</option>
+							<option value="4">365天以上</option>
+						</select>
+					</li>
+					
+					<li>
+						<span><b class="star">*</b>借款用途:</span>
+						<input id="LoanPurpose" type="text" placeholder="请填写您的借款用途"/>
+					</li>
+					<li>
+						<span>还款方式:</span>
+						<select name="" id="HkMode">
+							<option value="0">按月付息，到期还本</option>
+							<option value="1">等额本息</option>
+							<option value="2">等额本金</option>
+							<option value="3">到期还本息</option>
+						</select>
+					</li>
+					<li>
+						<span><b class="star">*</b>借款利率(%):</span>
+						<input id="LoanRate" type="text" placeholder="您期望的借款利率，10~15之间"/>
+					</li>
+					<li>
+						<span><b class="star">*</b>借款说明:</span>
+						<input id="LoanInfo" type="text" />
+					</li>
+					<li>
+						<span>还款来源:</span>
+						<input id="Hklaiyuan" type="text" />
+					</li>
+					<!--<li>
+						<span>验证码:</span>
+						<input id="YanZhengMa" type="text" style="width: 36%;" />
+						<img src="img/code.jpg" style="display:inline-block;width:18%;position: relative;top:10px;" alt="" />
+						<a href="javascript:void(0)" style="position: relative;top:10px;font-size: 13px;">换一张</a>
+					</li>-->
+				</ul>
+			</div>
+			<div class="submit_sq">
+				<button id="submitBtn" type="button" class="mui-btn regBtn">提交申请</button>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/mui_use.js"></script>
+		<script src="js/md5.js"></script>
+		<script src="js/globals.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			firstLoad();
+			function firstLoad() { //打开页面时触发(不能触发plus的项)
+				$('#LoanType').val(localStorage.getItem("dkName"));
+				Basics(); //基础配置
+			}
+			function Basics() { //基础配置
+				//注册
+				$('#submitBtn').on('tap', function() {
+					jieKuanApply();
+				})
+			}
+			function jieKuanApply() {
+				var type=$('#LoanType').val();
+				var jieKuanTitle = $("#LoanApplication").val().trim();
+				var PhoneNumber = $("#LoanPhone").val().trim();
+				var LoanNum = $('#LoanNum').val().trim();
+				var LoanTerm = $('#LoanTerm').find('option:checked').html();
+				var LoanPurpose = $('#LoanPurpose').val().trim();
+				var HkMode	=  $('#HkMode').find('option:checked').html();
+				var LoanRate = $('#LoanRate').val().trim();
+				var LoanInfo = $('#LoanInfo').val().trim();
+				var Hklaiyuan = $('#Hklaiyuan').val().trim();
+				
+				if(jieKuanTitle == "") {
+					mui.toast('请输入借款标题')
+					return false;
+				}
+				if(PhoneNumber == "") {
+					mui.toast('请输入借款手机号')
+					return false;
+				}
+				if(!isMobilePhone(PhoneNumber)) {
+					mui.toast('手机号码格式不正确')
+					return;
+				}
+				if(LoanNum == "") {
+					mui.toast('请输入借款总金额')
+					return false;
+				}
+				if(LoanPurpose == "") {
+					mui.toast('请输入借款用途')
+					return false;
+				}
+				if(LoanRate == "") {
+					mui.toast('请输入借款利率')
+					return false;
+				}
+				if(LoanInfo == "") {
+					mui.toast('请输入借款说明')
+					return false;
+				}
+				var success = function(response) {
+					console.log('注册：' + JSON.stringify(response));
+					$("#LoanApplication").val('');
+					$("#LoanPhone").val('');
+					$('#LoanNum').val('');
+					$('#LoanTerm').find('option:eq(0)').prop('checked',true);
+					$('#LoanPurpose').val('');
+					$('#HkMode').find('option:eq(0)').prop('checked',true);
+					$('#LoanRate').val('');
+					$('#LoanInfo').val('');
+					$('#Hklaiyuan').val('');
+					if(response.result=='1'){
+						mui.toast(response.msg);
+					}else{
+						mui.toast(response.msg);
+					}
+				}
+				var data = {
+					type:type,
+					title:jieKuanTitle,
+					phone:PhoneNumber,
+					money:LoanNum,
+					deadLine:LoanTerm,
+					toUse:LoanPurpose,
+					paymentType:HkMode,
+					inserestRate:LoanRate,
+					description:LoanInfo,
+					paymentSource:Hklaiyuan,
+					userId: localStorage.getItem(global_localStorage.UserId)
+				}
+				ajax(ApiUrl + global_ajaxObject.addFinance, data, success);
+			}
+			//验证手机号
+			function isMobilePhone(obj) {
+				var partten = /^((\(\d{3}\))|(\d{3}\-))?13[0-9]\d{8}|14[0-9]\d{8}|15[0-9]\d{8}|17[0-9]\d{8}|18\d{9}$/;
+				if(partten.test(obj)) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+		</script>
+	</body>
+
+</html>

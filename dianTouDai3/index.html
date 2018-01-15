@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/iconfont.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item mui-active" data-href="indexSub2.html">
+				<span class="mui-icon iconfont icon-shouyexian"></span>
+				<span class="mui-tab-label">&nbsp;&nbsp;首页</span>
+			</a>
+			<a class="mui-tab-item" data-href="BidList.html">
+				<span class="mui-icon iconfont icon-suo"></span>
+				<span class="mui-tab-label">投资</span>
+			</a>
+			<a class="mui-tab-item" data-href="UserIndex.html">
+				<span class="mui-icon iconfont icon-gerenzhongxin"></span>
+				<span class="mui-tab-label">我的账户</span>
+			</a>
+			<a class="mui-tab-item" data-href="More.html">
+				<span class="mui-icon iconfont icon-gengduo"></span>
+				<span class="mui-tab-label">更多</span>
+			</a>
+		</nav>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/mui_use.js"></script>
+	<script src="js/md5.js"></script>
+	<script src="js/globals.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		mui.init();
+		mui.plusReady(function() {
+			locker();
+			BottomTab(); //底部选项卡初始化
+		});
+
+		document.addEventListener("resume", function() { // 运行环境从后台切换到前台事件
+			console.log("resume");
+			locker();
+		}, false);
+
+		//设置默认打开首页显示的子页序号；
+		var Index = 0;
+		//子页的路径
+		var subpages = [];
+		var activeTab
+
+		function BottomTab() {
+
+			$('.mui-tab-item').each(function() {
+				subpages.push($(this).attr('data-href'));
+			})
+
+			//获取当前页面所属的Webview窗口对象
+			var self = plus.webview.currentWebview();
+			for(var i = 0; i < subpages.length; i++) {
+				//创建webview子页
+				var sub = plus.webview.create(subpages[i], subpages[i], {
+					top: '0px',
+					bottom: '50px'
+				});
+				//如果不是我们设置的默认的子页则隐藏，否则添加在窗口中
+				if(i != Index) {
+					sub.hide();
+				}
+				//将webview对象填充到窗口
+				self.append(sub);
+			}
+
+			//当前激活选项
+			activeTab = subpages[Index],
+				title = document.querySelector(".mui-title");
+			//选项卡点击事件
+			mui('.mui-bar-tab').on('tap', 'a', function(e) {
+
+				//获取目标子页的id
+				var targetTab = this.getAttribute('data-href');
+				if(targetTab == activeTab) {
+					return;
+				}
+				if(targetTab == "UserIndex.html") {
+					if(localStorage.getItem(global_localStorage.UserName) == null) {
+						MuiUse.openWindow('login.html');
+						return false;
+					}
+					var Index_MainHTML;
+					Index_MainHTML || (Index_MainHTML = plus.webview.getWebviewById('UserIndex.html'));
+					Index_MainHTML.evalJS("ResetData()");
+				}
+
+				//显示目标选项卡
+				plus.webview.show(targetTab, "fade-in", 300);
+				//隐藏当前选项卡
+				plus.webview.hide(activeTab);
+				//更换当前活跃的选项卡
+				activeTab = targetTab;
+
+			});
+		}
+
+		function TapBottomBtn(ShowUrl) {
+			//显示目标选项卡
+			plus.webview.show(ShowUrl, "fade-in", 300);
+			//隐藏当前选项卡
+			plus.webview.hide(activeTab);
+			//更换当前活跃的选项卡
+			activeTab = ShowUrl;
+			
+			$('.mui-bar-tab a').removeClass('mui-active');
+			$('.mui-bar-tab a[data-href="' + ShowUrl + '"]').addClass('mui-active');
+		}
+		
+		
+		function showTargetUrl(url){
+			plus.webview.show(url, "fade-in", 300);
+			activeTab = url;
+			$('.mui-bar-tab a').removeClass('mui-active');
+			$('.mui-bar-tab a[data-href="' + url + '"]').addClass('mui-active');
+		}
+		
+		
+		function locker() {
+			if(localStorage.getItem(global_localStorage.SignPassword) && localStorage.getItem(global_localStorage.UserName)) {
+				//验证
+				mui.openWindow({
+					id: "locker_verify.html",
+					url: "locker_verify.html",
+					show: {
+						aniShow: "slide-in-bottom"
+					},
+					waiting: {
+						autoShow: false
+					}
+				});
+			}
+		}
+	</script>
+
+</html>

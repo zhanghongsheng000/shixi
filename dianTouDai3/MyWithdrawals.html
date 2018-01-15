@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			header.mui-bar a {
+				color: #333;
+			}
+			
+			.mui-content {
+				background-color: #fff;
+			}
+			
+			.nav {
+				padding: 10px;
+			}
+			
+			.nav span {
+				font-size: 18px;
+			}
+			
+			.nav label {
+				font-size: 13px;
+				color: rgb(254, 107, 56);
+			}
+			
+			.nav input {
+				margin-top: 20px;
+				border-radius: 0px;
+				text-align: center;
+				background-color: rgb(238, 238, 238);
+			}
+			
+			.nav button {
+				width: 100%;
+				background-color: rgb(254, 107, 56);
+				color: white;
+				border-radius: 5px;
+				padding: 10px;
+			}
+			
+			.content{
+				padding: 0px 10px;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">提现</h1>
+		</header>
+		<div class="mui-content">
+			<div class="nav">
+
+				<span>提现金额(元)</span>
+				<br />
+				<label>可提现金额(元)：<em class="totalAmount">-</em></label>
+				<input type="hidden" name="oldbalance" value="27684.50" id="balance" />
+				<input type="text" name="cash" id="jine" placeholder="输入提现金额" onkeyup="clearNoNum(this)" />
+				<button id="withdraw">确认提现</button>
+
+			</div>
+			<div class="content">
+				<!--<p>温馨提示：</p>
+				<p>1、富有支付对提现会收取2元/笔的手续费，平台推广期内100元及以上的提现免收手续费</p>
+				<p>2、银行卡绑定时，富有支付需要对您提交的银行卡信息进行审核，审核时间大概为2个小时，请耐心等待。</p>
+				<p>3、如果绑定银行卡长时间未成功，请联系平台客服：15661638889；</p>
+				<p>4、提现；所需绑定的银行卡，建议使用工商银行、农业银行、建设银行、交通银行、招商银行、中国银行、中信银行、邮政储蓄银行。</p>
+				<p>5、提现申请，富有支付将在第二个工作日处理。节假日期间提交的提现申请，富有支付将顺延至工作日处理。</p>
+				<p>6、请注意当日充值金额需次日才能提现</p>-->
+			</div>
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/mui_use.js"></script>
+		<script src="js/md5.js"></script>
+		<script src="js/globals.js"></script>
+		<script type="text/javascript">
+			mui.init({
+				beforeback: function() {
+					var Index_MainHTML;
+					Index_MainHTML || (Index_MainHTML = plus.webview.getWebviewById('UserIndex.html'));
+					Index_MainHTML.evalJS("ResetData()");
+					return true;
+				}
+			})
+			mui.plusReady(function(){
+				GetDataInfo()
+			})
+			firstLoad();
+
+			function firstLoad() { //打开页面时触发(不能触发plus的项)
+				Basics(); //基础配置
+				ResetData(); //重置数据
+
+			}
+			//重置数据
+			function ResetData() {
+				GetUserInfo();
+			}
+
+			function clearNoNum(obj) {
+				obj.value = obj.value.replace(/[^\d.]/g, ""); //清除“数字”和“.”以外的字符  
+				obj.value = obj.value.replace(/^\./g, ""); //验证第一个字符是数字而不是.  
+				obj.value = obj.value.replace(/\.{2,}/g, "."); //只保留第一个. 清除多余的  
+				obj.value = obj.value.replace(/^(\-)*(\d+)\.(\d\d).*$/, '$1$2.$3'); //只能输入两个小数  
+			}
+
+			function Basics() { //基础配置
+				//提现
+				$('#withdraw').on('tap', function() {
+					Withdrawals(); //充值验证
+				})
+
+				
+			}
+			//获取用户信息
+			function GetUserInfo() {
+				var success = function(response) {
+					console.log('获取用户信息：' + JSON.stringify(response));
+					$('.totalAmount').html(response.availableAmount);
+
+				}
+
+				var data = {
+					userId: localStorage.getItem(global_localStorage.UserId)
+				}
+
+				ajax(ApiUrl + global_ajaxObject.UserInfo, data, success);
+			}
+			//提现申请
+			function Withdrawals() {
+				if($('#jine').val() == "" || Number($('#jine').val()) == 0) {
+					mui.toast('请输入金额');
+					return false;
+				}
+				var success = function(response) {
+					console.log('提现申请：' + JSON.stringify(response));
+					$('#jine').val('');
+					if(response.result == 1) {
+						mui.toast(response.msg);
+					} else {
+						mui.alert(response.msg);
+						//mui.toast(response.msg);
+					}
+				}
+
+				var data = {
+					userId: localStorage.getItem(global_localStorage.UserId),
+					cash: $('#jine').val()
+				}
+
+				ajax(ApiUrl + global_ajaxObject.withdrawal, data, success);
+			}
+			/*获取文字说明*/
+			function GetDataInfo(){
+				var success = function(response) {
+					//console.log('文字说明：' + JSON.stringify(response));
+					$('.content').html(response);
+				}
+
+				var data = {
+					type : "提现规则"
+				}
+
+				ajax(ApiUrl + global_ajaxObject.explain, data, success,'get','text');
+			}
+		</script>
+	</body>
+
+</html>

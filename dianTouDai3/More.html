@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			body {
+				background: #fff;
+			}
+			
+			.mui-row {
+				background: #fff;
+			}
+			
+			.mui-row li {
+				list-style: none;
+			}
+			
+			.mui-row img {
+				width: 40px;
+				height: 40px;
+			}
+			
+			.mui-row li a p {
+				display: inline;
+				position: absolute;
+				margin: 12px 30px;
+				font-size: 15px;
+				color: black;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">更多</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-row more_list">
+				<!--<div class="mui-col-sm-12 mui-col-xs-12">
+					<li class="mui-table-view-cell Goto" data-type="16" data-url="NewsList.html">
+						<a class="mui-navigate-right">
+							<img src="img/gonggao1.png" />
+							<p>平台公告</p>
+						</a>
+					</li>
+				</div>
+				<div class="mui-col-sm-12 mui-col-xs-12">
+					<li class="mui-table-view-cell Goto" data-type="17" data-url="NewsList.html">
+						<a class="mui-navigate-right">
+							<img src="img/news.png" />
+							<p>行业新闻</p>
+						</a>
+					</li>
+				</div>
+				<div class="mui-col-sm-12 mui-col-xs-12">
+					<li class="mui-table-view-cell Goto">
+						<a class="mui-navigate-right">
+							<img src="img/jieshao.png" />
+							<p>产品介绍</p>
+						</a>
+					</li>
+				</div>
+				<div class="mui-col-sm-12 mui-col-xs-12">
+					<li class="mui-table-view-cell CellPhone" data-phone="15661638889">
+						<a class="mui-navigate-right">
+							<img src="img/zaixiankefu.png" />
+							<p>在线客服</p>
+						</a>
+					</li>
+				</div>-->
+				
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/mui_use.js"></script>
+		<script src="js/md5.js"></script>
+		<script src="js/globals.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			firstLoad();
+
+			function firstLoad() { //打开页面时触发(不能触发plus的项)
+				//Basics(); //基础配置
+				GetList();
+			}
+
+			function Basics() { //基础配置
+				//跳转页面
+				$('.Goto').on('tap', function() {
+					if($(this).attr('data-url') == undefined) {
+						mui.toast('暂无页面');
+						return false;
+					}
+					localStorage.setItem(global_localStorage.NewsTypeName,$(this).find('p').html());
+					localStorage.setItem(global_localStorage.NewsTypeId,$(this).attr('data-type'));
+					MuiUse.openWindow($(this).attr('data-url'));
+				})
+				//拨打电话
+				$('.CellPhone').on('tap', function() {
+					if($(this).attr('data-phone') == undefined || $(this).attr('data-phone') == '') {
+						mui.toast('暂无电话');
+					} else {
+						window.location.href = "tel:" + $(this).attr('data-phone');
+					}
+				})
+			}
+			
+			function GetList(){
+				var success = function(response) {
+					console.log('更多列表：' + JSON.stringify(response));
+					var List=response.list;
+					
+					for(var i=0;i<List.length;i++){
+						if(List[i].catName=="我要投资"){
+							continue;
+						}
+						var ListHtml='<div class="mui-col-sm-12 mui-col-xs-12 Goto" data-pid="'+List[i].catId+'">';
+							ListHtml+='<li class="mui-table-view-cell">';
+							ListHtml+='<a class="mui-navigate-right">';
+							ListHtml+='<img src="'+ImgUrl+List[i].imgUrl+'" />';
+							ListHtml+='<p class="TitleName">'+List[i].catName+'</p>';
+							ListHtml+='</a></li></div>';
+							
+						$(".more_list").append(ListHtml);
+					}
+					$('.Goto').on('tap', function() {
+						localStorage.setItem("ItemsName",$(this).find('.TitleName').html());
+						localStorage.setItem("ItemsId",$(this).attr('data-pid'));
+						MuiUse.openWindow('MoreItem.html');
+					})
+				}
+				var data = {}
+				ajax(ApiUrl + global_ajaxObject.moreList, data, success);
+			}
+			
+		</script>
+	</body>
+
+</html>

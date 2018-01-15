@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/animate.min.css" />
+		<style>
+			li.mui-table-view-cell {
+				font-size: 15px;
+			}
+			
+			li.mui-table-view-cell:after {
+				left: 0;
+			}
+			
+			li.mui-table-view-cell .content {
+				display: inline-block;
+				width: 60%;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+			}
+			
+			li.mui-table-view-cell span.date {
+				float: right;
+				color: #ccc;
+			}
+			.mui-content>.mui-table-view:first-child{
+				margin-top: 0px;
+			}
+			.mui-content{
+				background-color: #FFFFFF;
+			}
+			.mui-table-view:after{
+				height: 0px!important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title"></h1>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view leibiao sclist">
+				<!--<li class="mui-table-view-cell">
+					<span class="content">为您介绍P2P平台需要达到什么…</span>
+					<span class="date">2017-09-25</span>
+				</li>-->
+			</ul>
+			<div class="BottomMsg" style="text-align: center;border-top: 0px solid #FA6425;height: 50px;line-height: 50px;font-size: 16px!important;">加载中...</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/mui_use.js"></script>
+		<script src="js/md5.js"></script>
+		<script src="js/globals.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			var _self;
+			if(window.plus) {
+				plusReady();
+			} else {
+				document.addEventListener("plusready", function() {
+					plusReady();
+				}, false);
+			}
+			function plusReady() {
+				_self = plus.webview.currentWebview(); //下拉刷新
+				_self.setPullToRefresh({
+					support: true,
+					height: '50px',
+					range: '100px',
+					style: 'circle',
+					offset: '1px'
+				}, pulldownRefresh);
+				document.addEventListener("plusscrollbottom", onScrollToBottom, false); //上拉刷新
+				Basics();
+				Refresh();
+			}
+			//基础配置
+			function Basics() {
+
+			}
+			//需要重新加载的
+			function Refresh() {
+				$('.mui-title').html(localStorage.getItem("ItemsDetailName"));
+				NewsList(); //列表信息
+			}
+			//重置数据
+			function ResetData() {
+				page = 1;
+				totalPage = -1;
+				$('.BottomMsg').show();
+				$('.BottomMsg').html('加载中...');
+				NewsList();
+			}
+			// 处理滚动到窗口底部事件
+			function onScrollToBottom() {
+
+				$('.BottomMsg').show();
+				if(totalPage < page && totalPage != -1) {
+					$('.BottomMsg').html('没有更多数据了');
+				} else {
+					NewsList();
+				}
+			}
+			var pageSize = 15;
+			var page = 1;
+			var totalPage = -1;
+			//列表信息
+			function NewsList() {
+				if(totalPage == -1) {
+					$('.sclist').empty();
+				}
+				var success = function(response) {
+					console.log('列表信息：' + JSON.stringify(response));
+					$('.BottomMsg').hide();
+						totalPage = response.totalPage;
+						page++;
+						for(var i = 0; i < response.list.length; i++) {
+							var Item = response.list[i];
+							var TempleteHtml = '<li data-id="'+Item.id+'" class="mui-table-view-cell NewsItem animated fadeInRight" style="-webkit-animation-delay: ' + (0.3 + 0.2 * i) + 's;">';
+							TempleteHtml += '<span class="content">'+Item.title+'</span>';
+							TempleteHtml += '<span class="date">'+Item.date+'</span>';
+							TempleteHtml += '</li>';
+
+							$('.sclist').append(TempleteHtml);
+						}
+						if(page >= response.totalPage) {
+							$('.BottomMsg').show();
+							$('.BottomMsg').html(response.totalPage == 0 ? "暂无信息" : "没有更多数据了");
+						}
+
+						$('.NewsItem').off('tap');
+						$('.NewsItem').on('tap', function() {
+//							localStorage.setItem(global_localStorage.NewsItemId, $(this).attr('data-id'));
+							localStorage.setItem("ItemsDetailConId", $(this).attr('data-id'));
+							MuiUse.openWindow('NewsItem.html');
+						})
+				}
+
+				var data = {
+					pagesize: pageSize,
+					page: page,
+					type: localStorage.getItem("ItemsDetailId")
+				}
+
+				ajax(ApiUrl + global_ajaxObject.newsList, data, success);
+			}
+			/**
+			 * 下拉刷新具体业务实现
+			 */
+			function pulldownRefresh() {
+				setTimeout(function() {
+					ResetData();
+					_self.endPullToRefresh();
+				}, 1500);
+			}
+		</script>
+	</body>
+
+</html>

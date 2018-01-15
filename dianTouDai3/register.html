@@ -1,0 +1,289 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			header.mui-bar a {
+				color: #333;
+			}
+			
+			.zijin {
+				font-size: 13px;
+				text-align: center;
+				margin-top: 12px;
+				color: rgb(254, 107, 56);
+			}
+			
+			.phone {
+				padding: 10px 10px 0px 10px;
+				margin-top: 10px;
+				background-color: #fff;
+			}
+			
+			.hrr {
+				clear: both;
+				position: relative;
+				top: 10px;
+				height: 2px;
+				margin-left: 0px;
+				border: none;
+				width: 50%;
+				background-color: rgb(254, 107, 56);
+			}
+			
+			.phone span {
+				font-size: 15px;
+			}
+			
+			.phone input {
+				width: 65%;
+				height: 20px;
+				border-style: none;
+				font-size: 15px;
+				padding: 0;
+				margin: 3px 0 5px 0;
+			}
+			
+			.mui-btn {
+				margin-top: 15px;
+				clear: both;
+				width: 100%;
+				background-color: rgb(254, 107, 56);
+				color: #fff;
+				padding: 10px;
+				font-size: 15px;
+				margin-bottom: 30px;
+			}
+			
+			.phone span {
+				font-size: 14px;
+			}
+			
+			.agree {
+				margin-top: 10px;
+			}
+			
+			.agree input {
+				background: #fff;
+				margin-left: 10px;
+			}
+			
+			.agree span a {
+				color: rgb(254, 107, 56);
+			}
+			
+			.agree span {
+				font-size: 14px;
+			}
+			
+			.hr {
+				height: 1px;
+				border: none;
+				background-color: rgb(229, 229, 229);
+			}
+			
+			.next {
+				margin: 0 10px;
+			}
+			
+			.phone img {
+				float: right;
+				width: 60px;
+			}
+			
+			.fasong {
+				float: right;
+				padding: 2px 5px;
+				border-radius: 3px;
+				border: 1px solid rgb(254, 107, 56);
+			}
+			
+			.fasong a {
+				color: rgb(254, 107, 56);
+			}
+			.yanzhengma {
+				float: right;
+				width: 90px;
+				padding: 5px 0px;
+				text-align: center;
+				color: rgb(255, 161, 120);
+				border-radius: 5px;
+				border: 1px solid rgb(255, 161, 120);
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">注册</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-row">
+				<div class="zijin">
+					<span>资金安全保障 让借贷改变生活</span>
+				</div>
+				<div class="phone">
+					<span>用户名</span>
+					<input id="UserName" type="text" placeholder="请输入用户名" onkeyup="this.value=this.value.replace(/[\u4e00-\u9fa5]/g,'')" style="margin-left: 46px;"/>
+					<hr class="hr" />
+					<!--<span>手机号码</span>
+					<input id="PhoneNumber" type="tel" placeholder="您的个人手机号码" style="margin-left: 33px;" />-->
+					
+					<span>手机号码</span>
+					<input id="PhoneNumber" placeholder="您的个人手机号码" style="margin-left: 33px;width: 40%;" value="" />
+					<button id="getCode" class="yanzhengma">发送验证码</button>
+					
+					<hr class="hr" />
+					<span>密码</span>
+					<input id="Password1" type="password" placeholder="请输入密码" style="margin-left: 62px;width: 62%;" />
+					<hr class="hr" />
+					<span>确认密码</span>
+					<input id="ConfirmPassword" type="password" placeholder="请重复输入密码" style="margin-left: 32px;" />
+					<hr class="hr" />
+					<span>手机验证码</span>
+					<input id="Yzm" placeholder="请输入手机验证码" style="margin-left: 18px;" />
+					<hr class="hr" />
+					<span>邀请码</span>
+					<input id="RecommendedCode" type="text" placeholder="请输入邀请码(选填)" style="margin-left: 48px; width: 62%；" />
+					<hr class="hr" />
+				</div>
+				<div class="agree">
+					<input id="Check" type="checkbox" class="checked" />
+					<span>我阅读并同意协议</span><a id="serviceArgeement" href="javascript:void(0)" style="font-size:15px;color:rgb(254, 107, 56);">《服务协议》</a>
+				</div>
+			</div>
+			<div class="next" style="text-align: center;">
+				<button type="button" class="mui-btn regBtn" style="margin-bottom: 10px;">下一步</button>
+				<span style="font-size: 15px;">已有账号？立即<a href="javascript:void(0)" class="loginBtn" style="color:rgb(254, 107, 56);">登录</a></span>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/mui_use.js"></script>
+		<script src="js/md5.js"></script>
+		<script src="js/globals.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			firstLoad();
+
+			function firstLoad() { //打开页面时触发(不能触发plus的项)
+
+				Basics(); //基础配置
+
+			}
+			
+			function Basics() { //基础配置
+				
+				$('#getCode').on('tap',function(){
+					var success = function(response){
+						console.log("验证码信息："+JSON.stringify(response));
+						if(response.reault){
+							mui.toast("验证码发送成功！");
+						}
+					}
+					var data = {
+						telenumber :$('#PhoneNumber').val(),
+						type:"app"
+					}
+					ajax(ImgUrl + global_ajaxObject.sendPhoneCode, data, success);
+				})
+				
+				//跳转登陆
+				$('.loginBtn').on('tap', function() {
+					mui.back();
+				})
+				//注册
+				$('.regBtn').on('tap', function() {
+					UserRegister();
+				})
+			}
+
+			function UserRegister() {
+				var UserName = $("#UserName").val().trim();
+				var PhoneNumber = $("#PhoneNumber").val().trim();
+				var PassWord = $('#Password1').val().trim();
+				var ConfirmPassword = $('#ConfirmPassword').val().trim();
+				var RecommendedCode = $("#RecommendedCode").val().trim();
+				var Yzm = $('#Yzm').val().trim();
+				if(UserName == "") {
+					mui.toast('请输入用户名')
+					return false;
+				}
+				if(PhoneNumber == "") {
+					mui.toast('请输入手机号')
+					return false;
+				}
+				if(!isMobilePhone(PhoneNumber)) {
+					mui.toast('手机号码格式不正确')
+					return;
+				}
+				if(PassWord == "") {
+					mui.toast('请输入密码')
+					return false;
+				}
+				if(PassWord.length<6) {
+					mui.toast('密码长度需6位以上')
+					return false;
+				}
+				if(PassWord != ConfirmPassword) {
+					mui.toast('两次密码不一致')
+					return false;
+				}
+				if(!($("#Check").is(":checked"))) {
+					mui.toast('请先阅读协议')
+					return false;
+				}
+				if(Yzm == "") {
+					mui.toast('请输入验证码');
+					return false;
+				}	
+				var success = function(response) {
+					console.log('注册：' + JSON.stringify(response));
+					localStorage.setItem("registerUserName",$("#UserName").val());
+					$("#UserName").val('');
+					$("#PhoneNumber").val('');
+					$("#Password1").val('');
+					$("#ConfirmPassword").val('');
+					$("#RecommendedCode").val('');
+					mui.toast(response.msg);
+					if(response.result == 1) {
+						localStorage.setItem(global_localStorage.UserId, response.userId);
+						MuiUse.openWindow('RealName.html')
+					}
+					else{
+						mui.toast(response.msg);
+					}
+				}
+
+				var data = {
+					userName: UserName,
+					cellphone: PhoneNumber,
+					phoneCode: Yzm,
+					password: PassWord,
+					inviteCode: RecommendedCode
+				}
+
+				ajax(ApiUrl + global_ajaxObject.register, data, success);
+			}
+			//验证手机号
+			function isMobilePhone(obj) {
+				var partten = /^((\(\d{3}\))|(\d{3}\-))?13[0-9]\d{8}|14[0-9]\d{8}|15[0-9]\d{8}|17[0-9]\d{8}|18\d{9}$/;
+				if(partten.test(obj)) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+			//服务协议
+			$('#serviceArgeement').on('tap',function(){
+				MuiUse.openWindow('ServiceAgreement.html');
+			})
+		</script>
+	</body>
+
+</html>

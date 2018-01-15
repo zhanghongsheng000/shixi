@@ -1,0 +1,310 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+	<style>
+		header.mui-bar a {
+			color: #333;
+		}
+		
+		.nav {
+			padding: 15px 0 15px 10px;
+		}
+		
+		body,
+		.mui-content {
+			background: #fff;
+		}
+		
+		.nav span {
+			font-size: 0.9em;
+			color: rgb(250, 100, 37);
+		}
+		
+		.content {
+			margin: 0 10px;
+		}
+		
+		.content input {
+			width: 63%;
+			border: none;
+			background: rgb(239, 239, 239);
+			border-radius: 0px;
+		}
+		
+		.content span {
+			font-size: 0.9em;
+		}
+		
+		.mui-checkbox input[type=checkbox]:checked:before,
+		.mui-radio input[type=radio]:checked:before {
+			color: rgb(254, 107, 54);
+		}
+		
+		.mui-checkbox label {
+			font-size: 0.9em;
+			margin-left: 10px;
+		}
+		
+		.mui-checkbox input {
+			font-size: 0.9em;
+			margin-left: 10px;
+		}
+		
+		.content button {
+			color: white;
+			margin: 10px;
+			padding: 10px 0px 10px 0;
+			border-radius: 5px;
+			width: 40%;
+		}
+		
+		#btn_touBiao {
+			background: #FA6425;
+			border: 1px solid #FA6425;
+		}
+		
+		.xiugai {
+			background: rgb(250, 100, 37);
+		}
+		
+		.close {
+			background: rgb(137, 137, 137);
+		}
+		/*#btn_touBiao{
+			display: none;
+		}*/
+	</style>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">自动投标</h1>
+		</header>
+		<div class="mui-content">
+			<div class="nav">
+				<span>您的账户余额：</span>
+				<span class="data-accountBalance"></span>
+			</div>
+			<div class="content">
+				<span>自动投标状态:</span>
+				<input id="states" data-pid="" type="text" readonly="readonly" value="已关闭" style="background:#fff;" />
+				<br />
+				<span>账户保留金额:</span>
+				<input class="data-balance" type="text" value="" />
+				<br />
+				<span>单次最大投标金额:</span>
+				<input class="data-SingleAmount" maxlength="8" type="text" value="" style="width: 55%;" />
+				<br />
+				<span>投标利率范围:</span>
+				<input class="data-minInvestRate" type="text" value="" style="width: 18%;" /><span>%-</span>
+				<input class="data-maxInvestRate" type="text" value="" style="width: 18%;" /><span>%</span>
+				<br />
+				<span>投标项目期限:</span>
+				<input class="data-minInvestDuration" type="text" value="" style="width: 18%;" /><span>天-</span>
+				<input class="data-maxInvestDuration" type="text" value="" style="width: 18%;" /><span>天</span>
+				<div class="mui-input-row mui-checkbox fangshi" data-type="1">
+					<span>投资还款方式：</span>
+					<input name="checkbox1" value="Item 1" type="checkbox" style="position: initial;">
+					<label style="width: 45%;padding-right:0;">按月付息，到期还本</label>
+				</div>
+				<div class="mui-input-row mui-checkbox fangshi" data-type="2">
+					<span style="visibility:hidden">投资还款方式：</span>
+					<input name="checkbox1" value="Item 1" type="checkbox" style="position: initial;">
+					<label style="width: 45%;padding-right:0;">等额本息</label>
+				</div>
+				<div class="mui-input-row mui-checkbox fangshi" data-type="3">
+					<span style="visibility:hidden">投资还款方式：</span>
+					<input name="checkbox1" value="Item 1" type="checkbox" style="position: initial;">
+					<label style="width: 45%;padding-right:0;">等额本金</label>
+				</div>
+
+				<div class="mui-input-row mui-checkbox fangshi" data-type="4">
+					<span style="visibility:hidden">投资还款方式：</span>
+					<input name="checkbox1" value="Item 1" type="checkbox" style="position: initial;">
+					<label style="width: 45%;padding-right:0;">到期还本息</label>
+				</div>
+				<br />
+				<div class="mui-input-row mui-checkbox leixing" data-pro="1">
+					<span>投资项目类型：</span>
+					<input name="checkbox1" value="Item 1" type="checkbox" style="position: initial;">
+					<label style="width: 45%;padding-right:0;">房屋抵押贷款</label>
+				</div>
+				<div class="mui-input-row mui-checkbox leixing" data-pro="2">
+					<span style="visibility:hidden">投资项目类型：</span>
+					<input name="checkbox1" value="Item 1" type="checkbox" style="position: initial;">
+					<label style="width: 45%;padding-right:0;">中小企业融资</label>
+				</div>
+				<div class="mui-input-row mui-checkbox leixing" data-pro="3">
+					<span style="visibility:hidden">投资项目类型：</span>
+					<input name="checkbox1" value="Item 1" type="checkbox" style="position: initial;">
+					<label style="width: 45%;padding-right:0;">车辆抵押贷款</label>
+				</div>
+				<div class="mui-input-row mui-checkbox leixing" data-pro="4">
+					<span style="visibility:hidden">投资项目类型：</span>
+					<input name="checkbox1" value="Item 1" type="checkbox" style="position: initial;">
+					<label style="width: 45%;padding-right:0;">金融资产抵押</label>
+				</div>
+
+				<br />
+				<button class="xiugai left_btn">保存自动投标</button>
+				<button id="btn_touBiao" class="close right_btn">开启该自动投标</button>
+				<div class="content_info">
+					<!--<p>点投贷自动投标条件说明：</p>
+					<p>1、(账户余额-保留余额)》=最小投标金额。</p>
+					<p>(1)若(账户余额-保留余额)》=最大投标金额，则投资金额取最大投标金额。</p>
+					<p>(2)若(庄户余额-保留余额)》=最小投资金额，则(账户余额-保留余额)《最大投标金额，则投资金额取(账户余额 保留余额)。</p>
+					<p>2、最小投标利率《=项目利率《=最大投标利率。</p>
+					<p>3、最小投资期限《=项目期限《=最大投资期限。</p>
+					<p>4、项目类型在用户设置的投标项目类型范围内。</p>
+					<p>5、按照投标设置时间从早到晚排序生成队列，满足上述条件的客户依次投标，若一旦投标，剩下的等待中队列取消。</p>
+					<p></p>
+					<p></p>-->
+				</div>
+			</div>
+
+		</div>
+
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/globals.js"></script>
+	<script src="js/utilities.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/md5.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui_use.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		mui.init()
+		var simgle;
+		//		mui.plusReady(function() {
+		//			GetTouBiaoData();
+		//		})
+		firstLoad();
+
+		function firstLoad() { //打开页面时触发(不能触发plus的项)
+			GetTouBiaoData();
+			GetDataInfo();
+		}
+
+		function GetTouBiaoData() {
+			var success = function(response) {
+				console.log("投标数据：" + JSON.stringify(response));
+				$('.data-accountBalance').html(response.accountBalance); //账户余额
+				if(response.result == '0') {
+					$('#states').attr('value', '未设置');
+					$('#btn_touBiao').show();
+					$('#btn_touBiao').attr('disabled', "disabled");
+
+				} else if(response.result == '1') {
+					$('#btn_touBiao').show();
+					var state = response.states;
+					if(state == '1') {
+						$('#states').attr('value', '已开启');
+						$('#btn_touBiao').html('关闭该自动投标');
+					} else if(state == '0') {
+						$('#states').attr('value', '已关闭');
+						$('#btn_touBiao').html('开启该自动投标');
+					}
+
+					$('#states').attr('data-pid', response.id);
+					for(var k in response) {
+						$('.data-' + k).val(response[k]);
+					}
+					var prostatus = response.types;
+					var hkstatus = response.paymentType;
+					for(var i = 0; i < prostatus.length; i++) {
+						$('div[data-pro="' + prostatus[i] + '"]').find('input').prop('checked', true);
+					}
+					for(var j = 0; j < hkstatus.length; j++) {
+						$('div[data-type="' + hkstatus[j] + '"]').find('input').prop('checked', true);
+					}
+				}
+			}
+			var data = {
+				userId: localStorage.getItem(global_localStorage.UserId)
+			}
+			ajax(ApiUrl + global_ajaxObject.autoInvestInfo, data, success);
+		}
+		$('.right_btn').click(function() {
+			var state;
+			if($('#states').val() == "已关闭") {
+				state = 1; //传入状态（关闭）
+			} else {
+				state = 0; //传入状态（开启）
+			}
+			var success = function(response) {
+				console.log("开启/关闭自动投标状态：" + JSON.stringify(response));
+				mui.toast(response.msg);
+				if(response.result == 1) {
+					if($('#states').val() == "已开启") {
+						$('#states').attr('value', '已关闭');
+						$('#btn_touBiao').html('开启该自动投标');
+					} else {
+						$('#states').attr('value', '已开启');
+						$('#btn_touBiao').html('关闭该自动投标');
+					}
+				}
+			}
+			var data = {
+				userId: localStorage.getItem(global_localStorage.UserId),
+				type: state
+			}
+			ajax(ApiUrl + global_ajaxObject.autoInvestOpenClose, data, success);
+		})
+		$('.left_btn').click(function() {
+			var Types = '';
+			var prodivs = $('.leixing');
+			for(var i = 0; i < prodivs.length; i++) {
+				if($(prodivs[i]).find('input').prop('checked')) {
+					Types += $(prodivs[i]).attr('data-pro') + ',';
+				}
+			}
+			var paymentType = '';
+			var hkdivs = $('.fangshi');
+			for(var k = 0; k < hkdivs.length; k++) {
+				if($(hkdivs[k]).find('input').prop('checked')) {
+					paymentType += $(hkdivs[k]).attr('data-type') + ',';
+				}
+			}
+			var success = function(response) {
+				console.log("设置自动投标状态：" + JSON.stringify(response));
+
+				mui.toast(response.msg);
+				simgle = $('.data-SingleAmount').val();
+				$('#btn_touBiao').attr('disabled', false);
+				GetTouBiaoData();
+			}
+			var data = {
+				id: $('#states').attr('data-pid'),
+				userId: localStorage.getItem(global_localStorage.UserId),
+				SingleAmount: $('.data-SingleAmount').val().trim(),
+				minInvestRate: $('.data-minInvestRate').val().trim(),
+				maxInvestRate: $('.data-maxInvestRate').val().trim(),
+				minInvestDuration: $('.data-minInvestDuration').val().trim(),
+				maxInvestDuration: $('.data-maxInvestDuration').val().trim(),
+				paymentType: paymentType,
+				types: Types,
+				balance: $('.data-balance').val().trim()
+			}
+			ajax(ApiUrl + global_ajaxObject.autoInvestSetting, data, success);
+		})
+		/*获取文字说明*/
+		function GetDataInfo() {
+			var success = function(response) {
+				//console.log('文字说明：' + JSON.stringify(response));
+				$('.content_info').html(response);
+			}
+
+			var data = {
+				type: "自动投标设置"
+			}
+
+			ajax(ApiUrl + global_ajaxObject.explain, data, success, 'get', 'text');
+		}
+	</script>
+
+</html>

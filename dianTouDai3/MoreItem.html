@@ -1,0 +1,215 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			body {
+				background: #fff;
+			}
+			
+			ul,
+			li {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			#more_box {
+				background: #fff;
+			}
+			
+			#more_box ul li.Platform {
+				background: url(img/gonggao1.png) no-repeat 18px 15px;
+				background-size: 22px;
+			}
+			
+			#more_box ul li.News {
+				background: url(img/news.png) no-repeat 18px 15px;
+				background-size: 22px;
+			}
+			
+			#more_box ul li.introduce {
+				background: url(img/jieshao.png) no-repeat 18px 15px;
+				background-size: 22px;
+			}
+			
+			#more_box ul li.service {
+				background: url(img/zaixiankefu.png) no-repeat 18px 15px;
+				background-size: 22px;
+			}
+			
+			#more_box ul li a {
+				padding-left: 20px;
+			}
+			
+			#more_box ul li {
+				border-bottom: 1px solid #ddd;
+				padding: 15px 15px;
+				position: relative;
+			}
+			
+			#more_box ul li a {
+				color: #333;
+				font-size: 16px;
+			}
+		</style>
+		<style>
+			body {
+				background: #fff;
+			}
+			
+			.mui-row {
+				background: #fff;
+			}
+			
+			.mui-row li {
+				list-style: none;
+			}
+			
+			.mui-row img {
+				width: 40px;
+				height: 40px;
+			}
+			
+			.mui-row li a p {
+				display: inline;
+				position: absolute;
+				margin: 12px 30px;
+				font-size: 15px;
+				color: black;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title ItemName"></h1>
+
+		</header>
+		<div class="mui-content">
+			<div class="mui-row more_list more_item">
+				<!--<div class="mui-col-sm-12 mui-col-xs-12">
+					<li class="mui-table-view-cell Goto" data-type="16" data-url="NewsList.html">
+						<a class="mui-navigate-right">
+							<img src="img/gonggao1.png" />
+							<p>平台公告</p>
+						</a>
+					</li>
+				</div>
+				<div class="mui-col-sm-12 mui-col-xs-12">
+					<li class="mui-table-view-cell Goto" data-type="17" data-url="NewsList.html">
+						<a class="mui-navigate-right">
+							<img src="img/news.png" />
+							<p>行业新闻</p>
+						</a>
+					</li>
+				</div>
+				<div class="mui-col-sm-12 mui-col-xs-12">
+					<li class="mui-table-view-cell Goto">
+						<a class="mui-navigate-right">
+							<img src="img/jieshao.png" />
+							<p>产品介绍</p>
+						</a>
+					</li>
+				</div>
+				<div class="mui-col-sm-12 mui-col-xs-12">
+					<li class="mui-table-view-cell CellPhone" data-phone="15661638889">
+						<a class="mui-navigate-right">
+							<img src="img/zaixiankefu.png" />
+							<p>在线客服</p>
+						</a>
+					</li>
+				</div>-->
+
+			</div>
+			<!--<div id="more_box">
+				<ul class="more_item">
+					<li class="Goto">
+						<a class="mui-navigate-right">
+							我要融资
+						</a>
+					</li>
+					<li class="Goto" data-url="HelpCenter.html">
+						<a class="mui-navigate-right">
+							帮助中心
+						</a>
+					</li>
+					<li class="Goto" data-url="AboutUs.html">
+						<a class="mui-navigate-right">
+							关于我们
+						</a>
+					</li>
+					<li class="Goto" data-url="PlatformInfo.html">
+						<a class="mui-navigate-right">
+							平台资讯
+						</a>
+					</li>
+				</ul>
+			</div>-->
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/mui_use.js"></script>
+		<script src="js/md5.js"></script>
+		<script src="js/globals.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function() {
+				$('.ItemName').html(localStorage.getItem("ItemsName"));
+				firstLoad();
+			})
+
+			function firstLoad() { //打开页面时触发(不能触发plus的项)
+				GetItemsList();
+				Basics(); //基础配置
+			}
+
+			function GetItemsList() {
+
+				var success = function(response) {
+					console.log('列表信息：' + JSON.stringify(response));
+					var List = response.list;
+					for(var i = 0; i < List.length; i++) {
+						//						var ListHtml='<li class="Goto" data-conid="'+List[i].contentId+'" data-pid="'+List[i].catId+'" data-state="'+List[i].defaultType+'">';
+						//							ListHtml+='<a class="mui-navigate-right">'+List[i].catName+'</a>';
+						//							ListHtml+='</li>';
+
+						var ListHtml = '<div class="mui-col-sm-12 mui-col-xs-12 Goto" data-conid="' + List[i].contentId + '" data-pid="' + List[i].catId + '" data-state="' + List[i].defaultType + '">';
+						ListHtml += '<li class="mui-table-view-cell">';
+						ListHtml += '<a class="mui-navigate-right">';
+						ListHtml += '<img src="' + ImgUrl + List[i].imgUrl + '" />';
+						ListHtml += '<p class="TitleName">' + List[i].catName + '</p>';
+						ListHtml += '</a></li></div>';
+						$(".more_item").append(ListHtml);
+					}
+					$('.Goto').on('tap', function() {
+						localStorage.setItem("ItemsDetailName", $(this).find('.TitleName').html());
+						localStorage.setItem("ItemsDetailId", $(this).attr('data-pid'));
+
+						if($(this).attr('data-state') == '0') {
+							localStorage.setItem("ItemsDetailConId", $(this).attr('data-conid'));
+							MuiUse.openWindow('NewsItem.html');
+						} else if($(this).attr('data-state') == '1') {
+							MuiUse.openWindow('NewsList.html');
+						}
+					})
+				}
+				var data = {
+					catId: localStorage.getItem("ItemsId")
+				}
+				ajax(ApiUrl + global_ajaxObject.nextMenu, data, success);
+			}
+
+			function Basics() { //基础配置
+				//跳转页面
+
+			}
+		</script>
+	</body>
+
+</html>

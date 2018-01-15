@@ -1,0 +1,217 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			header.mui-bar a {
+				color: #333;
+			}
+			
+			body {
+				background-color: #fff;
+			}
+			
+			.nav {
+				background-color: #fff;
+				padding: 10px;
+				font-size: 17px;
+			}
+			
+			.nav p {
+				width: 100%;
+				text-align: center;
+				margin-top: 20px;
+			}
+			
+			.nav img {
+				margin-left: 30%;
+				width: 40%;
+				height: 35px;
+			}
+			
+			.nav span {
+				font-size: 18px;
+			}
+			
+			.nav label {
+				font-size: 13px;
+				color: rgb(254, 107, 56);
+				line-height: 45px;
+			}
+			
+			.nav input {
+				margin-top: 20px;
+				border-radius: 0px;
+				text-align: center;
+				background-color: rgb(238, 238, 238);
+			}
+			
+			.nav button {
+				width: 100%;
+				background-color: rgb(254, 107, 56);
+				color: white;
+				border-radius: 5px;
+				padding: 10px;
+			}
+			
+			.content {
+				background-color: #fff;
+				padding:0 10px;
+			}
+			
+			.content p {
+				padding: 0px 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">充值</h1>
+		</header>
+		<div class="mui-content">
+			<div class="nav">
+				<span>充值渠道</span>
+				<p>平台第三方合作充值渠道</p>
+				<img src="img/logo.png" />
+				<br />
+				<label>账户金额(元)：<em class="totalAmount">0</em></label>
+				<br />
+				<span>充值金额(元)</span><input type="number" name="jine" id="jine" placeholder="输入充值金额" />
+				<button class="SumbitBtn">确认充值</button>
+			</div>
+			<div class="content">
+				<!--<p>温馨提示：</p>
+				<p>1、因开通快捷支付需验证预留手机号，且充值额度有限，建议优先使用网银充值</p>
+				<p>2、富有充值收取千分之二手续费，先暂由平台支付</p>
+				<p>3、为了您的账户安全，请充值前进行身份认证、手机绑定以及体现密码的设置</p>
+				<p>4、您的账户资金将通过第三方平台进行充值。</p>
+				<p>5、请注意您的银行卡充值限制，以免造成不便</p>
+				<p>6、禁止洗钱、信用卡套现、虚假交易等行为，一经发现并确认，将终止该账户的使用</p>
+				<p>7、如果充值金额没有即时到账，请联系平台客服：15661638889。</p>-->
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/mui_use.js"></script>
+		<script src="js/md5.js"></script>
+		<script src="js/globals.js"></script>
+		<script type="text/javascript">
+			mui.init({
+				beforeback: function() {
+					var Index_MainHTML;
+					Index_MainHTML || (Index_MainHTML = plus.webview.getWebviewById('UserIndex.html'));
+					Index_MainHTML.evalJS("ResetData()");
+					if(plus.webview.getWebviewById('BidItem.html') != null) {
+						var BidItem;
+						BidItem || (BidItem = plus.webview.getWebviewById('BidItem.html'));
+						BidItem.evalJS("GetUserInfo()");
+					}
+					return true;
+				}
+			});
+			mui.plusReady(function(){
+				GetDataInfo();
+			})
+			firstLoad();
+
+			function firstLoad() { //打开页面时触发(不能触发plus的项)
+				Basics(); //基础配置
+				
+				ResetData(); //重置数据
+				
+
+			}
+			//重置数据
+			function ResetData() {
+				GetUserInfo();
+				
+			}
+
+			function Basics() { //基础配置
+				//充值
+				$('.SumbitBtn').on('tap', function() {
+					RechargeV(); //充值验证
+				})
+			}
+			//获取用户信息
+			function GetUserInfo() {
+				var success = function(response) {
+					console.log('获取用户信息：' + JSON.stringify(response));
+					$('.totalAmount').html(response.availableAmount);
+
+				}
+
+				var data = {
+					userId: localStorage.getItem(global_localStorage.UserId)
+				}
+
+				ajax(ApiUrl + global_ajaxObject.UserInfo, data, success);
+			}
+			//充值验证
+			function RechargeV() {
+				if($('#jine').val() == "" || Number($('#jine').val()) == 0) {
+					mui.toast('请输入金额');
+					return false;
+				}
+				var success = function(response) {
+					console.log('充值验证：' + JSON.stringify(response));
+					if(response.result == 1) {
+						localStorage.setItem(global_localStorage.RechargeMoney, $('#jine').val());
+						$('#jine').val('');
+						MuiUse.openWindow('fuiou.html');
+						//RechargeS();//充值
+					} else {
+						mui.toast(response.msg);
+					}
+				}
+
+				var data = {
+					userId: localStorage.getItem(global_localStorage.UserId),
+					money: $('#jine').val()
+				}
+
+				ajax(ApiUrl + global_ajaxObject.recharge, data, success);
+			}
+			//充值
+			function RechargeS() {
+
+				var success = function(response) {
+					console.log('充值：' + JSON.stringify(response));
+					if(response.result == 1) {
+						mui.toast(response.msg);
+					} else {
+						mui.toast(response.msg);
+					}
+				}
+
+				var data = {
+					userId: localStorage.getItem(global_localStorage.UserId),
+					money: $('#jine').val(),
+					opType: "APP"
+				}
+
+				ajax(ImgUrl + global_ajaxObject.payAction, data, success);
+			}
+			/*获取文字说明*/
+			function GetDataInfo(){
+				var success = function(response) {
+					//console.log('文字说明：' + JSON.stringify(response));
+					$('.content').html(response);
+				}
+
+				var data = {
+					type : "绑卡规则"
+				}
+
+				ajax(ApiUrl + global_ajaxObject.explain, data, success,'get','text');
+			}
+		</script>
+	</body>
+
+</html>

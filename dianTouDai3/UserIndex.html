@@ -1,0 +1,527 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/iconfont.css" rel="stylesheet" />
+		<style>
+			ul,
+			li,
+			p {
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+			
+			.picture {
+				text-align: center;
+				padding-top: 50px;
+			}
+			
+			.nav {
+				background: url(img/personal_bg.jpg);
+				width: 100%;
+			}
+			
+			.nav p {
+				font-size: 16px;
+				color: white;
+				margin-top: 10px;
+			}
+			
+			.renzheng {
+				margin-top: 10px;
+				text-align: center;
+				padding-bottom: 30px;
+				padding-top:10px;
+			}
+			
+			.renzheng p {
+				text-align: center;
+				display: inline;
+				font-size: 15px;
+			}
+			
+			.renzheng img {
+				position: absolute;
+				margin-top: -2px;
+				width: 25px;
+				display: inline;
+			}
+			
+			.xiangqing {
+				padding: 5px 15px;
+			}
+			
+			.xiangqing h2 {
+				font-size: 0.9em;
+				color: rgb(80, 80, 80);
+			}
+			
+			.content {
+				overflow: hidden;
+				background: #fff;
+				border: solid 1px rgb(229, 229, 229);
+			}
+			
+			.content span {
+				color: #8f8f94;
+				font-size: 14px;
+				padding-top: 20px;
+			}
+			
+			.content p {
+				margin-left: -20px;
+				color: #FA6425;
+				font-size: 20px;
+				text-align: center;
+				padding: 5px;
+				font-size: 16px;
+				margin-bottom: 5px;
+			}
+			
+			.content1 {
+				float: left;
+				margin-left: 10%;
+				padding-top: 10px;
+			}
+			
+			.content1 span {
+				font-size: 14px;
+			}
+			
+			.content2 {
+				float: right;
+				margin-right: 10%;
+				padding-top: 10px;
+			}
+			
+			.shouyi {
+				clear: both;
+				padding: 5px 15px;
+				background: #EFEFF4;
+			}
+			
+			.shouyi h2 {
+				font-size: 0.9em;
+				color: rgb(80, 80, 80);
+			}
+			
+			.content_bottom {
+				height: 267px;
+				margin: 20px 0;
+				background: #fff;
+				border: solid 1px rgb(229, 229, 229);
+			}
+			
+			.content_bottom ul {
+				margin-bottom: 20px;
+			}
+			
+			.content_bottom ul li {
+				width: 50%;
+				float: left;
+				background: #fff;
+			}
+			
+			.content_bottom hr {
+				margin-top: 1px;
+				height: 1px;
+				border: none;
+				background-color: rgb(229, 229, 229);
+			}
+			
+			.content_bottom img {
+				margin-top: 10px;
+				margin-left: 20%;
+			}
+			
+			.content_bottom span {
+				position: absolute;
+				font-size: 14px;
+				margin-top: 20px;
+			}
+			
+			.content_bottom span a {
+				color: black;
+				font-size: 1em;
+			}
+			
+			nav.mui-bar-tab {
+				background: #fff;
+				padding: 5px 0;
+			}
+			
+			nav.mui-bar-tab span {
+				font-size: 12px;
+				position: relative;
+				top: 15px;
+			}
+			
+			nav.mui-bar-tab img {
+				width: 40%;
+			}
+			
+			.mui-bar-tab .mui-tab-item.mui-active {
+				color: #FC5C22;
+			}
+			
+			a.index_a {
+				background: url(img/index_on.jpg) no-repeat 50% 0px;
+				background-size: 30px;
+			}
+			
+			a.touZi_a {
+				background: url(img/money.jpg) no-repeat 50% 0px;
+				background-size: 30px;
+			}
+			
+			a.user_a {
+				background: url(img/user.jpg) no-repeat 50% 0px;
+				background-size: 30px;
+			}
+			
+			a.more_a {
+				background: url(img/more.jpg) no-repeat 50% 0px;
+				background-size: 30px;
+			}
+			
+			.border {
+				position: absolute;
+				width: 1px;
+				left: 50%;
+				margin-top: -115px;
+				height: 50px;
+			}
+			
+			.border1 {
+				width: 1px;
+				position: absolute;
+				left: 50%;
+				margin-top: -55px;
+				height: 50px;
+			}
+			
+			.border2 {
+				width: 1px;
+				position: absolute;
+				left: 30%;
+				height: 59px;
+			}
+			
+			.content_bottom ul li img {
+				width: 25px
+			}
+			
+			.iconfont {
+				color: #9425A2;
+				font-size: 20px;
+			}
+			
+			.UserMenu {
+				margin-top: 50px;
+				border-top: 1px solid #D0D0D0;
+			}
+			
+			.UserMenu ul li {
+				float: left;
+				width: 50%;
+				height: 50px;
+				background-color: #FFFFFF;
+				border-bottom: 1px solid #D0D0D0;
+			}
+			
+			.UserMenu ul li span {
+				display: block;
+				width: 70%;
+				height: 22px;
+				line-height: 22px;
+				font-size: 14px;
+				text-align: center;
+				margin: 0 auto;
+				margin-top: 15px;
+			}
+			
+			.userMenuLine {
+				border-right: 1px solid #E8E8E8;
+			}
+			
+			.wdzh_cz {
+				width: auto;
+				margin: 10px;
+				text-align: center;
+			}
+			
+			.wdzh_cz a.wdzh_cz1 {
+				background: #ff6633;
+				color: #fff;
+			}
+			
+			.wdzh_cz a.wdzh_cz2 {
+				color: #ff6633;
+			}
+			
+			.wdzh_cz a {
+				width: 40%;
+				display: block;
+				margin: 0 4.5%;
+				font-size: 16px;
+				color: #fff;
+				text-align: center;
+				height: 30px;
+				line-height: 30px;
+				float: left;
+				border-radius: 3px;
+				border: 1px solid #ff6633;
+			}
+			
+			.nav {
+				position: relative;
+			}
+			
+			.setting {
+				position: absolute;
+				top: 20px;
+				right: 20px;
+				width: 20px;
+			}
+			.loginOut{
+				width: 100%;
+				background:#FF6633;
+				color:#fff;
+				border:1px solid #FF6633;
+				padding:10px 0;
+				font-weight: bold;
+			}
+			.bottom_btn{
+				width: 90%;
+				margin:5px auto;
+			}
+			.renzheng li,.picture p{
+				text-align: left;
+			}
+			.renzheng li{
+				line-height: 30px;;
+			}
+			.renzheng,.picture{
+				margin-left: 10%;
+			}
+			.picture{
+				width: 80%;
+				display: inline-block;
+				padding-top:15px;
+			}
+			.rzState{
+				position: relative;
+				top:3px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div class="nav">
+				<!--<img class="setting GoTo IsLogin" data-url="setting.html" src="img/ic_set.png">-->
+				<img class="setting IsLogin" data-url="setting.html" src="img/user.png">
+				
+				<!--<div class="picture">-->
+					<!--<img src="img/user_img.png" class="GoTo IsLogin avatar" />
+					<p>我的专属邀请码：<em class="inviteCode">-</em></p>-->
+					<!--<p class="relName">-</p>-->
+					<!--<p class="relName">葫芦娃</p>-->
+				<!--</div>-->
+				<ul class="renzheng GoTo IsLogin avatar" style="display: inline-block;width: 70%;">
+					<li>
+						<p>用户名：<em class="UserName">-</em></p>
+					</li>
+					<li>
+						<p>我的专属邀请码：<em class="inviteCode">-</em></p>
+					</li>
+					<li>
+						<p>认证状态：</p>
+						<!--<span class="mui-icon iconfont icon-shouji"></span>
+						<p class="authStatus">未认证</p>-->
+						<!--<span class="mui-icon iconfont icon-diannao-copy"></span>-->
+						
+						<span class="mui-icon iconfont rzState icon-credentials_icon"></span>
+						<p class="authStatus">未认证</p>
+					</li>
+				</ul>
+			</div>
+			<div class="xiangqing">
+				<h2>账号详情</h2>
+			</div>
+			<div class="content GoTo IsLogin avatar">
+				<div class="content1">
+					<span>总额（元）</span>
+					<p class="totalAmount">-</p>
+					<span style="margin-left: -15px;">可用总额（元）</span>
+					<p class="availableAmount">-</p>
+					<img src="img/border.png" class="border" />
+				</div>
+				<div class="content2">
+					<span>冻结金额（元）</span>
+					<p class="frozenAmount">-</p>
+					<span>待收金额（元）</span>
+					<p class="toReceiveAmount">-</p>
+					<img src="img/border.png" class="border1" />
+				</div>
+				<div class="shouyi">
+					<h2>投资收益</h2>
+				</div>
+				<div class="content1">
+					<span>累计充值（元）</span>
+					<p class="totalRecharge">-</p>
+					<span>累计投资（元）</span>
+					<p class="totalInvest">-</p>
+					<img src="img/border.png" class="border" />
+				</div>
+				<div class="content2">
+					<span>累计提现（元）</span>
+					<p class="totalWithdraw">-</p>
+					<span>累计收益（元）</span>
+					<p class="totalProfit">-</p>
+					<img src="img/border.png" class="border1" />
+				</div>
+			</div>
+
+			<div class="wdzh_cz">
+				<a href="javascript:;" data-url="MyRecharge.html" class="wdzh_cz1 GoTo IsLogin">充值</a>
+				<a href="javascript:;" data-url="MyWithdrawals.html" class="wdzh_cz2 GoTo IsLogin">提现</a>
+			</div>
+
+			<div class="UserMenu">
+				<ul style="overflow: hidden;">
+					<li data-url="MyBidList.html" class="GoTo IsLogin userMenuLine "><span style="background: url(img/my_touzi.jpg) no-repeat;background-size: 22px;">我的投资</span></li>
+					<li data-url="Auto_toubiao.html" class="GoTo IsLogin"><span style="background: url(img/my_autotizi.jpg) no-repeat;background-size: 22px;">自动投标</span></li>
+					<li data-url="MyDetailed.html" class="GoTo IsLogin userMenuLine "><span style="background: url(img/my_mingxi.jpg) no-repeat;background-size: 22px;">资金明细</span></li>
+					<li data-url="MyBankCard.html" class="GoTo IsLogin"><span style="background: url(img/yinhangka.jpg) no-repeat;background-size: 22px;">银行卡</span></li>
+					<li data-url="MyInvitation.html" class="GoTo IsLogin userMenuLine "><span style="background: url(img/tuijian.jpg) no-repeat;background-size: 22px;">推荐好友</span></li>
+					<li data-url="ShortMessage.html" class="GoTo IsLogin"><span style="background: url(img/zhanneixin.jpg) no-repeat;background-size: 22px;">站内信</span></li>
+					<li id="hongBao" data-url="MyRedEnvelope.html" class="redEnvelope GoTo IsLogin" style="width: 100%;"><span style="background: url(img/my_jiekuan.jpg) no-repeat;background-size: 22px;width: 85%;">我的红包</span></li>
+					<!--<li class="userMenuLine GoTo IsLogin"><span style="background: url(img/my_jiekuan.jpg) no-repeat;background-size: 22px;">我的借款</span></li>-->
+					<!--<li class="GoTo IsLogin"><span style="background: url(img/kshuankuan.jpg) no-repeat;background-size: 22px;">快速还款</span></li>-->
+				</ul>
+			</div>
+			<div class="bottom_btn">
+				<button class="loginOut">退出当前账号</button>
+			</div>
+			<script src="js/mui.min.js"></script>
+			<script src="js/jquery.js"></script>
+			<script src="js/mui_use.js"></script>
+			<script src="js/md5.js"></script>
+			<script src="js/globals.js"></script>
+			<script type="text/javascript">
+				mui.init();
+				firstLoad();
+				
+				var Index_MainHTML;
+				mui.plusReady(function(){
+					$('.UserName').html(localStorage.getItem("uName"));
+					//注销账户
+					$('.loginOut').on('tap', function() {
+						if(localStorage.getItem(global_localStorage.UserName) != null){
+							mui.confirm('是否退出登录?', '提示', ['取消', '确认'], function(e) {
+								if(e.index == 1) {
+									$('#hongBao').hide();
+									$('.loginOut').hide();
+									localStorage.removeItem(global_localStorage.UserId);
+									localStorage.removeItem(global_localStorage.UserName);
+//									Index_MainHTML || (Index_MainHTML = plus.webview.getWebviewById('UserIndex.html'));
+//									Index_MainHTML.evalJS("ResetData()");
+									plus.webview.close('setting.html');
+									MuiUse.openWindow('login.html');
+								}
+							}, 'div');
+						}else{
+							return false;
+						}
+					})
+				})
+				function firstLoad() { //打开页面时触发(不能触发plus的项)
+					Basics(); //基础配置
+					ResetData(); //重置数据
+				}
+				//重置数据
+				function ResetData() {
+					if(localStorage.getItem(global_localStorage.UserName) != null) {
+						GetUserInfo();
+						$('#hongBao').show();
+						$('.loginOut').show();
+						$('.UserName').html(localStorage.getItem("uName"));
+					}
+					else{
+						$('.inviteCode').html('-');
+						$('.UserName').html('-');
+						$('.authStatus').html('未认证');
+						$('.totalAmount').html('-');
+						$('.frozenAmount').html('-');
+						$('.availableAmount').html('-');
+						$('.toReceiveAmount').html('-');
+						$('.totalRecharge ').html('-');
+						$('.totalWithdraw').html('-');
+						$('.totalInvest').html('-');
+						$('.totalProfit').html('-');
+						$('.UserName').html('-');
+						$('.rzState').removeClass('icon-shenfenzheng').addClass('icon-credentials_icon'); 
+						$('#hongBao').hide();
+						$('.loginOut').hide();
+					}
+				}
+				function Basics() { //基础配置
+					//跳转页面
+					$('.GoTo').on('tap', function() {
+						if($(this).attr('class').indexOf('IsLogin') > -1 && localStorage.getItem(global_localStorage.UserName) == null) {
+							MuiUse.openWindow('login.html');
+							return false;
+						}
+						if($(this).attr('class').indexOf('avatar') > -1) {
+							return false;
+						}
+						if($(this).attr('data-url') == undefined) { mui.toast('暂无页面'); return false; }
+						if($('.authStatus').html()=="未认证"){
+							
+							mui.alert('您需要进行实名认证','提示','去认证',function(){
+								MuiUse.openWindow('RealName.html');
+							});
+							return false;
+						}
+						MuiUse.openWindow($(this).attr('data-url'));
+					})
+					$('.setting').on('tap',function(){
+						MuiUse.openWindow($(this).attr('data-url'));
+					})
+				}
+				//获取用户信息
+				function GetUserInfo() {
+					var success = function(response) {
+						console.log('获取用户信息：' + JSON.stringify(response));
+						$('.inviteCode').html(response.inviteCode);
+						if(response.authStatus=='已认证'){
+							$('.rzState').removeClass('icon-credentials_icon').addClass('icon-shenfenzheng'); 
+						}
+						$('.authStatus').html(response.authStatus);
+						$('.totalAmount').html(NumberCompany(response.totalAmount));
+						$('.frozenAmount').html(NumberCompany(response.frozenAmount));
+						$('.availableAmount').html(NumberCompany(response.availableAmount));
+						$('.toReceiveAmount').html(NumberCompany(response.toReceiveAmount));
+						$('.totalRecharge ').html(NumberCompany(response.totalRecharge));
+						$('.totalWithdraw').html(NumberCompany(response.totalWithdraw));
+						$('.totalInvest').html(NumberCompany(response.totalInvest));
+						$('.totalProfit').html(NumberCompany(response.totalProfit));
+						//$('.relName').html(localStorage.getItem("relName"));
+						
+						
+					}
+					var data = {
+						userId: localStorage.getItem(global_localStorage.UserId)
+					}
+					ajax(ApiUrl + global_ajaxObject.UserInfo, data, success);
+				}
+			</script>
+	</body>
+
+</html>

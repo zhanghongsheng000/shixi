@@ -1,0 +1,217 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			header.mui-bar a {
+				color: #333;
+			}
+			
+			body {
+				background-color: #fff;
+			}
+			
+			.mui-content {
+				background-color: #fff;
+			}
+			
+			.yinhangka {
+				overflow: hidden;
+				padding: 20px 20px;
+			}
+			
+			.yinhangka img {
+				width: 60px;
+				
+			}
+			
+			.yinhangka p {
+				display: inline;
+				position: absolute;
+				font-size: 18px;
+				color: black;
+			}
+			
+			.tip p {
+				margin-left: 20px;
+				color: rgb(51, 51, 51);
+			}
+			
+			#renZ_info {
+				display: none;
+			}
+			
+			.tip {
+				margin: 20px 0;
+			}
+			.content{
+				padding:0 10px;
+			}
+			.bank-logo {
+				background-image: url(img/bank-logo.png);
+				display: block;
+				height: 40px;
+				overflow: hidden;
+				width: 50px;
+				float: left;
+			}
+			#bank-0318 {/*娓ゆ捣閾惰*/
+			    background-position: 0px -91px;
+			    height: 30px;
+			}
+			#bank-0102{/*涓浗宸ュ晢閾惰*/
+			    background-position: 0px -223px;
+			    height: 38px;
+			}
+			#bank-0303{/*涓浗鍏夊ぇ閾惰*/
+			    background-position: 0px -269px;
+			    height: 36px;
+			    width: 75px;
+			    
+			}
+			#bank-0315{/*鎭掍赴閾惰*/
+			    background-position: 0px -450px;
+			    height: 38px;
+			}
+			#bank-0304{/*鍗庡閾惰*/
+			    background-position: 0px -496px;
+			    height: 37px;
+			}
+			#bank-0105{/*涓浗寤鸿閾惰*/
+			    background-position: 0px -540px;
+			    height: 39px;
+			}
+			#bank-0301{/*浜ら 氶摱琛 */
+			    background-position: 0px -631px;
+			    height: 36px;
+			}
+			#bank-0305{/*涓浗姘戠敓閾惰*/
+			    background-position: 0px -726px;
+			    height: 31px;
+			}
+			#bank-0103{/*涓浗鍐滀笟閾惰*/
+			    background-position: 0px -858px;
+			    height: 39px;
+			}
+			#bank-0307{/* 骞冲畨閾惰*/
+			    background-position: 0px -905px;
+			    height: 37px;
+			    width: 70px;
+			}
+			#bank-0309{/*鍏翠笟閾惰*/
+			    background-position: 0px -1225px;
+			    height: 31px;
+			}
+			#bank-0308{/*鎷涘晢閾惰*/
+			    background-position: 0px -1267px;
+			    height: 39px;
+			}
+			#bank-0104{/*涓浗閾惰*/
+			    background-position: 0px -1357px;
+			    height: 41px;
+			}
+			#bank-0002{/*涓浗閭斂鍌ㄨ搫閾惰*/
+			    background-position: 0px -1408px;
+			    height: 31px;
+			}
+			#bank-0514{/*涓俊瀹炰笟閾惰*/
+			    background-position: 0px -1450px;
+			    height: 37px;
+			}
+			#bank-0319{/*寰藉晢閾惰*/
+			    background-position: 0px -1677px;
+			    height: 36px;
+			}
+			#bank-0316{/* 娴欏晢閾惰*/
+			    background-position: 0px -1722px;
+			    height: 39px;
+			}
+			#bank-0306{/*骞垮彂閾惰*/
+			    background-position: 0px -316px;
+			    height: 32px;
+			    width: 40px;
+			}
+			#bank-0310{/*涓婃捣娴︿笢鍙戝睍閾惰*/
+			    background-position: 0px -952px;
+			    height: 32px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">我的银行卡</h1>
+		</header>
+		<div class="mui-content">
+			<div id="BankCard" style="overflow: hidden;">
+				<!--<div class="yinhangka">
+					<span class="bank-logo" id="bank-0002"></span>
+					<p>交通银行<br \> 6222************6847</p>
+				</div>-->
+			</div>
+			<div class="content">
+				<p>温馨提示：</p>
+				<p>只允许绑一张银行卡，资金同卡进出</p>
+			</div>
+
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/mui_use.js"></script>
+		<script src="js/md5.js"></script>
+		<script src="js/globals.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			firstLoad();
+			mui.plusReady(function(){
+				GetDataInfo();
+			})
+			function firstLoad() { //打开页面时触发(不能触发plus的项)
+				Basics(); //基础配置
+				ResetData(); //重置数据
+
+			}
+			//重置数据
+			function ResetData() {
+				GetBank();
+			}
+
+			function Basics() { //基础配置
+			}
+			//获取银行卡
+			function GetBank() {
+				var success = function(response) {
+					console.log('获取银行卡：' + JSON.stringify(response));
+					//$('.totalAmount').html(response.availableAmount);
+					$('#BankCard').html('<div class="yinhangka"><span class="bank-logo" id="bank-'+response.orgCode+'"></span><p>'+IsNull(response.bankName)+'<br \> '+response.cardNum+'</p></div>');
+
+				}
+
+				var data = {
+					userId: localStorage.getItem(global_localStorage.UserId)
+				}
+
+				ajax(ApiUrl + global_ajaxObject.showBankCard, data, success);
+			}
+			/*获取文字说明*/
+			function GetDataInfo(){
+				var success = function(response) {
+					//console.log('文字说明：' + JSON.stringify(response));
+					$('.content').html(response);
+				}
+
+				var data = {
+					type : "充值规则"
+				}
+
+				ajax(ApiUrl + global_ajaxObject.explain, data, success,'get','text');
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			header.mui-bar a {
+				color: #333;
+			}
+			
+			.dianhua {
+				margin: 10px 0;
+			}
+			
+			.mui-table-view-cell {
+				background: #fff;
+			}
+			
+			.mui-row li {
+				list-style: none;
+			}
+			
+			.dianhua img {
+				width: 40px;
+				height: 40px;
+			}
+			
+			.mui-row li a p {
+				display: inline;
+				position: absolute;
+				margin: 12px 30px;
+				font-size: 15px;
+				color: black;
+			}
+			
+			.mui-bar .mui-btn {
+				top: 0px;
+			}
+			
+			.mui-btn {
+				clear: both;
+				width: 100%;
+				background-color: rgb(254, 107, 56);
+				border: 1px solid rgb(254, 107, 56);
+				color: #fff;
+				font-size: 15px;
+				height: 50px;
+				position: absolute;
+				bottom: 0;
+			}
+			.userPhone{
+				position: relative;
+			    display: block;
+			    overflow: hidden;
+			    margin: -11px -15px;
+			    padding: inherit;
+			    white-space: nowrap;
+			    text-overflow: ellipsis;
+			    color: inherit;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">账户设置</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-row">
+				<div class="mui-col-sm-12 mui-col-xs-12 dianhua">
+					<li class="mui-table-view-cell">
+						<a class="userPhone">
+							<img src="img/user.jpg" />
+							<p class="tel">-</p>
+						</a>
+					</li>
+				</div>
+				<div class="mui-col-sm-12 mui-col-xs-12 modifiyPwd">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<img src="img/mima.png" />
+							<p>修改密码</p>
+						</a>
+					</li>
+				</div>
+				<!--<div class="mui-col-sm-12 mui-col-xs-12 ">
+					<li class="mui-table-view-cell">
+						<a>
+							<img src="img/shoushi.png" />
+							<p>手势密码</p>
+							<div class="mui-switch mui-switch-mini" id="IsSignPassword">
+								<div class="mui-switch-handle"></div>
+							</div>
+						</a>
+					</li>
+				</div>-->
+				<div class="mui-col-sm-12 mui-col-xs-12 SignPassword">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<img src="img/xiugaimima.png" />
+							<p>修改手势登录</p>
+						</a>
+					</li>
+				</div>
+				<!--<div class="mui-col-sm-12 mui-col-xs-12">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<img src="img/aboutus.png" />
+							<p>关于我们</p>
+						</a>
+					</li>
+				</div>-->
+			</div>
+			<button id="SignOut" type="button" class="mui-btn loginOut">退出登录</button>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/mui_use.js"></script>
+		<script src="js/md5.js"></script>
+		<script src="js/globals.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			var Index_MainHTML;
+			firstLoad();
+			var _back = mui.back;
+			mui.back = function() {
+				BtnBack();
+
+			};
+
+			function BtnBack() {
+				
+				
+				//localStorage.setItem(global_localStorage.IsSignPassword, document.getElementById("IsSignPassword").classList.contains("mui-active"));
+				_back();
+			}
+
+			function firstLoad() { //打开页面时触发(不能触发plus的项)
+				Basics(); //基础配置
+				ResetData(); //重置数据
+			}
+			//基础配置
+			function Basics() {
+				//修改密码
+				$('.modifiyPwd').on('tap', function() {
+					MuiUse.openWindow('ModifyPwd.html');
+				})
+				$('.SignPassword').on('tap', function() {
+					SetPassWord();
+				})
+				
+			}
+			//重置数据
+			function ResetData() {
+//				if(localStorage.getItem(global_localStorage.IsSignPassword) == 'true') {
+//					document.getElementById('IsSignPassword').classList.add('mui-active');
+//				}
+				GetUserInfo();
+			}
+			//手势密码
+			function SetPassWord() {
+
+				if(localStorage.getItem(global_localStorage.SignPassword)) {
+					MuiUse.openWindow('locker_change.html');
+				} else {
+					MuiUse.openWindow('locker_set.html');
+				}
+
+			}
+			//获取用户信息
+			function GetUserInfo() {
+				var success = function(response) {
+					console.log('获取用户信息：' + JSON.stringify(response));
+					$('.tel').html(IsNull(response.tel));
+				}
+				var data = {
+					userId: localStorage.getItem(global_localStorage.UserId)
+				}
+				ajax(ApiUrl + global_ajaxObject.UserInfo, data, success);
+			}
+			mui.plusReady(function() {
+				//注销账户
+				$('.loginOut').on('tap', function() {
+					mui.confirm('是否退出登录?', '提示', ['取消', '确认'], function(e) {
+						if(e.index == 1) {
+							localStorage.removeItem(global_localStorage.UserId);
+							localStorage.removeItem(global_localStorage.UserName);
+							Index_MainHTML || (Index_MainHTML = plus.webview.getWebviewById('UserIndex.html'));
+							Index_MainHTML.evalJS("ResetData()");
+							plus.webview.close('setting.html');
+						}
+					}, 'div');
+				})
+			})
+		</script>
+	</body>
+
+</html>

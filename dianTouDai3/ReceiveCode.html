@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			header.mui-bar a {
+				color: #333;
+			}
+			
+			.phone {
+				padding: 10px 10px 0px 10px;
+				margin-top: 10px;
+				background-color: #fff;
+			}
+			
+			.phone span {
+				font-size: 15px;
+			}
+			
+			.phone input {
+				width: 65%;
+				height: 20px;
+				border-style: none;
+				font-size: 15px;
+				padding: 0;
+				margin: 3px 0 5px 0;
+			}
+			
+			.mui-btn {
+				margin-top: 15px;
+				clear: both;
+				width: 100%;
+				background-color: rgb(254, 107, 56);
+				color: #fff;
+				padding: 10px;
+				font-size: 15px;
+				margin-bottom: 30px;
+			}
+			
+			.phone span {
+				font-size: 14px;
+			}
+			
+			.hr {
+				height: 1px;
+				border: none;
+				background-color: rgb(229, 229, 229);
+			}
+			
+			.next {
+				margin: 0 10px;
+			}
+			
+			.fasong {
+				float: right;
+				padding: 2px 5px;
+				border-radius: 3px;
+				border: 1px solid rgb(254, 107, 56);
+			}
+			
+			.fasong a {
+				color: rgb(254, 107, 56);
+			}
+			
+			.yanzhengma {
+				float: right;
+				width: 90px;
+				padding: 5px 0px;
+				text-align: center;
+				color: rgb(255, 161, 120);
+				border-radius: 5px;
+				border: 1px solid rgb(255, 161, 120);
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">注册</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-row">
+				<div class="phone">
+
+					<span>手机号码</span>
+					<input id="PhoneNumber" placeholder="您的个人手机号码" style="margin-left: 33px;width: 40%;" value="" />
+					<button id="getCode" class="yanzhengma">发送验证码</button>
+
+					<hr class="hr" />
+
+					<span>手机验证码</span>
+					<input id="Yzm" placeholder="请输入手机验证码" style="margin-left: 18px;" />
+					<hr class="hr" />
+				</div>
+			</div>
+			<div class="next" style="text-align: center;">
+				<button type="button" class="mui-btn regBtn" style="margin-bottom: 10px;">确定</button>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/mui_use.js"></script>
+		<script src="js/md5.js"></script>
+		<script src="js/globals.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			firstLoad();
+
+			function firstLoad() { //打开页面时触发(不能触发plus的项)
+
+				Basics(); //基础配置
+
+			}
+
+			function Basics() { //基础配置
+
+				$('#getCode').on('tap', function() {
+
+					var telenumber = $('#PhoneNumber').val().trim();
+					if(telenumber == "") {
+						mui.toast('请输入手机号')
+						return false;
+					}
+					if(!isMobilePhone(telenumber)) {
+						mui.toast('手机号码格式不正确')
+						return;
+					}
+					$(this).attr("disabled", true); //防止多次点击
+					var success = function(response) {
+						console.log("验证码信息：" + JSON.stringify(response));
+						if(response.reault) {
+
+							mui.toast("验证码发送成功！");
+						}
+					}
+					var data = {
+						telenumber: telenumber,
+						type: "app"
+					}
+					ajax(ImgUrl + global_ajaxObject.sendPhoneCode, data, success);
+					timeCount();
+				})
+			}
+			//验证手机号
+			function isMobilePhone(obj) {
+				var partten = /^((\(\d{3}\))|(\d{3}\-))?13[0-9]\d{8}|14[0-9]\d{8}|15[0-9]\d{8}|17[0-9]\d{8}|18\d{9}$/;
+				if(partten.test(obj)) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+			//计时函数
+			var ordertime = 120 //设置再次发送验证码等待时间
+			var timeleft = ordertime;
+
+			function timeCount() {
+				timeleft -= 1;
+				if(timeleft > 0) {
+					$('#getCode').html(timeleft + " 秒后重发");
+					setTimeout(timeCount, 1000)
+				} else {
+					$('#getCode').html("重新发送");
+					timeleft = ordertime //重置等待时间
+					$('#getCode').removeAttr("disabled");
+				}
+			}
+		</script>
+	</body>
+
+</html>

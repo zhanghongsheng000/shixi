@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			body {
+				background: #fff;
+			}
+			ul,li{
+				margin:0;
+				padding:0;
+				list-style: none;
+			}
+			#more_box{
+				background:#fff;
+			}
+			#more_box ul li.Platform{
+				background: url(img/gonggao1.png) no-repeat 18px 15px;
+				background-size: 22px;
+			}
+			#more_box ul li.News{
+				background: url(img/news.png) no-repeat 18px 15px;
+				background-size: 22px;
+			}
+			#more_box ul li.introduce{
+				background: url(img/jieshao.png) no-repeat 18px 15px;
+				background-size: 22px;
+			}
+			#more_box ul li.service{
+				background: url(img/zaixiankefu.png) no-repeat 18px 15px;
+				background-size: 22px;
+			}
+			#more_box ul li a{
+				padding-left: 20px;
+			}
+			#more_box ul li{
+				border-bottom: 1px solid #ddd;
+				padding:15px 15px;
+				position: relative;
+			}
+			#more_box ul li a{
+				color:#333;
+				font-size: 16px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">更多</h1>
+		</header>
+		<div class="mui-content">
+			<div id="more_box">
+				<ul class="more_list">
+					<li class="Goto">
+						<a class="mui-navigate-right">
+							我要融资
+						</a>
+					</li>
+					<li class="Goto" data-url="HelpCenter.html">
+						<a class="mui-navigate-right">
+							帮助中心
+						</a>
+					</li>
+					<li class="Goto" data-url="AboutUs.html">
+						<a class="mui-navigate-right">
+							关于我们
+						</a>
+					</li>
+					<li class="Goto" data-url="PlatformInfo.html">
+						<a class="mui-navigate-right">
+							平台资讯
+						</a>
+					</li><!---->
+				</ul>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/mui_use.js"></script>
+		<script src="js/md5.js"></script>
+		<script src="js/globals.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function(){
+				firstLoad();
+			})
+			
+			function firstLoad() { //打开页面时触发(不能触发plus的项)
+				GetList();
+				Basics(); //基础配置
+			}
+			function GetList(){
+				var success = function(response) {
+					console.log('列表信息：' + JSON.stringify(response));
+					var List=response.list;
+					
+					for(var i=0;i<List.length;i++){
+						if(List[i].catName=="我要投资"){
+							continue;
+						}
+						var ListHtml='<li class="Goto" data-pid="'+List[i].catId+'">';
+							ListHtml+='<a class="mui-navigate-right">'+List[i].catName+'</a>';
+							ListHtml+='</li>';
+						$(".more_list").append(ListHtml);
+					}
+					$('.Goto').on('tap', function() {
+						localStorage.setItem("ItemsName",$(this).find('a').html());
+						localStorage.setItem("ItemsId",$(this).attr('data-pid'));
+						MuiUse.openWindow('MoreItem.html');
+					})
+				}
+				var data = {}
+				ajax(ApiUrl + global_ajaxObject.moreList, data, success);
+			}
+			
+			function Basics() { //基础配置
+				//跳转页面
+				
+			}
+		</script>
+	</body>
+
+</html>

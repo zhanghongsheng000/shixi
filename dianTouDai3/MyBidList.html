@@ -1,0 +1,260 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/animate.min.css" />
+		<style>
+			header.mui-bar a {
+				color: #333;
+			}
+			
+			.mui-bar~.mui-content .mui-fullscreen {
+				top: 44px;
+				height: auto;
+			}
+			
+			.mui-slider-indicator.mui-segmented-control {
+				background-color: #efeff4;
+			}
+			
+			.mui-segmented-control.mui-scroll-wrapper .mui-scroll {
+				width: 100%;
+			}
+			
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item {
+				width: 25%;
+				border-bottom: 2px solid transparent !important;
+			}
+			
+			.mui-segmented-control.mui-scroll-wrapper {
+				height: 40px;
+			}
+			
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+				color: #FD6B37;
+				border-bottom: 2px solid #FD6B37!important;
+			}
+			
+			.mui-pull-left {
+				color: #000000
+			}
+			
+			.new_project {
+				padding: 10px;
+				background: #fff;
+				width: 100%;
+				height: 250px;
+				margin-top: 10px;
+			}
+			
+			.new_project span {
+				float: left;
+				margin-top: 10px;
+				font-size: 0.8em;
+			}
+			
+			.new_project label {
+				color: rgb(153, 153, 153);
+			}
+			
+			.xuequ {
+				font-size: 15px;
+				color: #FA6425;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">我的投资</h1>
+		</header>
+		<div class="mui-content">
+
+			<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+				<div class="mui-scroll" style="background-color: #FFFFFF;">
+					<a class="mui-control-item mui-active" data-value="">
+						全部
+					</a>
+					<a class="mui-control-item" data-value="2">
+						投标中
+					</a>
+					<a class="mui-control-item" data-value="4">
+						还款中
+					</a>
+					<a class="mui-control-item" data-value="5">
+						完成
+					</a>
+				</div>
+			</div>
+			<div id="ItemList" class="sclist">
+				<!--<div class="new_project">
+					<span class="xuequ">学区房屋抵押贷款</span>
+					<span style="clear: both;">投资金额：5,000</span>
+					<span style="float: right;">年化收益率:<label style="color:#FA6425;">12%</label></span>
+					<span style="clear: both;">投资期限:30天</span>
+					<span style="float: right;">投标时间：<label>2017-08-01</label></span>
+					<span style="clear: both;">投资日期：<label>2017-08-01</label></span>
+					<span style="float: right;">截止日期：<label>2017-08-01</label></span>
+					<span style="clear: both;">标的类型:房屋抵押</span>
+					<span style="clear: both;">还款方式:到期还息</span>
+				</div>-->
+
+			</div>
+			<div class="BottomMsg" style="text-align: center;border-top: 0px solid #FA6425;height: 50px;line-height: 50px;">加载中...</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/mui_use.js"></script>
+		<script src="js/md5.js"></script>
+		<script src="js/globals.js"></script>
+		<script type="text/javascript">
+//			mui.init({
+//				beforeback: function() {
+//					var Index_MainHTML;
+//						Index_MainHTML || (Index_MainHTML = plus.webview.getWebviewById('BidItem.html'));
+//						Index_MainHTML.evalJS("removeDisabled()");
+//					return true;
+//				}
+//
+//			});
+			mui.init();
+			var _self;
+			if(window.plus) {
+				plusReady();
+			} else {
+				document.addEventListener("plusready", function() {
+					plusReady();
+				}, false);
+			}
+
+			function plusReady() {
+				_self = plus.webview.currentWebview(); //下拉刷新
+				_self.setPullToRefresh({
+					support: true,
+					height: '50px',
+					range: '100px',
+					style: 'circle',
+					offset: '1px'
+				}, pulldownRefresh);
+
+				document.addEventListener("plusscrollbottom", onScrollToBottom, false); //上拉刷新
+				Basics();
+				DataLoad();
+			}
+			// 处理滚动到窗口底部事件
+			function onScrollToBottom() {
+				$('.BottomMsg').show();
+				if(totalPage < page && totalPage != -1) {
+					$('.BottomMsg').html('没有更多数据了');
+				} else {
+					BidList();
+				}
+			}
+			//重置数据
+			function ResetData() {
+				page = 1;
+				totalPage = -1;
+				$('.BottomMsg').show();
+				$('.BottomMsg').html('加载中...');
+				BidList();
+			}
+			/**
+			 * 下拉刷新具体业务实现
+			 */
+			function pulldownRefresh() {
+				setTimeout(function() {
+					ResetData();
+					_self.endPullToRefresh();
+				}, 1500);
+			}
+
+			function Basics() { //基础配置
+
+				//切换选项卡
+				$('.mui-scroll a').on('tap', function() {
+					$('.mui-scroll a').removeClass('mui-active');
+					$(this).addClass('mui-active');
+					ResetData();
+				});
+			}
+			//需要加载的数据
+
+			function DataLoad() {
+				BidList(); //列表信息
+			}
+
+			var pageSize = 10;
+			var page = 1;
+			var totalPage = -1;
+			//列表信息
+			function BidList() {
+				if(totalPage == -1) { $('.sclist').empty(); }
+				var success = function(response) {
+					console.log('列表信息：' + JSON.stringify(response));
+					//$('.BottomMsg').hide();
+					//if(response.result == 1) {
+					totalPage = response.totalPage;
+					page++;
+					for(var i = 0; i < response.list.length; i++) {
+						var Item = response.list[i];
+						var TempleteHtml = '<div class="new_project animated bounceInRight" style="-webkit-animation-delay: ' + (0.3 + 0.2 * i) + 's;">';
+						TempleteHtml += '<span class="xuequ">' + IsNull(Item.title) + '</span>';
+						TempleteHtml += '<span style="clear: both;">投资金额：' + NumberCompany(Item.amount) + '</span>';
+						TempleteHtml += '<span style="float: right;">年化收益率:<label style="color:#FA6425;">' + IsNull(Item.rate) + '%</label></span>';
+						TempleteHtml += '<span style="clear: both;">投资期限:' + NumberCompany(Item.durationValue) + Item.durationUnit + '</span>';
+						TempleteHtml += '<span style="clear: both;">投资日期：<label>' + IsNull(Item.bidTime) + '</label></span>';
+						switch($('.mui-active').attr('data-value')) {
+							case '2':
+								TempleteHtml += '<span style="clear: both;">截止日期：<label>' + IsNull(Item.endTime) + '</label></span>';
+								break;
+							case '4':
+								TempleteHtml += '<span style="clear: both;">下期还款日：<label>' + IsNull(Item.shouldDate) + '</label></span>';
+								break;
+							case '5':
+								TempleteHtml += '<span style="clear: both;">完成日期：<label>' + IsNull(Item.successTime) + '</label></span>';
+								break;
+						}
+						TempleteHtml += '<span style="clear: both;">标的类型:' + IsNull(Item.type) + '</span>';
+						TempleteHtml += '<span style="clear: both;">还款方式:' + IsNull(Item.paymentType) + '</span>';
+						TempleteHtml += '</div>';
+						$('.sclist').append(TempleteHtml);
+					}
+
+					if(page >= response.totalPage) {
+						$('.BottomMsg').show();
+						$('.BottomMsg').html(response.totalPage == 0 ? "暂无数据" : "没有更多数据了");
+						//$('.BottomMsg').html('没有更多数据了');
+					}
+
+					//						$('.courseItem').off('tap');
+					//						$('.courseItem').on('tap', function() {
+					//							if($('.ctab').attr('data-value') == "1") {
+					//								localStorage.setItem(global_localStorage.courseId, $(this).attr('data-id'));
+					//								MuiUse.openWindow('GoodItem.html');
+					//							} else {
+					//								localStorage.setItem(global_localStorage.shopId, $(this).attr('data-id'));
+					//								MuiUse.openWindow('schoolItem.html');
+					//							}
+					//
+					//						})
+					//}
+				}
+
+				var data = {
+					userId: localStorage.getItem(global_localStorage.UserId),
+					type: $('.mui-active').attr('data-value'),
+					pagesize: pageSize,
+					page: page
+				}
+
+				ajax(ApiUrl + global_ajaxObject.myInvestProjList, data, success);
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,621 @@
+{
+  "index.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/iconfont.css",
+      "css/mui.min.css",
+      "indexSub.html",
+      "js/globals.js",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js",
+      "indexSub2.html"
+    ],
+    "refer": [
+      "indexSub.html",
+      "More.html",
+      "UserIndex.html",
+      "BidList.html",
+      "locker_verify.html",
+      "More2.html",
+      "login.html",
+      "locker_set.html",
+      "indexSub2.html"
+    ]
+  },
+  "More.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "img/news.png",
+      "img/gonggao1.png",
+      "img/zaixiankefu.png",
+      "img/jieshao.png",
+      "js/globals.js",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js"
+    ],
+    "refer": [
+      "NewsList.html",
+      "MoreItem.html"
+    ]
+  },
+  "BidList.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "img/che.png",
+      "js/animateBackground-plugin.js",
+      "js/swiper.min.js",
+      "js/globals.js",
+      "js/raphael.js",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/BaseInfo.js",
+      "js/md5.js",
+      "css/animate.min.css",
+      "img/fang.png",
+      "img/jin.png"
+    ],
+    "refer": [
+      "BidItem.html"
+    ]
+  },
+  "indexSub.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "img/user.png",
+      "img/emil.png",
+      "img/touZi.jpg",
+      "img/banner.jpg",
+      "img/gongGao.png",
+      "img/huanKuan.jpg",
+      "img/zhuanQu.jpg",
+      "js/globals.js",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js",
+      "css/animate.min.css",
+      "css/swiper.min.css",
+      "js/swiper.min.js",
+      "img/che.png",
+      "img/fang.png",
+      "js/animateBackground-plugin.js",
+      "js/BaseInfo.js",
+      "js/raphael.js",
+      "img/jin.png"
+    ],
+    "refer": [
+      "NewsItem.html",
+      "BidItem.html",
+      "setting.html",
+      "ShortMessage.html",
+      "login.html"
+    ]
+  },
+  "UserIndex.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "css/iconfont.css",
+      "img/yinhangka.jpg",
+      "img/zhanneixin.jpg",
+      "img/tuijian.jpg",
+      "img/border.png",
+      "img/personal_bg.jpg",
+      "img/user_img.png",
+      "img/my_touzi.jpg",
+      "img/my_jiekuan.jpg",
+      "img/my_autotizi.jpg",
+      "img/kshuankuan.jpg",
+      "img/my_mingxi.jpg",
+      "js/globals.js",
+      "js/jquery.js",
+      "js/mui_use.js",
+      "js/md5.js",
+      "img/ic_set.png",
+      "img/user.png"
+    ],
+    "refer": [
+      "login.html",
+      "setting.html",
+      "RealName.html",
+      "MyBidList.html",
+      "MyDetailed.html",
+      "MyBankCard.html",
+      "MyInvitation.html",
+      "MyRecharge.html",
+      "MyWithdrawals.html",
+      "ShortMessage.html",
+      "Auto_toubiao.html",
+      "MyRedEnvelope.html"
+    ]
+  },
+  "NewsList.html": {
+    "resources": [
+      "css/animate.min.css",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/globals.js",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js",
+      "fonts/mui.ttf"
+    ],
+    "refer": [
+      "NewsItem.html"
+    ]
+  },
+  "NewsItem.html": {
+    "resources": [
+      "img/fengjing.gif",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/globals.js",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js"
+    ],
+    "refer": [
+      "LoanApplication.html"
+    ]
+  },
+  "BidItem.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/globals.js",
+      "css/animate.min.css",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js",
+      "img/gerenxinxi.png",
+      "img/shidirenzheng.png",
+      "fonts/mui.ttf",
+      "img/touzixiaxian.png",
+      "img/gongsixinxi.png",
+      "img/lixi2.png",
+      "img/tuichushijian.png",
+      "img/jisuan.png",
+      "js/mui.zoom.js",
+      "js/mui.previewimage.js",
+      "css/prevImg.css",
+      "touchTouch/touchTouch.jquery.js",
+      "touchTouch/touchTouch.css",
+      "touchTouch/preloader.gif"
+    ],
+    "refer": [
+      "MyRecharge.html",
+      "login.html",
+      "MyBidList.html"
+    ]
+  },
+  "login.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/globals.js",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js"
+    ],
+    "refer": [
+      "register.html",
+      "RealName.html",
+      "findpassword1.html",
+      "locker_change.html",
+      "locker_set.html",
+      "index.html"
+    ]
+  },
+  "setting.html": {
+    "resources": [
+      "img/aboutus.png",
+      "js/mui.min.js",
+      "img/shoushi.png",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "img/xiugaimima.png",
+      "img/mima.png",
+      "img/user.jpg",
+      "js/globals.js",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js"
+    ],
+    "refer": [
+      "locker_set.html",
+      "locker_change.html",
+      "ModifyPwd.html"
+    ]
+  },
+  "register.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/globals.js",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js"
+    ],
+    "refer": [
+      "RealName.html",
+      "ServiceAgreement.html",
+      "ReceiveCode.html"
+    ]
+  },
+  "RealName.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/globals.js",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js"
+    ],
+    "refer": []
+  },
+  "MyBidList.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/globals.js",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js",
+      "css/animate.min.css"
+    ],
+    "refer": []
+  },
+  "MyDetailed.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/globals.js",
+      "css/animate.min.css",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js"
+    ],
+    "refer": []
+  },
+  "MyBankCard.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/globals.js",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js",
+      "img/yinhangka.png",
+      "img/bankIcon.png",
+      "img/bank-logo.png"
+    ],
+    "refer": []
+  },
+  "MyInvitation.html": {
+    "resources": [
+      "img/erweima.gif",
+      "fonts/mui.ttf",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/globals.js",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js",
+      "css/animate.min.css"
+    ],
+    "refer": []
+  },
+  "MyRecharge.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "img/logo.png",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/globals.js",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js"
+    ],
+    "refer": [
+      "dianshang_main.html",
+      "fuiou.html"
+    ]
+  },
+  "dianshang_main.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/globals.js",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js"
+    ],
+    "refer": []
+  },
+  "fuiou.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/common.css",
+      "js/globals.js",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js"
+    ],
+    "refer": []
+  },
+  "MyWithdrawals.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "js/globals.js",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js"
+    ],
+    "refer": []
+  },
+  "ShortMessage.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/globals.js",
+      "css/animate.min.css",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js"
+    ],
+    "refer": []
+  },
+  "locker_set.html": {
+    "resources": [
+      "js/mui.locker.js",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/globals.js"
+    ],
+    "refer": []
+  },
+  "locker_verify.html": {
+    "resources": [
+      "js/mui.locker.js",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/globals.js",
+      "js/jquery.js"
+    ],
+    "refer": [
+      "login.html"
+    ]
+  },
+  "locker_change.html": {
+    "resources": [
+      "js/mui.locker.js",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/globals.js",
+      "js/jquery.js",
+      "js/mui_use.js"
+    ],
+    "refer": [
+      "locker_set.html"
+    ]
+  },
+  "More2.html": {
+    "refer": [
+      "NewsList.html",
+      "PlatformInfo.html",
+      "HelpCenter.html",
+      "AboutUs.html",
+      "MoreItem.html"
+    ],
+    "resources": [
+      "img/news.png",
+      "img/gonggao1.png",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "img/zaixiankefu.png",
+      "js/globals.js",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "img/jieshao.png",
+      "js/md5.js"
+    ]
+  },
+  "PlatformInfo.html": {
+    "refer": [
+      "NewsList.html"
+    ],
+    "resources": [
+      "img/news.png",
+      "img/gonggao1.png",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "img/zaixiankefu.png",
+      "js/globals.js",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js"
+    ]
+  },
+  "HelpCenter.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/globals.js",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js"
+    ],
+    "refer": [
+      "NewsList.html",
+      "BasicKnow.html",
+      "SiteRule.html"
+    ]
+  },
+  "MoreItem.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/globals.js",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js"
+    ],
+    "refer": [
+      "NewsItem.html",
+      "NewsList.html"
+    ]
+  },
+  "Auto_toubiao.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/globals.js",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js"
+    ],
+    "refer": []
+  },
+  "LoanApplication.html": {
+    "resources": [
+      "img/code.jpg",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/globals.js",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js"
+    ],
+    "refer": []
+  },
+  "MyRedEnvelope.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "img/hongbao_tu1.jpg",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/globals.js",
+      "css/animate.min.css",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js"
+    ],
+    "refer": []
+  },
+  "ServiceAgreement.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/globals.js",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js"
+    ],
+    "refer": []
+  },
+  "findpassword1.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/globals.js",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js"
+    ],
+    "refer": [
+      "findpassword2.html"
+    ]
+  },
+  "findpassword2.html": {
+    "refer": [
+      "ModifyPassword.html"
+    ],
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/globals.js",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js"
+    ]
+  },
+  "ModifyPwd.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/globals.js",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js"
+    ],
+    "refer": [
+      "login.html"
+    ]
+  },
+  "ReceiveCode.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/globals.js",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js"
+    ],
+    "refer": []
+  },
+  "indexSub2.html": {
+    "resources": [
+      "img/emil.png",
+      "js/swiper.min.js",
+      "css/animate.min.css",
+      "img/zhuanQu.jpg",
+      "js/BaseInfo.js",
+      "img/user.png",
+      "img/fang.png",
+      "img/banner.jpg",
+      "img/touZi.jpg",
+      "css/swiper.min.css",
+      "js/animateBackground-plugin.js",
+      "img/gongGao.png",
+      "js/raphael.js",
+      "img/huanKuan.jpg",
+      "js/globals.js",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/mui_use.js",
+      "js/jquery.js",
+      "js/md5.js"
+    ],
+    "refer": [
+      "BidItem.html"
+    ]
+  }
+}
