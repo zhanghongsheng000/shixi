@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>权限管理</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script>
+			;
+			(function(win, doc) {
+				function change() {
+					doc.documentElement.style.fontSize = 20 * doc.documentElement.clientWidth / 320 + 'px';
+				}
+				change();
+				win.addEventListener('resize', change, false);
+			})(window, document);
+		</script>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="header">
+				<a onclick="history.go(-1)"><img src="images/back.png" class="back fl"></a>
+				<a href="#" class="mangage">权限管理</a>
+				<!--<a><img src="images/menu.png" class="menu fr"></a>-->
+			</div>
+			<div class="clear"></div>
+			<div class="content">
+				<div class="role">
+					<p>支持多个角色的设置，分配系统的多种操作权限。维护系统和数据安全。</p>
+					<img src="images/mangage.png" />
+				</div>
+				<div class="role1">
+					<p>各个角色的权限设置</p>
+					<img src="images/mangage1.png" />
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

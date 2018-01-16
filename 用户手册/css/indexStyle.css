@@ -1,0 +1,104 @@
+
+.mainC{background-color: #00A5C3;}
+
+.clear{
+	clear: both;
+}
+.head-title {
+	width: 16rem;
+	height: 10rem;
+	background: url(../images/index_bg.jpg);
+	background-size:16rem 10rem ;
+	position: relative;
+}
+
+.head-main-name {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 110px;
+	padding: 10px;
+}
+
+.head-main-name .head-main-title {
+	font-size: 40px;
+	font-weight: bold;
+}
+
+.head-main-name p {
+	color: #FFFFFF;
+	margin-top: 40px;
+	line-height: 30px;
+}
+
+.list-menu-item a{
+	position: relative;
+}
+
+.list-menu-item img.icon{
+	width: 48px;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+.list-menu-item-right {
+	width: 100%;
+	float: right;
+
+	padding-left: 70px;
+	font-size: 20px;
+	font-weight: bold;
+	color: #666666;
+	position: relative;
+}
+
+.menuName{
+	height: 70px;
+		line-height: 70px;
+}
+
+.item-line{
+	width:100%;
+	border-bottom: 1px solid #D5D5D5;
+}
+
+img.downBtn{
+	width: 20px;
+	float: right;
+	margin-top: 20px;
+	margin-right: 20px;
+}
+
+.list-menuItem{
+	margin: 0px!important;
+	padding: 0px!important;
+	list-style-type: none;
+}
+
+.list-menuItem .downBtn{
+	margin-top: 0px;
+}
+
+.list-menuItem li.sItem{
+	margin-top: 30px;
+	font-size: 14px;
+	color:#23A0B2;
+}
+
+.list-menuItem li.sItem:first-child{
+	margin-top: 0px;
+}
+
+.list-menuItem-item{
+	margin: 0px!important;
+	padding: 0px!important;
+	list-style-type: none;
+}
+
+
+
+.list-menuItem-item li{
+	margin-top: 30px;
+	color: #666666!important;
+}

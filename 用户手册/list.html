@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/indexStyle.css" rel="stylesheet" />
+		<title>用户手册</title>
+		<style>
+			.mui-title,
+			.mui-action-back {
+				color: #FFFFFF;
+			}
+			
+			body,
+			.mui-content {
+				background-color: #FFFFFF;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav mainC">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">用户手册</h1>
+		</header>
+		<div class="mui-content">
+			<div class="list-menu-main">
+				<div class="list-menu-item">
+					<a>
+						<img class="icon" src="images/jbgg.png" />
+						<div class="list-menu-item-right">
+							<div class="menuName TopBtn">基本功能 <img class="downBtn" src="images/up.png"></div>
+							<ul class="list-menuItem">
+								<li class="sItem ">
+									<div class="source" index=0>学校信息管理 <img class="downBtn" src="images/down.png"></div>
+									<ul class="list-menuItem-item" style="display:none;">
+										<li class="goto" data-url="Article.html?s=xuexiaoxinxi">学校信息 <img class="downBtn" src="images/rightIcon.png"></li>
+									</ul>
+								</li>
+								<li class="sItem ">
+									<div class="source" index=1>学生信息管理 <img class="downBtn" src="images/down.png"></div>
+									<ul class="list-menuItem-item" style="display:none;">
+										<li class="goto" data-url="Article.html?s=xueshengxinxidaoru">学生信息导入 <img class="downBtn" src="images/rightIcon.png"></li>
+										<li class="goto" data-url="Article.html?s=xueshengxinxichaxun">学生信息查询 <img class="downBtn" src="images/rightIcon.png"></li>
+										<li class="goto" data-url="Article.html?s=xueshengxinxibianji">学生信息编辑 <img class="downBtn" src="images/rightIcon.png"></li>
+										<li class="goto" data-url="Article.html?s=xueshengxinxiluru">学生信息录入 <img class="downBtn" src="images/rightIcon.png"></li>
+										<li class="goto" data-url="Article.html?s=xueshengxuehaobulu">学生学号补录 <img class="downBtn" src="images/rightIcon.png"></li>
+										<li class="goto" data-url="Article.html?s=kuaididanhaobulu">快递单号补录 <img class="downBtn" src="images/rightIcon.png"></li>
+									</ul>
+								</li>
+								<li class="sItem ">
+									<div class="source" index=2>照片采集补录 <img class="downBtn" src="images/down.png"></div>
+									<ul class="list-menuItem-item" style="display:none;">
+										<li class="goto" data-url="Article.html?s=zhaopianruku">照片入库 <img class="downBtn" src="images/rightIcon.png"></li>
+										<li class="goto" data-url="Article.html?s=zhaopianshenhe">照片审核 <img class="downBtn" src="images/rightIcon.png"></li>
+										<li class="goto" data-url="Article.html?s=zhaopiantihuan">照片替换 <img class="downBtn" src="images/rightIcon.png"></li>
+									</ul>
+								</li>
+								<li class="sItem ">
+									<div class="source" index=3>数据导出管理 <img class="downBtn" src="images/down.png"></div>
+									<ul class="list-menuItem-item" style="display:none;">
+										<li class="goto" data-url="Article.html?s=yuanxiaodaochu">院校导出 <img class="downBtn" src="images/rightIcon.png"></li>
+										<li class="goto" data-url="Article.html?s=shangchuanjiaoyubu">上传教育部 <img class="downBtn" src="images/rightIcon.png"></li>
+										<li class="goto" data-url="Article.html?s=shangbaopici">上报批次 <img class="downBtn" src="images/rightIcon.png"></li>
+										<li class="goto" data-url="Article.html?s=paishejiludaochu">拍摄记录导出 <img class="downBtn" src="images/rightIcon.png"></li>
+									</ul>
+								</li><li class="sItem ">
+									<div class="source" index=4>权限管理 <img class="downBtn" src="images/down.png"></div>
+									<ul class="list-menuItem-item" style="display:none;">
+										<li class="goto" data-url="Article.html?s=quanxian">权限管理 <img class="downBtn" src="images/rightIcon.png"></li>
+									</ul>
+								</li>
+								<li class="sItem ">
+									<div class="source" index=5>应用程序 <img class="downBtn" src="images/down.png"></div>
+									<ul class="list-menuItem-item" style="display:none;">
+										<li class="goto" data-url="Article.html?s=yingyong">应用管理 <img class="downBtn" src="images/rightIcon.png"></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</a>
+					<div class="clear"></div>
+				</div>
+
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				
+				if(localStorage.getItem('data') != null) {
+					var ss = localStorage.getItem('data').split(',');
+					for(var i = 0; i < ss.length; i++) {
+						$('.source').eq(ss[i]).find('.downBtn').attr('src', 'images/up.png');
+						$('.list-menuItem-item').eq(ss[i]).show();
+						$('.source').eq(ss[i]).addClass('on');
+					}
+					localStorage.removeItem('data')
+				}
+
+				$('.TopBtn').on('tap', function() {
+					if($(this).find('.downBtn').attr('src').indexOf('down') > -1) {
+						$('.list-menuItem').show();
+						$(this).find('.downBtn').attr('src', 'images/up.png')
+					} else {
+						$('.list-menuItem').hide();
+						$(this).find('.downBtn').attr('src', 'images/down.png')
+					}
+
+				});
+
+				$('.source').on('tap', function() {
+					if($(this).find('.downBtn').attr('src').indexOf('down') > -1) {
+						$(".list-menuItem-item").eq($(this).attr('index')).show();
+						$(this).find('.downBtn').eq(0).attr('src', 'images/up.png');
+						$(this).addClass("on");
+					} else {
+						$(".list-menuItem-item").eq($(this).attr('index')).hide();
+						$(this).find('.downBtn').eq(0).attr('src', 'images/down.png')
+						$(this).removeClass("on");
+					}
+				})
+
+				$('.goto').on('tap', function() {
+					var pu = [];
+					$('.source.on').each(function() {
+						pu.push($(this).attr('index'));
+					})
+					localStorage.setItem('data',pu.join(','))
+					window.location.href = $(this).attr('data-url');
+				})
+			})
+		</script>
+	</body>
+
+</html>

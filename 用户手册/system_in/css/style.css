@@ -1,0 +1,82 @@
+.app1{
+	background: url(../img/app1_bg.png);
+	width: 100%;
+	height: 100%;
+	background-size:100% 100% ;
+}
+
+.app_title1{
+	text-align: center;
+}
+.app_title1 img{
+	width: 5.875rem;
+	margin-top: 2rem;
+}
+.app1 p{
+	margin-top: 1.5rem;
+	text-indent: 2em;
+	font-size: 0.55rem;
+	line-height: 1.1rem;
+	padding:  0 1.4rem;
+	color: #FFFFFF;
+}
+.app1 p span{
+	color: #ffa200;
+}
+.app2{
+	background: url(../img/APP2_bg.png);
+	width: 100%;
+	height: 100%;
+	background-size:100% 100% ;
+}
+.app_title2{
+	text-align: center;
+}
+.app_title2 img{
+	width: 10.3rem;
+	margin-top: 2rem;
+}
+.app2 p{
+	margin-top: 1.5rem;
+	text-indent: 2em;
+	font-size: 0.55rem;
+	line-height: 1.1rem;
+	padding:  0 1.4rem;
+	color: #FFFFFF;
+}
+.app2_ph{
+	width: 14.05rem;
+	height: 10rem;
+	margin-top: 1.5rem;
+	margin-left: 1rem;
+}
+.app3_ph{
+	width: 11.1rem;
+	height: 10rem;
+	margin-top: 1rem;
+	margin-left: 2.5rem;
+}
+.app4_ph{
+	width: 11.1rem;
+	height: 10rem;
+	margin-top: 1.2rem;
+	margin-left: 2.5rem;
+}
+.app5_ph{
+	width: 11.1rem;
+	height: 6rem;
+	margin-top: 2.5rem;
+	margin-left: 2rem;
+}
+.app6_ph{
+	width: 11.6rem;
+	height: 9rem;
+	margin-top: 2rem;
+	margin-left: 2.2rem;
+}
+.app7_ph{
+	width: 11.6rem;
+	height: 11.6rem;
+	margin-top: 1rem;
+	margin-left: 2.2rem;
+}

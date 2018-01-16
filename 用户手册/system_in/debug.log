@@ -1,0 +1,11 @@
+[0213/164956.678:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
+[0213/164956.678:ERROR:exception_snapshot_win.cc(87)] thread ID 3036 not found in process
+[0213/164956.678:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0213/164956.694:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess: 已尝试访问正在退出的过程。  (0xc000010a)
+[0213/165103.830:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
+[0213/165103.832:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
+[0213/165103.854:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
+[0213/165103.854:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
+[0213/165103.859:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
+[0213/165103.859:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
+[0213/165103.907:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess: 已尝试访问正在退出的过程。  (0xc000010a)
