@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<!-- Bootstrap core CSS -->
+		<link href="public/bootstrap.min.css" title="" rel="stylesheet" />
+		<link rel="stylesheet" href="css/plugins/toastr/toastr.min.css" />
+		<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+		<link href="public/animate.css" rel="stylesheet">
+		<link rel="stylesheet" href="public/inspinia.css" />
+		<!--<link rel="stylesheet" href="css/my_TiBaoJiLu.css" />-->
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		    <script src="public/html5shiv.min.js"></script>
+		    <script src="public/respond.min.js"></script>
+		<![endif]-->
+		<title>内部知识</title>
+		<style>
+			ul,li{
+				margin:0;
+				padding:0;
+				list-style: none;
+			}
+			body{
+				background:#F5F5F5;
+			}
+			.wrapper-content>h3 {
+				font-weight: 500;
+				padding-left: 10px;
+				border-left: 2px solid #88B7E0;
+			}
+			
+			.right_box {
+				margin-top: 15px;
+				border-top: 1px dotted #666;
+				padding: 15px 0;
+				font: 12px "microsoft yahei", Arial, Helvetica, sans-serif !important;
+				color: #333;
+				font-weight: 700;
+			}
+			.topTab,.tabList{
+				overflow: hidden;
+			}
+			.tabList{
+				width: 60%;
+				float: left;
+			}
+			.tabList li{
+				float: left;
+				width: 19%;
+				text-align: center;
+				line-height: 40px;
+				background:#B3B3B3;
+				color:#fff;
+				margin-right:1%;
+				cursor: pointer;
+			}
+			.tabList li.active{
+				background:#1297E2;
+			}
+			.searchBox{
+				display: inline-block;
+				width: 40%;
+				float: right;
+			}
+			.searchBox button{
+				float: right;
+				border-radius: 0;
+				outline: none;
+			}
+			.searchBox input{
+				display: inline-block;
+				width: 60%;
+				float: right;
+			}
+			.fenleisec{
+				padding:0px 0 15px;
+				background:#fff;
+				overflow: hidden;
+			}
+			.fenleiul{
+				width: 60%;
+				overflow: hidden;
+			}
+			.fenleiul li{
+				float: left;
+				width: 17%;
+				text-align: center;
+				color:#fff;
+				background:#1297E2;
+				margin-right: 1%;
+				line-height: 34px;
+			}
+			.fenleiul li.title{
+				width: 9%;
+				background:#fff;
+				color:#333;
+			}
+			.grayprogess{
+				width: 100%;
+				height:10px;
+				background:#F5F5F5;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="wrapper" class="container">
+			<!--标编辑-->
+			<div id="biaobj" class=" wrapper wrapper-content animated fadeInRight">
+				<h3>内部知识</h3>
+				<div class="right_box" id="right_box">
+					<div class="topTab">
+						<ul class="tabList">
+							<li class="active">手机卡类</li>
+							<li>购机类</li>
+							<li>宽带类</li>
+							<li>充值缴费类</li>
+							<li>其他</li>
+						</ul>
+						<div class="searchBox">
+							<button type="button" class="btn btn-w-m btn-success bright">搜索</button>
+							<input type="text" class="form-control" />
+						</div>
+					</div>
+					<!--表格部分-->
+					<div class="ibox-content">
+						<div class="fenleisec">
+							<ul class="fenleiul">
+								<li class="title">二级类别</li>
+								<li>全部</li>
+								<li>关键业务</li>
+								<li>非关键业务</li>
+								<li>查询业务</li>
+								<li>咨询业务</li>
+							</ul>
+						</div>
+						<div class="grayprogess"></div>
+						<div class="row" style="padding:10px 5px;">
+							<div class="col-sm-12">
+								<table class="table table-striped table-bordered table-hover dataTables-example">
+									<thead>
+										<tr>
+											<th>知识编号</th>
+											<th>标题</th>
+											<th>浏览次数</th>
+											<th>作者</th>
+											<th>发布日期</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<a href="javascript:void(0)">102101</a>
+											</td>
+											<td>手机卡注销业务的注意事项</td>
+											<td>216</td>
+											<td>孙海涛</td>
+											<td>2017-06-25</td>
+										</tr>
+										<tr>
+											<td>
+												<a href="javascript:void(0)">102101</a>
+											</td>
+											<td>手机卡注销业务的注意事项</td>
+											<td>216</td>
+											<td>孙海涛</td>
+											<td>2017-06-25</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-5">
+								<div class="dataTables_info" id="editable_info" role="status" aria-live="polite">显示从1到8，总8条</div>
+							</div>
+							<div style="height:27px;" class="col-sm-7">
+								<div class="dataTables_paginate paging_simple_numbers" id="editable_paginate">
+									<ul class="pagination pull-right" style="margin:-3px 0;">
+										<li class="paginate_button previous" id="editable_previous">
+											<a href="#" aria-controls="editable" data-dt-idx="0" tabindex="0">上一页</a>
+										</li>
+										<li class="paginate_button previous" id="editable_previous">
+											<a href="#" aria-controls="editable" data-dt-idx="0" tabindex="1">1</a>
+										</li>
+										<li class="paginate_button previous" id="editable_previous">
+											<a href="#" aria-controls="editable" data-dt-idx="0" tabindex="2">2</a>
+										</li>
+										<li class="paginate_button previous" id="editable_previous">
+											<a href="#" aria-controls="editable" data-dt-idx="0" tabindex="3">3</a>
+										</li>
+										<li class="paginate_button previous" id="editable_previous">
+											<a href="#" aria-controls="editable" data-dt-idx="0" tabindex="4">4</a>
+										</li>
+										<li class="paginate_button previous" id="editable_previous">
+											<a href="#" aria-controls="editable" data-dt-idx="0" tabindex="5">下一页</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="public/jquery-1.11.3.js"></script>
+		<script src="public/bootstrap.min.js" type="text/javascript"></script>
+		<script src="js/plugins/lhgdialog/lhgdialog.js"></script>
+		<!-- 弹出警示框 -->
+		<script src="js/plugins/toastr/toastr.min.js"></script>
+		<!-- 弹出确认框 -->
+		<script src="public/artDialog4.1.7/artDialog.js?skin=blue"></script>
+		<script src="public/artDialog4.1.7/plugins/iframeTools.js"></script>
+
+		<script src="js/templet_form.js"></script>
+	</body>
+
+</html>
