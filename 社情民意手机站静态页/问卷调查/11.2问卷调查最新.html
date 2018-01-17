@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<title>在线调查详情</title>
+	<link rel="stylesheet" href="css/base.css"/>
+	<link rel="stylesheet" href="css/index.css"/>
+	<link href="css/demo.css" rel="stylesheet" type="text/css">
+	
+	
+	<script>
+	;(function(win,doc){
+		function change(){
+			doc.documentElement.style.fontSize=20*doc.documentElement.clientWidth/320+'px';
+		}
+		change();
+		win.addEventListener('resize',change,false);
+	})(window,document);
+	</script>
+	<style>
+   
+		.city{
+			background: #FFFFFF;
+		}
+		.area{
+			background: #FFFFFF;
+		}
+	</style>
+</head>
+<body>         
+	
+ 
+<div class="main">
+	<div class="header">
+      	<img src="images/fanhui.png" class="fanhui left"/>
+     	<h2>在线调查</h2>
+     	<span class="right zhuce"><img src="images/wenjuan.png" class="zxdc_r"><br /><a href="#" class="tongji1">统计</a></span>
+	</div>
+	<div class="clear"></div>
+	<div class="zxdcxq_content">
+		<div class="dc_date">
+			<span>在线调查时间：<span>2017-10-20</span></span>
+		</div>
+		<div class="liubai3"></div>
+		<div class="question_shuoming">
+			<span>关于河北省大众对转基因农产品认知情况的调查</span>
+		</div>
+		<div class="liubai3"></div>
+		<div class="question">
+			<span>Q1: 您所在的城市是：</span>
+			<br />
+			<div class="xuanxiang">
+				<select name="province1" class="province" style="display: none ;"></select><!--省默认为河北省-->
+				<select name="city1" class="city" style="margin-left: 1rem;"></select><i>市 </i>
+				<select name="area1" class="area"></select><i>区/县</i></li>
+			</div>
+		</div>
+		<div class="question1 ">
+			<span>Q2: 您的性别：</span>
+			<div class="js-demo-1">
+				<label><input type="radio" name="radio" value="0"> 男</label>
+				<br />
+				<label><input type="radio" name="radio" value="1" >女</label>
+				<br />
+			</div>
+		</div>
+		<div class="question1 ">
+			<span>Q3: 您的年龄层次：</span>
+			<div class="js-demo-1">
+				<label><input type="radio" name="age" value="0">15岁以下</label>
+				<br />
+				<label><input type="radio" name="age" value="0">16岁~35岁</label>
+				<br />
+				<label><input type="radio" name="age" value="0">36岁~60岁</label>
+				<br />
+				<label><input type="radio" name="age" value="0">60岁以上</label>
+			</div>
+		</div>
+		<div class="question1">
+			<span>Q4: 这是多选：</span>
+			<div class="js-demo-2">
+			<label><input type="checkbox" name="checkbox" value="0"/> 交友聊天</label>
+			<br />
+			<label><input type="checkbox" name="checkbox" value="1" />网络游戏</label>
+			<br />
+			<label><input type="checkbox" name="checkbox" value="2" />程序编码</label>
+			<br />
+			<label><input type="checkbox" name="checkbox" value="3" />网上购物</label>
+			</div>
+		</div>
+		<div class="question1 ">
+			<span>Q5: 这是禁用：</span>
+			<div class="js-demo-1">
+				<label><input type="radio" name="age" value="0" disabled="disabled">15岁以下</label>
+				<br />
+				<label><input type="radio" name="age" value="0" disabled="disabled">16岁~35岁</label>
+				<br />
+				<label><input type="radio" name="age" value="0" disabled="disabled">36岁~60岁</label>
+				<br />
+				<label><input type="radio" name="age" value="0" disabled="disabled">60岁以上</label>
+			</div>
+		</div>
+		
+	
+		 <div class="xq_content">
+		 	<h4><input type="button" value="提交"></h4>
+		 </div>
+	</div>
+	<div class="thanks" style="display: block;width: 10rem;"><p>请回答完所有问题再提交！</p></div>
+		
+	
+	
+</div>
+<div class="footer">
+	<div class="youqlj">
+		<a href="#"> 河北省社情民意云平台（www.hebsqmy.cn）＊2017 版权所有 All Rights Reserved.</a>
+		<a href="#"> 主办单位名称：河北省社情民意研究会   网站备案号：冀ICP备123456789号</a>
+	</div>
+</div>
+</body>
+
+	<script src="js/PCASClass.js"></script>
+	<script language="javascript" defer>
+		new PCAS("province1","city1","area1","河北"," "," ");
+	</script>
+	
+	<script src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script src="js/ion.checkRadio.min.js"></script>
+	<script language="javascript">
+		$(".js-demo-1").find("input").ionCheckRadio();
+		$(".js-demo-2").find("input").ionCheckRadio();
+	</script>
+	
+</html>

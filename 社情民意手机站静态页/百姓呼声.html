@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<title>百姓呼声</title>
+	<link rel="stylesheet" href="css/base.css"/>
+	<link rel="stylesheet" href="css/index.css"/>
+	
+	<script>
+	;(function(win,doc){
+		function change(){
+			doc.documentElement.style.fontSize=20*doc.documentElement.clientWidth/320+'px';
+		}
+		change();
+		win.addEventListener('resize',change,false);
+	})(window,document);
+	</script>
+
+<style type="text/css">
+	textarea::-webkit-input-placeholder{ /*WebKit browsers*/
+			padding-top: 0.2rem;
+			padding-left: 0.2rem;
+			color: #b9b9b9;
+			font-size: 0.55rem;
+			}
+	textarea::-moz-input-placeholder{ /*Mozilla Firefox*/
+			padding-top: 0.2rem;
+			padding-left: 0.2rem;
+			color: #b9b9b9;
+			font-size: 0.55rem;
+			}
+	textarea::-ms-input-placeholder{ /*Internet Explorer*/ 
+			padding-top: 0.2rem;
+			padding-left: 0.2rem;
+			color: #b9b9b9;
+			font-size: 0.55rem;
+			}
+</style>
+		
+
+</head>
+<body>         
+	
+ 
+<div class="main">
+	<div class="header">
+      	<img src="images/fanhui.png" class="fanhui left"/>
+     	<h2>百姓呼声</h2>
+	</div>
+	<div class="liuyan_content">
+		<ul class="zhuce2" >
+			<li class="pos"><span class="left name">*</span><label>留言人：</label><input type="text" class="long_size" /></li>
+			<li class="pos"><span class="left name">*</span><label>电 &nbsp;&nbsp;话：</label><input type="text" class="long_size" /></li>
+			<li class="pos"><span class="left name">&nbsp;</span><label>年 &nbsp;&nbsp;龄：</label><input type="text" class="long_size" /></li>
+			<li><span class="left">&nbsp;</span><label>公司名称：</label><input type="text" class="long_size"></li>
+			<li class="pos"><span class="left name">&nbsp;</span><label>职 &nbsp;&nbsp;务：</label><input type="text" class="long_size" /></li>
+			<li><span class="left">*</span><label>所属机构：</label><input type="text" class="long_size"></li>
+			<li><span class="left">*</span><label>所属类别：</label><input type="text" class="long_size"></li>
+			<li><span class="left">*</span><label>时间标题：</label><input type="text" class="long_size"></li>
+			<li class="liuyan_nr" style="height: 5.5rem;"><span class="left">*</span><label>留言内容：</label><textarea placeholder="请输入您叙述的内容……"></textarea></li>
+		</ul>
+		<ul class="zhuce3 ">
+			<input type="file" name="资料上传"  class="hide" id="File">
+			<li><span class="left">*</span><label>资料上传：</label><img src="images/shangchuan.jpg" class="clp upload" onclick = "clp();"><i class="right">可上传视频，图片，文件等。</i></li>
+			<div class="file hide">
+				<img src="images/file.jpg" />
+			</div>
+		</ul>
+		<div class="liji_zhuce1">
+			<a href="#">提交</a>
+		</div>
+	</div>
+	<div class="text_shuoming">
+		<span>留言说明：</span>
+		<p> 欢迎您为河北的发展建言献策，通过平台留言向各级党政机关反映问题、提出意见建议是您的合法权利，请遵守有关法律法规，倡导网络文明。</p>
+		<p>一、如何进行留言</p>
+		<p>选择“所在地区”确认留言的地区，选择《类别》确认留言类别，填写留言人名称、联系方式、留言内容（字数不得超过1000字）等信息后，选择《提交》即可完成留言。</p>
+		<p>二、留言提示</p>
+		<p>为了及时、有效的处理您反映的问题，请写清楚事件发生的时间、地点及主要事实和证据，并尽量留下您的真实姓名和电话，以便在核实情况时与您取得联系。</p>
+		<p>三、哪些留言不予接受</p>
+		<p> 本着知民意、解民忧、汇民智、聚民心的原则，社情民意云平台全面接受涉及河北省范围内的问题反映、政策咨询、意见建议。以下情况不予接受：</p>
+		<p>（1） 已经过诉讼程序的涉法、涉诉问题。包括执法机关按照国家法律、法规已处理的问题或需执法机关按照国家法律、法规裁定的问题。</p>
+		<p>（2） 公民、法人间的民事纠纷问题；</p>
+		<p>（3） 问题涉及军队；</p>
+		<p>（4）诉求、咨询内容模糊不详，无从调查的；</p>
+		<p>（5）其他超出权责范围的问题。</p>
+	</div>
+</div>
+<div class="footer">
+	<div class="youqlj">
+		<a href="#"> 河北省社情民意云平台（www.hebsqmy.cn）＊2017 版权所有 All Rights Reserved.</a>
+		<a href="#"> 主办单位名称：河北省社情民意研究会   网站备案号：冀ICP备123456789号</a>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery.js" ></script>
+<script>
+	function clp(){
+		return  $("#File").click();
+	};
+	$('.upload').click(function(){
+		$('.upload').hide();
+		$('.file').show();
+	})
+</script>
+	
+</html>

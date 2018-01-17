@@ -1,0 +1,959 @@
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+.clear{
+	clear: both;
+}
+.header{
+	background: rgb(229,26,20);
+	height: 2.2rem;
+}
+.header select{
+	color: #ffffff;
+}
+.city2{
+	font-size:0.55rem;
+	border: none;
+	margin-left: 0.2rem;
+	margin-top: 0.8rem;
+	appearance:none;
+	-moz-appearance:none;
+	-webkit-appearance:none;
+  	background: url(../images/xiala.png) no-repeat scroll right center transparent;
+  	background-size: 0.5rem 0.275rem;
+  	padding-right: 0.625rem;
+  	padding-left: 0.375rem;
+  	
+}
+.city option{
+	color: #333333;
+}
+.header input{
+	border: none;
+	border-radius: 0.5rem;
+	width: 8.05rem;
+	height: 1.25rem;
+	margin-top: 0.5rem;
+	margin-left: 0.375rem;
+	background: rgb(192,17,12);
+	padding-left: 1.3rem;
+
+	color: #FFFFFF;
+}
+input::-webkit-input-placeholder{
+	color: #FFFFFF;
+	padding-left: 2.5rem;
+	font-size: 0.5rem;
+}
+.search{
+	width: 0.7rem;
+	height: 0.725rem;
+	margin-left: -8.8rem;
+	margin-top: 0.75rem;
+}
+.guanlidl{
+	margin-top: 0.8rem;
+	font-size: 0.55rem;
+	color: #FFFFFF;
+	margin-right: 0.45rem;
+}
+.biaoti{
+	width: 100%;
+	height: 5.45rem;
+}
+.tufashijian{
+	width: 3.75rem;
+	margin: 0.9rem 0rem 0 0.25rem;
+}
+.tufashijian img{
+	margin-left: 1.25rem;
+	width: 1.175rem;
+	height:1.175rem;
+}
+.tufashijian p a{
+	font-size: 0.56rem;
+	color: #333333;
+}
+.tufashijian p{
+	text-align: center;
+}
+.picture_new{
+	background:rgb(246,246,246);
+	margin-top: 0.375rem;
+	padding-top: 0.45rem;
+}
+.biaoti1 span{
+	font-size: 0.75rem;
+	color: #FFFFFF;
+}
+.biaoti1 a{
+	font-size: 0.6rem;
+	color: #FFFFFF;
+	margin-top: 0.15rem;
+}
+.biaoti1{
+	background: url(../images/pic_new_bg.jpg);
+	background-size:16rem 1.75rem ;
+	background-repeat: no-repeat;
+	padding: 0.375rem 0.45rem;
+}
+.new_content{
+	padding: 0rem 0.45rem;
+	margin-top: 0.525rem;
+	padding-bottom: 0.5rem;
+}
+.new_xiangq{
+	margin-left: 0.3rem;
+	margin-right: 0.325rem;
+	margin-bottom: 0.2rem;
+}
+.new_xiangq img{
+	width: 6.9rem;
+	height: 3.9rem;
+}
+.new_xiangq p{
+	font-size: 0.6rem;
+	line-height: 1.15rem;
+}
+.new_xiangq p a{
+	color: #333333;
+}
+.tzgg_content a{
+	font-size: 0.7rem;
+	line-height: 1.5rem;
+	color: #333333;
+}
+.tzgg_content ul li{
+	padding-top: 0.3rem;
+	height: 1.2rem;
+}
+.tzgg_content a span{
+	font-size: 0.65rem;
+}
+.tzgg_content{
+	padding: 0rem 0.45rem;
+}
+.tzgg_content ul{
+	margin-top: 0.3rem;
+}
+.new_content1{
+	padding: 0rem 0.45rem;
+	margin-top: 0.525rem;
+	
+}
+.liubai{
+	background: rgb(246,246,246);
+	height: 0.5rem;
+	width: 100%;
+	margin-top: 0.2rem;
+}
+.footer{
+	background: rgb(190,18,3);
+	width: 100%;
+}
+.footer a{
+	display: block;
+	font-size: 0.4rem;
+	line-height: 0.9rem;
+	color:#FFFFFF;
+	text-align: center;
+}
+.youqlj{
+	padding: 0.7rem 0rem;
+}
+
+
+/***************新闻列表******************/
+.fanhui{
+	width: 0.375rem;
+	height: 0.7rem;
+	margin-top: 0.7rem;
+	padding-left: 0.4rem;
+}
+.header h2{
+	text-align: center;
+	font-size: 0.8rem;
+	padding-top: 0.6rem;
+	color: #FFFFFF;
+	width: 15rem;
+}
+.chakan_more{
+	background: rgb(246,246,246);
+	margin-top: 0.5rem;
+}
+.chakan_more a{
+	display: block;
+	font-size: 0.65rem;
+	line-height: 1.05rem;
+	color: #bdbdbd;
+	padding:0.3rem 0;
+	text-align: center;
+}
+
+
+/***************新闻详情******************/
+.xq_content{
+	margin-top: 0.9rem;
+}
+.xq_content h3{
+	text-align: center;
+	font-size:0.7rem ;
+	color:#494949;
+	line-height: 0.75rem;
+}
+.fabu_time{
+	display: block;
+	text-align: center;
+	font-size: 0.5rem;
+	line-height: 0.75rem;
+	margin: 0.45rem 0 0.3rem 0;
+	color:#878787 ;
+}
+.xq_content img{
+	width: 100%;
+	height: 7.6rem;
+}
+.xq_content p{
+	font-size: 0.65rem;
+	line-height:1.15rem;
+	color: #4b4b4b;
+	text-indent: 2em;
+}
+.miaoshu{
+	padding: 0.8rem 0.45rem;
+}
+
+
+
+
+
+/************4捐赠详情*************************/
+.woyaojz{
+	text-align: center;
+	margin-bottom: 0.7rem;
+}
+.woyaojz a{
+	font-size: 0.6rem;
+	background: rgb(251,0,0);
+	color: #FFFFFF;
+	padding: 0.15rem 0.5rem;
+	border-radius: 0.2rem;
+}
+
+
+/*************4公益捐款**************/
+.liubai1{
+	background: rgb(246,246,246);
+	height: 0.375rem;
+	width: 100%;
+}
+.axdd_content{
+	background: url(../images/gyjz_bg.jpg);
+	background-size: 100% 1.7rem;
+	height: 1.4rem;
+	padding: 0.2rem 0rem;
+}
+.axdd_content span{
+	font-size: 0.75rem;
+	font-family: "宋体";
+	color: #FFFFFF;
+	margin-left: 0.8rem;
+}
+.axdd_content a{
+	font-size: 0.6rem;
+	color: #aa0d06;
+	padding-right: 0.45rem;
+}
+.aixin{
+	padding:0 0.45rem;
+}
+.aixin ul{
+	margin-top: 0.5rem;
+}
+.aixin ul li{
+	font-size: 0.65rem;
+	height: 1.25rem;
+}
+.aixin ul li a{
+	color: #454545;
+}
+.date{
+	margin-left: 3.1rem;
+}
+.gy_active{
+	padding:0.2rem 0.45rem;
+}
+.gy_active img{
+	width: 15.05rem;
+	height: 7.65rem;
+}
+.gy_active p{
+	font-size: 0.65rem;
+	line-height: 1.5rem;
+}
+.zxym_person{
+	width: 7.0rem;
+	margin-left: 0.35rem;
+	margin-right: 0.2rem;
+	
+}
+.zhuxueym{
+	padding: 0.6rem 0.45rem;
+}
+.zhuxueym img{
+	width: 6.95rem;
+	height: 5.25rem;
+}
+.zhuxueym p{
+	text-align: center;
+	font-size: 0.6rem;
+	line-height: 1.15rem;
+	margin: 0.2rem 0;
+}
+
+
+/**************公益捐赠列表******************/
+.liubai2{
+	background: rgb(246,246,246);
+	height: 0.45rem;
+	width: 100%;
+}
+.gyjz_list{
+	padding:0 0.45rem;
+}
+.gyjz_list ul{
+	margin-top: 0.5rem;
+}
+.gyjz_list ul li{
+	font-size: 0.65rem;
+	height: 1.5rem;
+}
+.gyjz_list ul li a{
+	color: #454545;
+}
+.gyjz_list ul li a label{
+	color: #ff0700;
+}
+.gyjz_list ul li a span{
+	color: #FFFFFF;
+	background: #ff0700;
+	padding: 0.1rem 0.8rem;
+	border-radius: 0.2rem;
+	font-size: 0.6rem;
+}
+
+
+/*****************便民电话******************/
+
+
+.ggrx{
+	width:2.5rem;
+	margin: 1.2rem 0.55rem 0.4rem  0.925rem/*0.925rem*/;
+}
+.ggrx img{
+	width: 2.1rem;
+	height:2.1rem;
+}
+.ggrx p a{
+	font-size: 0.56rem;
+	color: #333333;
+}
+.ggrx p{
+	margin-top: 0.2rem;
+	text-align: center;
+	margin-left: -0.4rem;
+}
+.bianminth_content{
+	margin-bottom: 15.2rem;
+	padding-bottom: 1.8rem;
+}
+
+
+/*********便民电话详情************/
+.table3{
+	margin: 0.55rem 0 0.875rem 0;
+	text-align: center;
+	border-right: 1px solid rgb(255,168,168);
+	border-bottom: 1px solid rgb(255,168,168);
+	border-collapse:collapse;
+}
+.table3 td {
+	width: 8rem;
+	height: 1.7rem;
+	border-left: 1px solid rgb(255,168,168);
+	border-top: 1px solid rgb(255,168,168);
+}
+.gonggrexian{
+	background: rgb(255,236,223);
+	color: #d12c2c;
+	font-size: 0.7rem;
+}
+.style{
+	font-size: 0.6rem;
+	background: rgb(255,249,245);
+}
+/*****************登录*************************/
+.zhuce{
+	margin-top: -0.65rem;
+	font-size: 0.6rem;
+	padding-right: 0.45rem;
+	color: #FFFFFF;
+}
+.denglu_content{
+	margin-top: 0.5rem;
+}
+.denglu_content ul{
+	border-bottom: 1px solid rgb(241,241,241);
+}
+.denglu_content ul li{
+	border-top: 1px solid rgb(241,241,241);
+	height: 1.9rem;
+}
+.denglu_content ul li label{
+	font-size: 0.65rem;
+	margin-left: 0.2rem;
+	color: #4b4b4b;
+	width: 2.7rem;
+	height: 25px;
+	display: inline-block;
+	line-height: 25px;
+	text-align: right;
+	padding-top: 0.4rem;
+}
+.denglu_content ul li span{
+	padding-left: 0.5rem;
+	color: rgb(251,0,0);
+	font-size: 0.6rem;
+	margin-top: 0.6rem;
+}
+.denglu_content ul li input{
+	font-size: 0.65rem;
+}
+.long_size{
+	height: 1.1rem;
+	width: 10.5rem;
+	border: none;
+}
+.yanzhengma1{
+	margin-top: 0.4rem;
+	width: 3.1rem;
+	height: 1.1rem;
+	padding-right: 3.2rem;
+}
+.yanzhengma{
+	border: none;
+	width: 5rem;
+	height: 1.1rem;
+}
+.change{
+	margin-top: 0.75rem;
+}
+.change a{
+	font-size: 0.6rem;
+}
+.forget{
+	color: #fb0000;
+	padding-left: 0.75rem;
+}
+.chang_ano{
+	color: #999999;
+	padding-right:2.5rem;
+}
+.liji_login{
+	margin-top: 1.5rem;
+	text-align: center;
+	padding-bottom: 13rem;
+}
+.liji_login a{
+	color: #FFFFFF;
+	background: rgb(209,44,44);
+	font-size: 0.65rem;
+	padding:0.4rem 4.25rem;
+	border-radius: 0.15rem;
+}
+
+/***********注册***********/
+.table_zhuce li{
+	width: 50%;
+	float: left;
+	font-size: 0.6rem;
+	line-height: 1.6rem;
+	cursor: pointer;
+	text-align: center;
+}
+.table_zhuce ul{
+	padding-bottom: 1.6rem;
+	border-bottom: 1px solid rgb(241,241,241);
+}
+.on{
+	color: #e51a14;
+	border-bottom: 2px solid #e51a14;
+}
+.no_active{
+	color: #a4a4a1;
+}
+.zhuce2{
+	border-bottom: 1px solid rgb(241,241,241);
+}
+.zhuce2 li{
+	border-top: 1px solid rgb(241,241,241);
+	height: 1.9rem;
+}
+.zhuce2  li label{
+	font-size: 0.65rem;
+	color: #4b4b4b;
+	width: 3.5rem;
+	height: 25px;
+	display: inline-block;
+	line-height: 25px;
+	text-align: right;
+	padding-top: 0.4rem;
+}
+.zhuce2  li span{
+	padding-left: 0.5rem;
+	color: rgb(251,0,0);
+	font-size: 0.6rem;
+	margin-top: 0.4rem;
+	padding-top: 0.4rem;
+}
+.zhuce2  li input{
+	font-size: 0.65rem;
+}
+.province,.city,.area{
+	width:  2.6rem;
+	height: 1.15rem;
+	background: rgb(238,238,238);
+	border: none;
+	font-size: 0.5rem;
+}
+
+.zhuce2 li i{
+	font-size: 0.65rem;
+	color: #4b4b4b;
+}
+.name{
+	position: absolute;
+	margin-left: 0.6rem;
+}
+.pos label{
+	margin-left: 0.7rem;
+}
+.liji_zhuce{
+	margin-top: 2.8rem;
+	text-align: center;
+	padding-bottom: 2.8rem;
+}
+.liji_zhuce a{
+	color: #FFFFFF;
+	background: rgb(209,44,44);
+	font-size: 0.65rem;
+	padding:0.4rem 4.25rem;
+	border-radius: 0.15rem;
+}
+.hide{
+	display: none;
+}
+.liji_zhuce1{
+	margin-top: 2.8rem;
+	text-align: center;
+	padding-bottom: 1.5rem;
+}
+.liji_zhuce1 a{
+	color: #FFFFFF;
+	background: rgb(209,44,44);
+	font-size: 0.65rem;
+	padding:0.4rem 4.25rem;
+	border-radius: 0.15rem;
+}
+/**********找回密码*******************/
+.email_con{
+	padding: 1.8rem 0.45rem 0 0.45rem;
+}
+.email_con img{
+	width: 1.725rem;
+	height: 1.9rem;
+	margin-left: 0.9rem;
+}
+.email_enter{
+	font-size: 0.65rem;
+	color: #333333;
+	line-height: 0.9rem;
+}
+.email_enter1{
+	font-size: 0.4rem;
+	color: #797979;
+	line-height: 0.9rem;
+}
+.email_login{
+	margin-top: 1.8rem;
+}
+.noemail{
+	padding: 0rem 0.45rem 1rem 0.45rem;
+}
+.noemail span{
+	font-size: 0.65rem;
+	color: #797979;
+	line-height: 1.2rem;
+}
+.noemail p{
+	font-size: 0.6rem;
+	color: #333333;
+	line-height:1.2rem ;
+}
+.noemail p label a{
+	color: #d12c2c;
+}
+.liji_login1{
+	margin-top: 1.5rem;
+	text-align: center;
+	padding-bottom: 13rem;
+}
+.liji_login1 a{
+	color: #FFFFFF;
+	background: rgb(209,44,44);
+	font-size: 0.65rem;
+	padding:0.4rem 2rem;
+	border-radius: 0.15rem;
+}
+/****************留言***************/
+.liuyan_content{
+	margin-top: 0.4rem;
+}
+.liuyan_nr{
+	background: rgb(248,248,248);
+}
+.liuyan_nr textarea{
+	height: 5rem;
+	width: 11rem;
+	border: none;
+	position: absolute;
+	margin-top: 0.5rem;
+	background: rgb(248,248,248);
+}
+.upload{
+	width: 2.6rem;
+	height: 2.6rem;
+}
+.zhuce3{
+	margin-top:0.6rem;
+}
+.zhuce3  li label{
+	font-size: 0.65rem;
+	color: #4b4b4b;
+	width: 3.5rem;
+	height: 25px;
+	display: inline-block;
+	line-height: 25px;
+	text-align: right;
+	padding-top: 0.4rem;
+}
+.zhuce3  li span{
+	padding-left: 0.5rem;
+	color: rgb(251,0,0);
+	font-size: 0.6rem;
+	margin-top: 0.4rem;
+	padding-top: 0.4rem;
+}
+.zhuce3 i{
+	font-size: 0.55rem;
+	color: #999999;
+	margin-right: 0.6rem;
+	margin-top: 0.75rem;
+}
+.text_shuoming{
+	border-top: 1px solid rgb(238,238,238);
+	padding: 0.8rem 0.45rem;
+}
+.text_shuoming span{
+	color: #D12C2C;
+	font-size: 0.55rem;
+	line-height: 1rem;
+}
+.text_shuoming p{
+	color: #797979;
+	font-size: 0.55rem;
+	line-height: 0.9rem;
+	text-indent: 2em;
+}
+.file{
+	margin-top: -1.5rem;
+	margin-left: 4.5rem;
+}
+.file img{
+	width: 2.6rem;
+	height: 2.6rem;
+}
+
+/***********个人中心我的信息*******************/
+.my_message{
+	border-bottom: 1px solid rgb(241,241,241);
+}
+.my_message li{
+	border-top: 1px solid rgb(241,241,241);
+	height: 1.9rem;
+}
+.my_message  li label{
+	font-size: 0.65rem;
+	color: #4b4b4b;
+	width: 2.7rem;
+	height: 25px;
+	display: inline-block;
+	line-height: 25px;
+	text-align: right;
+	padding-top: 0.4rem;
+}
+.my_message li span{
+	font-size: 0.65rem;
+	color: #4b4b4b;
+	margin-left: 0.4rem;
+}
+.my_message li a{
+	font-size: 0.65rem;
+	color: #FB0000;
+	margin-top: 0.7rem;
+	padding-right: 0.45rem;
+}
+.server{
+	margin-top: 1.5rem;
+	text-align: center;
+	padding-bottom: 7rem;
+}
+.server a{
+	color: #FFFFFF;
+	background: rgb(209,44,44);
+	font-size: 0.65rem;
+	padding:0.4rem 4.75rem;
+	border-radius: 0.15rem;
+}
+/***********个人中心我的留言**************/
+.my_liuyan{
+	padding: 0.4rem 0.45rem;
+}
+.my_liuyan p{
+	font-size: 0.55rem;
+	line-height: 1.2rem;
+	text-indent: 2em;
+}
+.my_liuyan span{
+	font-size: 0.55rem;
+	color: #999999;
+}
+.time{
+	margin-top: 0.3rem;
+}
+.gery{
+	width: 100%;
+	height: 2rem;
+	margin-top: 0.2rem;
+	background: rgb(246,246,246);
+}
+/***********个人中心我的回复**************/
+.my_huifu{
+	margin: 0.1rem 0.45rem;
+	padding: 0.1rem 0rem;
+	border-top: 1px solid rgb(241,241,241);
+}
+.my_huifu p{
+	font-size: 0.55rem;
+	line-height: 1.2rem;
+}
+.my_huifu span{
+	font-size: 0.55rem;
+	color: #999999;
+}
+.my_huifu p label{
+	color: #fb0000;
+}
+.fanhui1{
+	width: 14.4rem;
+	height: 1.5rem;
+	margin-left: 0.45rem;
+	padding-left: 0.45rem;
+	margin-top: 0.3rem;
+	margin-bottom: 1rem;
+	border: 1px solid rgb(210,210,210);
+}
+/*************在线调查*********/
+.diaocha{
+	margin-top: 0.35rem;
+}
+.diaocha select{
+	margin: 0.425rem 0;
+	border-radius: 0.2rem;
+}
+.diaocha  label{
+	font-size:0.55rem;
+}
+.diaocha li{
+	font-size: 0.65rem;
+	color: #4B4B4B;
+	margin: 0.4rem 0 0.4rem 0.45rem;
+}
+.diaocha li span{
+	color: #000000;
+}
+.diaocha input{
+	margin: 0.5rem 0.2rem;
+}
+.radio{
+	display: inline-block;
+	width: 4.3rem;
+}
+.select{
+	margin-left: 1.8rem;
+}
+.xq_content h4{
+	text-align: center;
+	margin-top: 1rem;
+	margin-bottom: 0.9rem;
+}
+.xq_content h4 input{
+	width: 13.2rem;
+	height: 1.5rem;
+	font-size: 0.85rem;
+	background: #d12c2c;
+	color: #FFFFFF;
+	border-radius: 0.2rem;
+	border: none;
+	cursor: pointer;
+}
+.diaocha hr{
+	border: none;
+	border-top: 1px solid #eaeaea;
+}
+
+
+/**************11.2 在线调查列表页*****************/
+.zxdc_content{
+	margin: 0 0.45rem;
+}
+.wenjuan{
+	margin-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	border-bottom: 1px solid #e7e7e7;
+}
+.wenjuan img{
+	width: 1.65rem;
+	height: 1.65rem;
+}
+.wenjuan span a{
+	color: #d12c2c;
+	text-align: center;
+    padding-top: 0.4rem;
+    display: inline-block;
+    font-size: 0.6rem;
+    border: 1px solid #d12c2c;
+    width: 3rem;
+    height: 1rem;
+    border-radius: 5px;
+}
+.wenjuan p{
+	display: inline-block;
+	font-size: 0.65rem;
+	line-height: 0.9rem;
+	width: 9.8rem;
+	margin-left: 0.4rem;
+	color: #454545;
+}
+.wenjuan span{
+	text-align: center;
+}
+.thanks{
+	width:8rem;
+	margin-left: 3.4rem;
+	position:absolute;
+	bottom: 1rem;
+	display: none;
+}
+.thanks p{
+	background: rgba(0,0,0,0.5);
+	color: #FFFFFF; 
+	text-align: center; 
+	font-size: 0.7rem;
+	padding: 0.8rem 0; 
+	border-radius: 5px;
+}
+
+/**********11.2在线调查详情****************/
+.zxdc_r{
+	width: 1rem;
+	height: 0.8rem;
+	margin-top: -0.4rem;
+}
+.tongji1{
+	font-size: 0.3rem;
+	color: #FFFFFF;
+	display: block;
+	margin-top: -0.1rem;
+}
+.dc_date{
+	padding:0.5rem 0.45rem;
+}
+.dc_date span{
+	font-size: 0.65rem;
+	line-height: 0.9rem;
+	color: #454545;
+}
+.question_shuoming{
+	padding:0.45rem;
+}
+.question_shuoming span{
+	font-size: 0.65rem;
+	line-height: 0.75rem;
+	color: #454545;
+}
+.question{
+	padding: 0.2rem 0.45rem;
+}
+.question span{
+	font-size: 0.65rem;
+	line-height: 0.7rem;
+}
+.question label{
+	font-size: 0.65rem;
+	line-height: 0.7rem;
+	margin-left: 0.3rem;
+}
+.question select{
+	width: 3rem;
+}
+.question i{
+	font-size: 0.55rem;
+	padding: 0 0.2rem;
+}
+.question input{
+	margin-top: 0.4rem;
+}
+
+.question1 span{
+	font-size: 0.65rem;
+	line-height: 0.5rem;
+}
+.question1 label{
+	font-size: 0.65rem;
+	line-height: 0.7rem;
+	margin-left: 0.3rem;
+}
+.kongbai{
+	width: 16rem;
+	height: 0.1rem;
+	margin-top: 0.1rem;
+	background: #FFFFFF;
+	margin-left: -0.45rem;
+	padding-right: 0.45rem;
+}
+.xuanxiang{
+	width: 15.8rem;
+	background: #eeeeee;
+	margin-left: -0.45rem;
+	padding: 0.2rem 0 0.2rem 0.2rem;
+	margin-top: 0.4rem;
+}
+.liubai3{
+	background: rgb(246,246,246);
+    height: 0.1rem;
+    width: 100%;
+}

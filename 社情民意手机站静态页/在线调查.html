@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<title>在线调查</title>
+	<link rel="stylesheet" href="css/base.css"/>
+	<link rel="stylesheet" href="css/index.css"/>
+	<script src="js/PCASClass.js"></script>
+	<script src="js/jquery.js"></script>
+	
+	<script>
+	;(function(win,doc){
+		function change(){
+			doc.documentElement.style.fontSize=20*doc.documentElement.clientWidth/320+'px';
+		}
+		change();
+		win.addEventListener('resize',change,false);
+	})(window,document);
+	</script>
+</head>
+
+<body>         
+ 
+<div class="main">
+	<div class="header">
+     	<img src="images/fanhui.png" class="fanhui left"/>
+     	<h2>在线调查</h2>
+	</div>	
+    <div class="xq_content">
+    	<h3>关于河北省大众对转基因农产品认知情况的调查</h3>
+    	<span class="fabu_time">发布时间：2017-07-23</span>
+    		<ul class="diaocha">
+				<li><span>Q1：</span>您所在的城市是：</li>
+				<select name="province" class="province" style="margin-left: 2rem;"></select><label>&nbsp;省 &nbsp;</label><select name="city" class="city"></select><label>&nbsp;市 &nbsp;</label><select name="area" class="area"></select><label>&nbsp;区/县</label>
+				<hr />
+				<li><span>Q2：</span>您的性别：</li>
+				<div class="select">
+					<label class="radio"><input name="xingbie" type="radio" value="" />男 </label> 
+					<label ><input name="xingbie" type="radio" value="" />女 </label>
+				</div>
+				 
+				<hr />
+				<li><span>Q3：</span>您的年龄层次：</li>
+				<div class="select">
+					<label class="radio"><input name="age" type="radio" value="" />15岁以下</label> 
+					<label class="radio"><input name="age" type="radio" value="" />16岁~35岁 </label>
+					<label class="radio"><input name="age" type="radio" value="" />36岁~60岁</label> 
+					<label class="radio"><input name="age" type="radio" value="" />60岁以上 </label>
+				</div>
+				<hr />
+				<li><span>Q4：</span>您的受教育程度：</li>
+				<div class="select">
+					<label class="radio"><input name="edu" type="radio" value="" />小学及以下</label> 
+					<label class="radio"><input name="edu" type="radio" value="" />初中 </label>
+					<label class="radio"><input name="edu" type="radio" value="" />高中或中专</label> 
+					<label class="radio"><input name="edu" type="radio" value="" />大专或本科 </label>
+					<label class="radio"><input name="edu" type="radio" value="" />研究生以上 </label>
+				</div>
+				<hr />
+				<li><span>Q5：</span>您的所学专业/从事专业领域：</li>
+				<div class="select">
+					<label class="radio"><input name="work" type="radio" value="" />理工类</label> 
+					<label class="radio"><input name="work" type="radio" value="" />农林类 </label>
+					<label class="radio"><input name="work" type="radio" value="" />人文类</label> 
+					<label class="radio"><input name="work" type="radio" value="" />医学类 </label>
+					<label class="radio"><input name="work" type="radio" value="" />艺术类 </label>
+					<label class="radio"><input name="work" type="radio" value="" />其他 </label>
+				</div>
+				<hr />
+				<li><span>Q6：</span>您目前所从事职业：</li>
+				<div class="select">
+					<label class="radio"><input name="job" type="radio" value="" />农民</label> 
+					<label class="radio"><input name="job" type="radio" value="" />工人 </label>
+					<label class="radio"><input name="job" type="radio" value="" />学生</label> 
+					<label class="radio"><input name="job" type="radio" value="" />企业职员</label>
+					<label class="radio"><input name="job" type="radio" value="" />个体经营者</label>
+					<label class="radio"><input name="job" type="radio" value="" />其他 </label> 
+				</div>
+				
+				<hr />
+				<li><span>Q7：</span>您经常关注的领域：（可多选）：</li>
+				<div class="select">
+					<label class="radio"><input name="view" type="checkbox" value="" />教育</label> 
+					<label class="radio"><input name="view" type="checkbox" value="" />医疗 </label>
+					<label class="radio"><input name="view" type="checkbox" value="" />农业</label> 
+					<label class="radio"><input name="view" type="checkbox" value="" />城市建设</label>
+					<label class="radio"><input name="view" type="checkbox" value="" />人文艺术</label>
+					<label class="radio"><input name="view" type="checkbox" value="" />其他 </label>
+				</div>
+				
+				<hr />
+			</ul>
+    		<h4><input type="button" value="提交"></h4>
+    	
+    </div>
+    <div class="footer">
+		<div class="youqlj">
+			<a href="#"> 河北省社情民意云平台（www.hebsqmy.cn）＊2017 版权所有 All Rights Reserved.</a>
+			<a href="#"> 主办单位名称：河北省社情民意研究会   网站备案号：冀ICP备123456789号</a>
+		</div>
+	</div>
+</div>
+<script language="javascript" defer>
+	new PCAS("province","city","area"," "," "," ");
+</script>
+ 
+</html>

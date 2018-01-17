@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<title>注册</title>
+	<link rel="stylesheet" href="css/base.css"/>
+	<link rel="stylesheet" href="css/index.css"/>
+	
+	<script>
+	;(function(win,doc){
+		function change(){
+			doc.documentElement.style.fontSize=20*doc.documentElement.clientWidth/320+'px';
+		}
+		change();
+		win.addEventListener('resize',change,false);
+	})(window,document);
+	</script>
+
+		<style type="text/css">
+			input::-webkit-input-placeholder{ /*WebKit browsers*/
+				padding-top: 0.2rem;
+				padding-left: 0.2rem;
+				color: #999999;
+			}
+		input::-moz-input-placeholder{ /*Mozilla Firefox*/
+			padding-top: 0.2rem;
+			padding-left: 0.2rem;
+			color: #999999;
+			}
+		input::-ms-input-placeholder{ /*Internet Explorer*/ 
+			padding-top: 0.2rem;
+			padding-left: 0.2rem;
+			color: #999999;
+			}
+</style>
+		
+
+</head>
+<body>         
+	
+ 
+<div class="main">
+	<div class="header">
+      	<img src="images/fanhui.png" class="fanhui left"/>
+     	<h2>注册</h2>
+     	<span class="right zhuce">登录</span>
+	</div>
+	<div class="zhuce_content">
+		<ul class="table_zhuce">
+			<li class="on per">个人注册</li>
+			<li class="no_active com">企业注册</li>
+		</ul>
+		<div class="clear"></div>
+		<div class="personal">
+			<ul class="zhuce2">
+				<li><span class="left">*</span><label>登录名称：</label><input type="text" class="long_size"></li>
+				<li><span class="left">*</span><label>所在地区：</label><select name="province1" class="province"></select><i>省 </i><select name="city1" class="city"></select><i>市 </i><select name="area1" class="area"></select><i>区/县</i></li>
+				<li class="pos"><span class="left name">*</span><label>姓 &nbsp;&nbsp;名：</label><input type="text" class="long_size" /></li>
+				<li class="pos"><span class="left name">*</span><label>手机号：</label><input type="text" class="long_size" /></li>
+				<li class="pos"><span class="left name">&nbsp;</span><label> 邮 &nbsp;&nbsp;箱：</label><input type="text" class="long_size"placeholder="您可以通过邮箱找回密码"/></li>
+				<li class="pos"><span class="left name">*</span><label>&nbsp;密 &nbsp;&nbsp;码：</label><input type="text" class="long_size" /></li>
+				<li><span class="left">*</span><label>重复密码：</label><input type="text" class="long_size"></li>
+				<li class="pos"><span class="left name">&nbsp;</span><label> 推荐人： </label><input type="text" class="long_size" /></li>
+				<li class="pos"><span class="left name">*</span><label>验证码：</label><input type="text"  class="yanzhengma" /> <img src="images/yanzhengma.jpg" class="yanzhengma1 right"/></li>
+			</ul>
+			<div class="change">
+				<a href="#" class="right chang_ano">看不清楚？换一张</a>
+			</div>
+			<div class="liji_zhuce">
+				<a href="#">立即注册</a>
+			</div>
+		</div>
+		<div class="company  hide">
+			<ul class="zhuce2">
+				<li><span class="left">*</span><label>登录名称：</label><input type="text" class="long_size"></li>
+				<li><span class="left">*</span><label>公司名称：</label><input type="text" class="long_size"></li>
+				<li><span class="left">*</span><label>所在地区：</label><select name="province2" class="province"></select><i>省 </i><select name="city2" class="city"></select><i>市 </i><select name="area2" class="area"></select><i>区/县</i></li>
+				<li><span class="left">*</span><label>法人代表：</label><input type="text" class="long_size"></li>
+				<li class="pos"><span class="left name">&nbsp;</span><label> 邮 &nbsp;&nbsp;箱：</label><input type="text" class="long_size"placeholder="您可以通过邮箱找回密码"/></li>
+				<li class="pos"><span class="left name">*</span><label>联系人：</label><input type="text" class="long_size" /></li>
+				<li class="pos"><span class="left name"></span><label>职 &nbsp;&nbsp;位：</label><input type="text" class="long_size" /></li>
+				<li class="pos"><span class="left name">*</span><label>手机号：</label><input type="text" class="long_size" /></li>
+				<li><span class="left">&nbsp;</span><label>企业简介：</label><input type="text" class="long_size"></li>
+				<li class="pos"><span class="left name">*</span><label>&nbsp;密 &nbsp;&nbsp;码：</label><input type="text" class="long_size" /></li>
+				<li><span class="left">*</span><label>重复密码：</label><input type="text" class="long_size"></li>
+				<li class="pos"><span class="left name">&nbsp;</span><label> 推荐人： </label><input type="text" class="long_size" /></li>
+				<li class="pos"><span class="left name">*</span><label>验证码：</label><input type="text"  class="yanzhengma" /> <img src="images/yanzhengma.jpg" class="yanzhengma1 right"/></li>
+			</ul>
+			<div class="change">
+				<a href="#" class="right chang_ano">看不清楚？换一张</a>
+			</div>
+			<div class="liji_zhuce1">
+				<a href="#">立即注册</a>
+			</div>
+		</div>
+		
+	</div>
+		
+	
+	
+</div>
+<div class="footer">
+	<div class="youqlj">
+		<a href="#"> 河北省社情民意云平台（www.hebsqmy.cn）＊2017 版权所有 All Rights Reserved.</a>
+		<a href="#"> 主办单位名称：河北省社情民意研究会   网站备案号：冀ICP备123456789号</a>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery.js" ></script>
+	<script>
+		$('.table_zhuce>li').click(function(){
+			$('.table_zhuce>li').removeClass('on');
+			$(this).addClass('on').removeClass('no_active');
+		});
+		$('.per').click(function(){
+			$('.personal').show();
+			$('.company').hide();
+		});
+		$('.com').click(function(){
+			$('.personal').hide();
+			$('.company').show();
+		});
+		
+	</script>
+	<script src="js/PCASClass.js"></script>
+	<script language="javascript" defer>
+		new PCAS("province1","city1","area1"," "," "," ");
+		new PCAS("province2","city2","area2"," "," "," ");
+	</script>
+</html>
