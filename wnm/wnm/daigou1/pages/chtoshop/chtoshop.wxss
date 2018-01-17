@@ -1,0 +1,126 @@
+/* pages/chtoshop/chtoshop.wxss */
+Page {
+  background: #F5F5F5;
+  font-size: 15px;
+}
+.start{
+  height: 80px; 
+  display: flex;
+}
+.stone{
+  width: 33%;
+  position:relative;
+}
+.topnum{
+  position: absolute;
+  font-weight: bold;
+  color:red;
+}
+.topimg{
+  width: 95%;
+  margin-top: 20px;
+}
+.toptit{
+  position: absolute;
+  font-size: 12px;
+  text-align:center;
+  right: 10px;
+  color: white;
+}
+.chls{
+  width:50%;
+  text-align:center;
+  padding: 20px 0;
+  position:relative;
+}
+.chimg{
+  height:100px;
+  width:100px;
+}
+.chtit{
+  font-size: 16px;
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  font-weight: 900;
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+.chdis{
+  font-size: 10px;
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  top: 70px;
+  color: white;
+}
+.cheig{
+  display: flex;
+}
+.conlis{
+  display:flex;
+  padding:5px;
+  border-bottom:1px solid #ccc;
+}
+.contimg{
+  width: 23px;
+  height: 23px;
+  margin-top: 2px;
+}
+.cinstit{
+  width:120px;
+  color: #979797;
+  margin-top: 2px;
+  margin-left:5px;
+}
+.cintimg{
+  width:20px;
+  height:20px;
+  margin-top: 2px;
+}
+.cimtest{
+  width:calc(50% - 100px );
+  color: #979797;
+  margin-top: 2px;
+  margin-left:5px;
+}
+.cimtext{
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 5px 5px;
+  height: 65px;
+  padding: 10px;
+}
+.subl{
+  background: red;
+  color: white;
+  width: 30%;
+  margin-left: 10%;
+}
+.resetl{
+  background: #ccc;
+  position: absolute;
+  color: white;
+  width: 30%;
+  top: 0px;
+  right: 10%;
+}
+.tishi{
+  position: fixed;
+  width: 170px;
+  height: 100px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  top: 150px;
+  background: #ccc;
+  left: calc(50% - 85px);
+}
+.tides{
+  font-size: 15px;
+  text-align: center;
+  line-height: 100px;
+}
+.hid{
+  display: none;
+}

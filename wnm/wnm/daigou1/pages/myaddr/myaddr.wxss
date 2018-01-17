@@ -1,0 +1,52 @@
+/* pages/myaddr/myaddr.wxss */
+page{
+  background: #F0F0F0;
+}
+.addrlis{
+  height:100px;
+  background:#FFF;
+  margin-top: 10px;
+}
+.addrdes{
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px;
+  font-size: 13px;
+  line-height: 23px;
+  height: 45px;
+}
+.addrs{
+  width:15px;
+  height:15px;
+  margin:10px 5px 10px 10px;
+}
+.bomtit{
+  width:60%;
+  font-size:11px;
+  line-height:35px;
+  color:red;
+}
+.addrbom{
+  display:flex;
+  height: 35px;
+}
+.bonexit{
+  font-size: 13px;
+  line-height: 35px;
+  width: 10%;
+  margin-left: 5px;
+}
+.addrbotm{
+  position: fixed;
+  bottom: 0px;
+  height: 50px;
+  width: 100%;
+  background: #FFFFFF;
+  display: flex;
+}
+.tbomtit{
+  font-size: 15px;
+  line-height: 50px;
+  width: calc(100% - 100px);
+}

@@ -1,0 +1,112 @@
+<!--pages/chtoshop/chtoshop.wxml-->
+<view class='start'>
+  <view class='stone {{strect == "start" ? "hid" : ""}}'>
+      <text class='topnum' style='top: {{toptith}};left:{{topnumleft}};color:#9E9E9E;'>1</text> 
+      <image class='topimg' style='height: {{topimgw}};'  src='../../images/hseee.png'></image>
+      <text class='toptit' style='top: {{toptith}};width:{{toptitw}};'>开始申请</text> 
+  </view>
+  <view class='stone {{strect == "start" ? "" : "hid"}}'>
+      <text class='topnum' style='top: {{toptith}};left:{{topnumleft}};'>1</text> 
+      <image class='topimg' style='height: {{topimgw}};'  src='../../images/jsee.png'></image>
+      <text class='toptit' style='top: {{toptith}};width:{{toptitw}};'>开始申请</text> 
+  </view>
+  <view class='stone {{strect == "xiemai" || strect == "xieshop" ? "" : "hid"}}'>
+    <text class='topnum' style='top: {{toptith}};left:{{topnumleft}};'>2</text> 
+      <image class='topimg' style='height: {{topimgw}};' src='../../images/jsee.png'></image>
+     <text class='toptit' style='top: {{toptith}};width:{{toptitw}};'>填写资料</text> 
+  </view>
+  <view class='stone {{strect == "xiemai" || strect == "xieshop" ? "hid" : ""}}'>
+    <text class='topnum' style='top: {{toptith}};left:{{topnumleft}};color:#9E9E9E;'>2</text> 
+      <image class='topimg' style='height: {{topimgw}};' src='../../images/hseee.png'></image>
+     <text class='toptit' style='top: {{toptith}};width:{{toptitw}};'>填写资料</text> 
+  </view>
+  <view class='stone {{strect == "shen" ? "hid" : ""}}'>
+     <text class='topnum' style='top: {{toptith}};left:{{topnumleft}};color:#9E9E9E;'>3</text> 
+      <image class='topimg' style='height: {{topimgw}};' src='../../images/hseee.png'></image>
+     <text class='toptit' style='top: {{toptith}};width:{{toptitw}};'>系统审核</text> 
+  </view>
+  <view class='stone {{strect == "shen" ? "" : "hid"}}'>
+     <text class='topnum' style='top: {{toptith}};left:{{topnumleft}};color:#9E9E9E;'>3</text> 
+      <image class='topimg' style='height: {{topimgw}};' src='../../images/hseee.png'></image>
+     <text class='toptit' style='top: {{toptith}};width:{{toptitw}};'>系统审核</text> 
+  </view>
+</view>
+<view class='cheig {{strect == "start" ? "" : "hid"}}'>
+  <view class='chls'>
+    <image class='chimg' src='../../images/hse.png' bindtap="shopls"></image>
+    <text class='chtit' bindtap="shopls">商家</text>
+    <text class='chdis' bindtap="shopls">成为商家</text>
+  </view>
+  <view class='chls'>
+    <image class='chimg' src='../../images/lvsw.png' bindtap="shoping"></image>
+    <text class='chtit' bindtap="shoping">买手</text>
+    <text class='chdis' bindtap="shoping">成为买手</text>
+  </view>
+</view>
+
+<view class='{{strect == "xieshop" || strect == "xiemai" ? "" : "hid"}}' style='padding:10px'>
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class='conlis'>
+    <image class='contimg' src='../../images/phone.png'></image>
+    <input name='phone' type='number' style="width: calc(100% - 30px);margin-left: 10px;" placeholder="店铺联系电话" />
+  </view>
+  <view class='conlis'>
+    <image class='contimg'  src='../../images/pname.png'></image>
+    <input name='shop_name' style="width: calc(100% - 30px);margin-left: 10px;" placeholder="店铺名称" />
+  </view>
+  <view class='conlis'>
+    <image class='contimg' src='../../images/pwd.png'></image>
+    <input name='pwd' password='ture' style="width: calc(100% - 30px);margin-left: 10px;" placeholder="设置登录密码" />
+  </view>
+  <view class='conlis'>
+    <image class='contimg' src='../../images/pwd1.png'></image>
+    <input name='repwd' password='ture' style="width: calc(100% - 30px);margin-left: 10px;" placeholder="请再次输入密码" />
+  </view>
+  <view class='conlis' style="flex-wrap:wrap;">
+    <image class='contimg' src='../../images/shenf.png'></image>
+    <text class='cinstit'>请上传身份证</text>
+    <image class='cintimg' data-id='1' bindtap='chooseimage' src='../../images/tadd.png'></image>
+    <text class='cimtest' data-id='1' bindtap='chooseimage'>正面</text>
+    <input name="shenz" value='{{zid}}' type='hidden' style='width:0px;'></input>
+    <image class='cintimg' data-id='2' bindtap='chooseimage' src='../../images/tadd.png'></image>
+    <text class='cimtest' data-id='2' bindtap='chooseimage'>反面</text>
+    <input name="shenf" value='{{fid}}' type='hidden' style='width:0px;'></input>
+    <view class='{{shenz == "" && shenf == "" ? "hid" : "" }}' style='width: 100%;'>
+      <text style='width:150px;'></text>
+      <image style='width:calc(50% - 70px);height:80px;margin-left:135px;' src='{{shenz}}'></image>
+      <image style='width:calc(50% - 70px);height:80px;margin-left:5px;' src='{{shenf}}'></image>
+    </view>
+    <!-- <input style="width: calc(100% - 100px);margin-left: 10px;" /> -->
+  </view>
+  <view class='conlis {{strect == "xiemai" ? "hid" : ""}}' style="flex-wrap:wrap;">
+    <image class='contimg' src='../../images/yinye.png'></image>
+    <text class='cinstit' data-id='3' bindtap='chooseimage' bindtap='chooseimage'>请上传营业执照</text>
+    <image data-id='3' bindtap='chooseimage' style='width:20px;height:20px;margin-top: 2px;' src='../../images/tadd.png'></image>
+    <input name="yinye" value='{{yyid}}' type='hidden' style='width:0px;'></input>
+    <text style='width:calc(100% - 250px);'></text>
+    <text style='width: 150px'></text>
+    <image class='{{yinye == "" ? "hid" : ""}}' style='width:calc(50% - 70px);height: 80px' src='{{yinye}}'></image>
+  </view>
+  <view class='conlis {{strect == "xieshop" ? "" : "hid"}}'>
+    <image class='contimg' style="margin-top:30px;" src='../../images/des.png'></image>
+    <textarea name='shopdis' placeholder="商家介绍..." class='cimtext' />
+  </view>
+  <view class='conlis {{strect == "xiemai" ? "" : "hid"}}'>
+    <image class='contimg' style="margin-top:30px;" src='../../images/des.png'></image>
+    <textarea name='maidis' placeholder="买手介绍..." class='cimtext' />
+  </view>
+  <view class='conlis'>
+    <image class='contimg' style="margin-top:30px;" src='../../images/goodsdes.png'></image>
+    <textarea name='goodsdis' placeholder="产品介绍..." class='cimtext' />
+  </view>
+  <view style='margin-top:20px;position:relative;'>
+    <button class='subl' formType="submit">提交</button>
+    <button class='resetl' formType="reset">取消</button>
+  </view>
+</form>
+</view>
+<view style='height:50px;'>
+</view>
+<view class='tishi {{tishid == "1" ? "hid" : ""}}'>
+  <view class='tides'>{{tishi}}</view>
+</view>

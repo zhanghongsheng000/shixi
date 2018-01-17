@@ -1,0 +1,30 @@
+/* follow.wxss */
+.guanlis{
+  height:70px;
+  padding:10px;
+  display:flex;
+  border:1px solid #F5F5F5;
+  font-family: 'Microsoft Yahei';
+}
+.guanimg{
+  width:70px;
+  height:70px;
+}
+.guantit{
+  width:calc(100% - 130px);
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  line-height:70px;
+  padding: 10px;
+  font-size: 14px;
+}
+.guanti{
+  width:30px;
+  height:30px;
+}
+.gundel{
+  width:20px;
+  height:20px;
+  margin-top:35px;
+}

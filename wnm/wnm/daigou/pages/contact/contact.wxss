@@ -1,0 +1,26 @@
+/* pages/contact/contact.wxss */
+image{
+  width: 30px;
+  height: 30px;
+}
+.contact{
+  margin: 40px 15px;
+  border: 1px dashed black;
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  align-items: center;
+  border-radius: 5%;
+}
+.phone{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.txt{
+  font-size: 10px;
+}
+.num{
+  font-size: 14px;
+}
+

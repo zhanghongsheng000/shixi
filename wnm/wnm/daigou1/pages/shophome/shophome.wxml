@@ -1,0 +1,2 @@
+<!--pages/shophome/shophome.wxml-->
+<text>{{page}}.wxml</text>

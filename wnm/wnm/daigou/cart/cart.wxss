@@ -1,0 +1,150 @@
+/* cart.wxss */
+.conlis{
+  padding: 0 10px 10px 10px;
+  font-family: 'Microsoft Yahei';
+}
+.contit{
+  height:50px;
+  border-bottom:1px solid #F5F5F5;
+  position:relative;
+  display: flex;
+}
+.changimg{
+  width: 25px;
+  height: 25px;
+  margin-left:8px;
+  margin-top:34px; 
+}
+.changimg:nth-child(1){
+  margin-top:13px; 
+}
+.wshop{
+  width: 20px;
+  height: 20px;
+  margin-top:15px;
+  margin-left:15px;
+}
+.lisleft{
+  width:auto;
+  margin-left:10px;
+  line-height:50px;
+  font-size:15px;
+  color:#989898;
+}
+.lisimg{
+  width: 15px;
+  height: 15px;
+  margin-top:18px;
+  margin-left:5px;
+}
+.congoods{
+  height: 90px;
+  display: flex;
+  padding: 10px 0;
+  border-bottom:1px solid #F5F5F5;
+}
+.list{
+  width:39px;
+}
+.goodimg{
+  width:90px;
+  height:90px;
+}
+.details{
+  width: calc(100% - 135px);
+}
+.top{
+  flex-direction:row;
+  height:45px;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  overflow:hidden;
+  width:calc(100% - 16px);
+  font-size:14px;
+  line-height:25px;
+  padding:5px 8px;
+  flex-direction:row;
+  height:45px;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  overflow:hidden;
+  width:calc(100% - 16px);
+  font-size:14px;
+  line-height:25px;
+  padding:5px 8px;
+}
+.bottom{
+  flex-direction:row;
+  height:30px;
+  display:flex;
+}
+.price{
+  min-width:55px;
+  margin-left:5px;
+  font-size:15px;
+  line-height:30px;
+  color:#FF2741;
+  width:calc(100% - 130px);
+}
+.donum{
+  height:22px;
+  width:66px;
+  border:1px solid #ccc;
+  margin-top:5px;
+  border-radius:5px;
+  display:flex;
+}
+.jian{
+  width:22px;
+  height:25px;
+}
+.number{
+  width: 22px;
+  padding:0 8px;
+  font-size:11px;
+}
+.jia{
+  width:22px;
+  height:22px;
+}
+.ljt{
+  width:20px;
+  height:20px;
+  margin-top:7px;
+  margin-left:10px;
+}
+.blank{
+  height: 50px;
+}
+.pay{
+  padding: 0 10px;
+  background-color: white;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  font-size: 14px;
+}
+.selectall{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.selectall image{
+  width: 25px;
+  height: 25px;
+}
+.paybtn{
+  background-color: #fe5600;
+  color: white;
+  font-size: 16px;
+  height: 50px;
+  width: 30%;
+  line-height: 50px;
+  text-align: center;
+}

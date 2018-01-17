@@ -1,0 +1,26 @@
+<!--pages/shop/shop.wxml-->
+<view class='header'>
+  <view><image class='logo'   mode='aspectFit' src='{{arrShop.shop_url}}'></image></view>
+  <view class='name'><text style="font-size: 18px;font-weight: 900;">{{arrShop.shop_name}}</text></view>
+  <view><button class='follow {{turn}}'  size='mini' bindtap="setDisabled">+关注</button></view>
+  <view class='des'><text>{{arrShop.shopdis}}</text></view> 
+</view>
+
+<view class="show">
+  <text >产品展示</text>
+</view>
+
+<view class='list'>
+
+ <view class='content' bindtap='gotoproduct' data-id='{{item.id}}' wx:for="{{arrProduct}}">
+  <view class='productImage'><image  mode='aspectFit' src='{{item.goods_tot}}'></image></view>
+  <view class="{{item.start == 1 ? '' : 'hid'}}" style="position: absolute;width: 100%;top:120px;">
+    <image class='discount'  mode='scaleToFill' src='../../images/bgg.png'></image>
+    <text style="font-size: 12px;position: absolute;width: 50%;left: 0px;text-align: center;line-height: 23px;color: #FFFFFF;">限时抢购</text>
+  </view>
+  <view class='productTitle'>{{item.goods_name}}</view>
+  <view class='productDes'>{{item.goods_des}}</view>
+  <view class='price'><text class='productPrice'>￥{{item.money}}</text><text class='productOldPrice'>￥{{item.old_money}}</text></view>
+</view>
+
+</view>

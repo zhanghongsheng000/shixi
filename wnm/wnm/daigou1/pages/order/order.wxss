@@ -1,0 +1,78 @@
+.nav{
+  display: flex;
+  font-size: 12px;
+}
+.nav view{
+  width: calc(100% / 3);
+  text-align: center;
+  line-height: 40px;
+  height: 40px;
+}
+
+.on{
+  border-bottom: 2px solid #ff273f;
+  color: #ff273f;
+}
+.off{
+  background-color: #fefefe;
+}
+view{
+  overflow: hidden;
+}
+.lists{
+  padding: 10px;
+}
+.list{
+  padding: 10px 3px;
+  background-color: #f7f7f7;
+  display: flex;
+  margin-bottom:8px; 
+  font-size: 12px;
+}
+.toux{
+  width: 30%;
+}
+.toux image{
+  width: 100px;
+  height: 100px;
+}
+.intro{
+  padding: 0 8px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.shopname{
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
+}
+.name{
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  overflow:hidden;
+  color: #616161;
+  width: 100%;
+}
+.type{
+  color: #999999;
+}
+.priceAndNum{
+  padding-right: 3px;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+.price{
+  color: #343434;
+}
+.num{
+  color: #999999;
+}
+.blank1{
+  height: 10px;
+  background-color: #f5f5f5;
+}

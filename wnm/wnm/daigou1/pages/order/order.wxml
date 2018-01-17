@@ -1,0 +1,136 @@
+<!-- 商品列表状态导航 -->
+<view class='nav'>
+    <view bindtap='status1' class='payment {{status===1?"on":"off"}}'>
+    全部
+    </view>
+    
+    <view bindtap='status2' class='send {{status===2?"on":"off"}}'>
+      待付款
+    </view>
+
+    <view bindtap='status3' class='sign {{status===3?"on":"off"}}'>
+      待发货
+    </view>
+    
+    <view bindtap='status4' class='sign {{status===4?"on":"off"}}'>
+      收货
+    </view>
+
+    <view bindtap='status5' class='sign {{status===5?"on":"off"}}'>
+      已完成
+    </view>
+</view>
+<view class='blank1'></view>
+<!-- 待付款 -->
+<!-- 商品列表 -->
+<view class='lists' hidden="{{status===1 ? false : true}}" bindtap='order'>
+  <!-- 店家名称 -->
+  <view class='shopname'>
+    小森森的店铺
+  </view>
+  <!-- 商品列表 -->
+  <view class='list' >
+    <!-- 头像 -->
+    <view class='toux'>
+      <image src='../../images/toux.jpg'></image>
+    </view>
+    <!-- 商品介绍 -->
+    <view class='intro'>
+      <!-- 产品名称 -->
+      <view class='name'>
+        待付款博士代购新加坡进口厂家直邮包税包清关COSME DECORTEEEEEEEEEEEEE
+      </view>
+      <!-- 商品类型 -->
+      <view class='type'>
+        商品类型：乳液
+      </view>
+    </view>
+    <!-- 价格 -->
+    <view class='priceAndNum' >
+      <!-- 价格 -->
+      <view class='price'>
+      ￥309
+      </view>
+      <!-- 数量 -->
+      <view class='num'>
+        ×1
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 待发货 -->
+<!-- 商品列表 -->
+<view class='lists' hidden="{{status===2 ? false : true}}">
+  <!-- 店家名称 -->
+  <view class='shopname'>
+    小森森的店铺
+  </view>
+  <!-- 商品列表 -->
+  <view class='list' bindtap='order'>
+    <!-- 头像 -->
+    <view class='toux'>
+      <image src='../../images/toux.jpg'></image>
+    </view>
+    <!-- 商品介绍 -->
+    <view class='intro'>
+      <!-- 产品名称 -->
+      <view class='name'>
+        待付款博士代购新加坡进口厂家直邮包税包清关COSME DECORTEEEEEEEEEEEEE
+      </view>
+      <!-- 商品类型 -->
+      <view class='type'>
+        商品类型：乳液
+      </view>
+    </view>
+    <!-- 价格 -->
+    <view class='priceAndNum' >
+      <!-- 价格 -->
+      <view class='price'>
+      ￥309
+      </view>
+      <!-- 数量 -->
+      <view class='num'>
+        ×1
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 待收货 -->
+<!-- 商品列表 -->
+<view class='lists' hidden="{{status===3 ? false : true}}">
+  <!-- 店家名称 -->
+  <view class='shopname'>
+    小森森的店铺
+  </view>
+  <!-- 商品列表 -->
+  <view class='list' bindtap='order'>
+    <!-- 头像 -->
+    <view class='toux'>
+      <image src='../../images/toux.jpg'></image>
+    </view>
+    <!-- 商品介绍 -->
+    <view class='intro'>
+      <!-- 产品名称 -->
+      <view class='name'>
+        待付款博士代购新加坡进口厂家直邮包税包清关COSME DECORTEEEEEEEEEEEEE
+      </view>
+      <!-- 商品类型 -->
+      <view class='type'>
+        商品类型：乳液
+      </view>
+    </view>
+    <!-- 价格 -->
+    <view class='priceAndNum' >
+      <!-- 价格 -->
+      <view class='price'>
+      ￥309
+      </view>
+      <!-- 数量 -->
+      <view class='num'>
+        ×1
+      </view>
+    </view>
+  </view>
+</view>

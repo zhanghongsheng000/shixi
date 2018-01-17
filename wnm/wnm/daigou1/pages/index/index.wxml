@@ -1,0 +1,20 @@
+<view class="top" bindtap="bindButtonTap">
+  <input class="topinp" value="请输入商家名称"/>
+  <image class="top_soso" src="../../images/soso.png"></image>
+</view>
+<view class="magess">
+  <image src="../../images/hot.png" class="magimg" style="width:20px;height:20px;"></image>
+  <view class="magcon">区域购最新活动，买二送一啦！</view>
+</view>
+<!-- <map id="map" longitude="{{lng}}" latitude="{{lat}}" scale="16"  markers="{{markers}}" bindmarkertap="markertap" show-location style="width: 100%; height: {{maphig}};" controls="{{controls}}" bindcontroltap="controltap" bind:touchmove="movem" bindmarkertap="markertap"></map> -->
+<!-- <map id="map" longitude="{{lng}}" latitude="{{lat}}" scale="16"  markers="{{markers}}" show-location style="width: 100%; height: {{maphig}};" controls="{{controls}}"></map> -->
+<map id="map" longitude="{{lng}}" latitude="{{lat}}" scale="16" controls="{{controls}}" markers="{{markers}}"  show-location style="width: 100%; height: {{maphig}};" bindmarkertap="bindtap"></map>
+<!-- <view class="shop" bindtap="goShop">
+  <image class="shopimg" src="../../images/shop.png"></image>
+  <view class="shoptit" style="color:white;font-size:15px">商城</view>
+</view>  -->
+<!-- <view class="calloutb">
+  <view class="callout">
+  
+  </view>
+</view> -->

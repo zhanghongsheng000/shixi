@@ -1,0 +1,20 @@
+<!--pages/myaddr/myaddr.wxml-->
+<view class='addrlis'>
+  <view class='addrdes'>
+    <text>艾丽，15542446845</text>
+    <text>收货地址：深圳市罗湖区国贸大厦c504</text>
+  </view>
+  <view class='addrbom'>
+    <image class='addrs' src='../../images/onchange.png'></image>
+    <text class='bomtit'>已设为默认地址</text>
+    <image style='width: 17px;height:17px;;margin-top:10px;' src='../../images/gai.png'></image>
+    <text class='bonexit'>编辑</text>
+    <image style='width: 17px;height:17px;margin-top:10px;' src='../../images/ljt.png'></image>
+    <text class='bonexit'>删除</text>
+  </view>
+</view>
+<view class='addrbotm' bindtap='addrbotm'>
+  <image style='width: 20px;height: 20px;margin:15px;' src='../../images/jr.png'></image>
+  <text class='tbomtit'>新增收货地址</text>
+  <image style='width: 20px;height: 20px;margin:15px;' src='../../images/arrow_right.png'></image>
+</view>

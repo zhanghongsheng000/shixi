@@ -1,0 +1,120 @@
+<!--cart.wxml-->
+<view class='conlis'>
+  <view class='contit' bindtap='selectlist' data-num='0'>
+    <image class='changimg' src='../../images/{{selectlist[0]?"gou":"onchange"}}.png'></image>
+    
+    <text class='lisleft'>洗护系列</text>
+    <image class='lisimg' src='../../images/arrow_right.png'></image>
+  </view>
+  <view class='congoods' bindtap='selectproduct' data-num='0,0' >
+    <view class ='list' >
+      <image class='changimg'  src='../../images/{{select[0][0]?"gou":"onchange"}}.png'></image>
+    </view>
+    <view>
+      <image class='goodimg'  src="../../images/toux.jpg"></image>
+    </view>
+    <view  class='details'>
+      <view class='top' >dsfgkjdhsfng;lkdsfjglkdsdfgj克劳福德感觉你还是离开adasfsfasasfgas
+      </view>
+      <view  class='bottom' >
+        <text class='price' >￥309</text>
+        <view class='donum' >
+           <image class='jian'  src='../../images/jian.png' bindtap='jianNum'></image> 
+          <input type='number' class='number' value='{{num}}' bindblur='getNum' min='1' max='10'  />
+           <image class='jia'  src='../../images/jia.png' bindtap='jiaNum'></image> 
+        </view>
+        <image class='ljt'  src='../../images/ljt.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='congoods' bindtap='selectproduct' data-num='0,1' >
+    <view class ='list' >
+      <image class='changimg'  src='../../images/{{select[0][1]?"gou":"onchange"}}.png'></image>
+    </view>
+    <view>
+      <image class='goodimg'  src="../../images/toux.jpg"></image>
+    </view>
+    <view  class='details'>
+      <view class='top' >dsfgkjdhsfng;lkdsfjglkdsdfgj克劳福德感觉你还是离开adasfsfasasfgas
+      </view>
+      <view  class='bottom' >
+        <text class='price' >￥309</text>
+        <view class='donum' >
+           <image class='jian'  src='../../images/jian.png' bindtap='jianNum'></image> 
+          <input type='number' class='number' value='{{num}}' bindblur='getNum' min='1' max='10'  />
+           <image class='jia'  src='../../images/jia.png' bindtap='jiaNum'></image> 
+        </view>
+        <image class='ljt'  src='../../images/ljt.png'></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='conlis'>
+  <view class='contit' bindtap='selectlist' data-num='1'>
+    <image class='changimg' src='../../images/{{selectlist[1]?"gou":"onchange"}}.png'></image>
+    
+    <text class='lisleft'>洗护系列</text>
+    <image class='lisimg' src='../../images/arrow_right.png'></image>
+  </view>
+  <view class='congoods' bindtap='selectproduct' data-num='1,0' >
+    <view class ='list' >
+      <image class='changimg'  src='../../images/{{select[1][0]?"gou":"onchange"}}.png'></image>
+    </view>
+    <view>
+      <image class='goodimg'  src="../../images/toux.jpg"></image>
+    </view>
+    <view  class='details'>
+      <view class='top' >dsfgkjdhsfng;lkdsfjglkdsdfgj克劳福德感觉你还是离开adasfsfasasfgas
+      </view>
+      <view  class='bottom' >
+        <text class='price' >￥309</text>
+        <view class='donum' >
+           <image class='jian'  src='../../images/jian.png' bindtap='jianNum'></image> 
+          <input type='number' class='number' value='{{num}}' bindblur='getNum' min='1' max='10'  />
+           <image class='jia'  src='../../images/jia.png' bindtap='jiaNum'></image> 
+        </view>
+        <image class='ljt'  src='../../images/ljt.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='congoods' bindtap='selectproduct' data-num='1,1' >
+    <view class ='list' >
+      <image class='changimg'  src='../../images/{{select[1][1]?"gou":"onchange"}}.png'></image>
+    </view>
+    <view>
+      <image class='goodimg'  src="../../images/toux.jpg"></image>
+    </view>
+    <view  class='details'>
+      <view class='top' >dsfgkjdhsfng;lkdsfjglkdsdfgj克劳福德感觉你还是离开adasfsfasasfgas
+      </view>
+      <view  class='bottom' >
+        <text class='price' >￥309</text>
+        <view class='donum' >
+           <image class='jian'  src='../../images/jian.png' bindtap='jianNum'></image> 
+          <input type='number' class='number' value='{{num}}' bindblur='getNum' min='1' max='10'  />
+           <image class='jia'  src='../../images/jia.png' bindtap='jiaNum'></image> 
+        </view>
+        <image class='ljt'  src='../../images/ljt.png'></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 空白 -->
+<view class='blank'>
+
+</view>
+
+<!-- 结算 -->
+<view class='pay'>
+  <view class='selectall'>
+    <image  bindtap='selectall' src='../../images/{{selectall?"gou":"onchange"}}.png'></image>
+    <text>全选</text>
+  </view>
+  
+  <text>合计：￥1000</text>
+  <view class='paybtn'>
+    结算（1）
+  </view>
+</view>

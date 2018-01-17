@@ -1,0 +1,57 @@
+<!--myself.wxml-->
+<view class="user">
+  <image class="userimg" src='../../images/toux.jpg'></image>
+  <text class='username'>葬魂</text>
+</view>
+<view class='conser' style='border-bottom: 5px solid #F5F5F5;'>
+  <view class='conlis'>
+    <text class='lisleft' style='color: black;margin: 0px;'>查看订单</text>
+    <text class='lisrig'>全部订单</text>
+    <image class='lisimg' src='../../images/arrow_right.png'></image>
+  </view>
+  <view style='display:flex;'>
+    <view class='paying' bindtap='payment'>
+      <image class='payimg' src='../../images/payment.png'></image>
+      <text class='paytit'>待付款</text>
+    </view>
+    <view class='paying' bindtap='send'>
+      <image class='payimg' src='../../images/send.png'></image>
+      <text class='paytit'>待发货</text>
+    </view>
+    <view class='paying' bindtap='sign'>
+      <image class='payimg' src='../../images/Sign.png'></image>
+      <text class='paytit'>待收货</text>
+    </view>
+    <view class='paying' bindtap='aftersales'>
+      <image class='payimg' src='../../images/aftersales.png'></image>
+      <text class='paytit'>退换/售后</text>
+    </view>
+  </view>
+</view>
+<view class='conser'>
+  <view class='conlis' bindtap='goReceiveAddress'>
+    <image class='usimg' src='../../images/dza.png'></image>
+    <text class='lisleft'>我的地址</text>
+    <image class='lisimg' src='../../images/arrow_right.png'></image>
+  </view>
+  <view class='conlis'>
+    <image class='usimg' src='../../images/b.png'></image>
+    <text class='lisleft'>我的信息</text>
+    <image class='lisimg' src='../../images/arrow_right.png'></image>
+  </view>
+  <view class='conlis' bindtap='goContact'>
+    <image class='usimg' src='../../images/c.png'></image>
+    <text class='lisleft'>联系客服</text>
+    <image class='lisimg' src='../../images/arrow_right.png'></image>
+  </view>
+  <view class='conlis'bindtap='goProblem'>
+    <image class='usimg' src='../../images/d.png'></image>
+    <text class='lisleft'>常见问题</text>
+    <image class='lisimg' src='../../images/arrow_right.png'></image>
+  </view>
+  <view class='conlis'>
+    <image class='usimg' src='../../images/e.png'></image>
+    <text class='lisleft'>申请成为买手/商家</text>
+    <image class='lisimg' src='../../images/arrow_right.png'></image>
+  </view>
+</view>

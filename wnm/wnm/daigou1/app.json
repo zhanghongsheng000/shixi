@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/follow/follow",
+    "pages/myself/myself",
+    "pages/cart/cart",
+    "pages/soso/soso",
+    "pages/shophome/shophome",
+    "pages/shop/shop",
+    "pages/product/product",
+    "pages/chtoshop/chtoshop",
+    "pages/myaddr/myaddr",
+    "pages/order/order",
+    "pages/contact/contact",
+    "pages/problem/problem",
+    "pages/problemdetail/problemdetail",
+    "pages/ordertag/ordertag",
+    "pages/addrbotm/addrbotm",
+    "pages/firmorder/firmorder",
+    "pages/chgadder/chgadder"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FF2740",
+    "navigationBarTitleText": "蜗牛慢海外代购",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#FE2740",
+    "backgroundColor": "white",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "区域购",
+        "iconPath": "images/mop.png",
+        "selectedIconPath": "images/mop1.png"
+      },
+      {
+        "pagePath": "pages/follow/follow",
+        "text": "我的关注",
+        "iconPath": "images/follow.png",
+        "selectedIconPath": "images/follow1.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "images/cart.png",
+        "selectedIconPath": "images/cart1.png"
+      },
+      {
+        "pagePath": "pages/myself/myself",
+        "text": "我的",
+        "iconPath": "images/myself.png",
+        "selectedIconPath": "images/myself1.png"
+      }
+    ]
+  }
+}

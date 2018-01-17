@@ -1,0 +1,44 @@
+<!--cart.wxml-->
+<view class='conlis' wx:for="{{cart}}">
+  <block wx:if="{{item.shop.star == 1}}">
+  <view class='contit'>
+    <image class='wshop' src='../../images/16.png'></image>
+    <text class='lisleft'>{{item.shop.shop_name}}</text>
+    <image class='lisimg' src='../../images/arrow_right.png'></image>
+  </view>
+  </block>
+  <view class='congoods'>
+    <view class ='list' data-id='{{index}}' bindtap='change'>
+      <image class='changimg' data-id='{{index}}' src='../../images/{{item.good.chang == "0" ? "onchange.png" : "change.png"}}'></image>
+    </view>
+    <view>
+      <image bindtap='gofirmorder' class='goodimg' data-id='{{index}}' src="{{item.good.goods_tot}}"></image>
+    </view>
+    <view  class='details'>
+      <view class='tit' bindtap='gofirmorder' data-id='{{index}}' >{{item.good.goods_name}}
+      </view>
+      <view  class='bottom' >
+        <text class='price' >￥{{item.good.money}}</text>
+        <view class='donum' >
+          <image class='jian' data-id='{{index}}' src='../../images/jian.png' bindtap='jianNum'></image> 
+          <input type='number' data-id='{{index}}' class='number' value='{{item.good.num}}' bindblur='getNum' min='1' max='10'  />
+          <image class='jia' data-id='{{index}}' src='../../images/jia.png' bindtap='jiaNum'></image> 
+        </view>
+        <image class='ljt' data-id='{{index}}' src='../../images/ljt.png' bindtap='ljt'></image>
+      </view>
+    </view>
+  </view>
+</view>
+<view style='height:50px;'></view>
+<view class="foot" style='display:flex;height: 50px;width:100%;border-top: 1px solid #ccc;position:fixed;bottom:0px;background:white;z-index: 5;'>
+  <view class ='list' style='width: 100px;font-size: 15px;color: #818181;line-height:50px;' bindtap='chgall'>
+    <image class='changimg' style="margin-top: 10px;margin-left: 10px;" src='../../images/{{chang == "0" ? "onchange.png" : "change.png"}}'></image>
+    <text style='line-height:50px;position:absolute;top:0;margin-left:10px;'>全选</text>
+  </view>
+  <view style='width: calc(100% - 250px);'>
+    <view style="flex-direction: row-reverse;height: 23px;margin-top:5px;width: 100%; font-size: 17px;text-align:right;">合计：<text style='margin-right:20px;color:red;'>￥{{allprice}}</text></view>
+    <view style="flex-direction: row-reverse;height: 20px;width: 100%; font-size: 12px;text-align:right;color: #818181;"><text style='margin-right:20px;'>不含运费</text></view>
+  </view>
+  <view bindtap='order' style='width: 150px;background:red;font-size:17px;text-align: center;line-height:50px;color:white;'>结算({{allprice}})</view>
+</view>
+

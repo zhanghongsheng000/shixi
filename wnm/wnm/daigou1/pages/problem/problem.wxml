@@ -1,0 +1,12 @@
+<!--pages/problem/problem.wxml-->
+<view class='lists'>
+  <view wx:for="{{list}}" bindtap='goProblem'>
+    <!-- · 手把手教你玩转APP -->
+     {{item.title}}
+  </view>
+  <view>
+    <!-- · 蜗牛慢新网上线，敬请关注 -->
+     {{item.title}}
+  </view>
+</view>
+

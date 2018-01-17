@@ -1,0 +1,197 @@
+/* @import"../ordertag/ordertag.wxss"; */
+page{
+  font-size: 14px;
+  font-family: '微软雅黑';
+}
+.f-g{
+  color: #9a9a9a;
+  font-size:12px;
+  width: 100%;
+}
+.f-a{
+  color: #9a9a9a;
+  font-size: 15px;
+}
+.f-r{
+  color: #ff3952;
+}
+.consigneemess{
+  position: relative;
+  display: flex;
+}
+.selectimg{
+  width: 15px;
+  height: 15px;
+  right: 3px;
+  margin: 25px 15px 0px 10px;
+}
+.consignee_name{
+  display: inline-block;
+  width: 50%;
+}
+.consignee_phone{
+  width: 50%;
+  display: inline-block;
+}
+.consignee{
+  width: calc(100% - 60px);
+  margin-top: 10px;
+}
+.colorborder{
+  display: flex;
+}
+.colorborder view{
+  width:  calc(5% - 4px);
+  margin: 0 2px;
+}
+/* 奇数行 */
+.colorborder > view:nth-child(odd){
+  height: 3px;
+  background-color: #3283f9;
+}
+/* 偶数行 */
+.colorborder > view:nth-child(even){
+  height: 3px;
+  background-color: #fe6c6d;
+}
+.blank{
+  height: 15px;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+.producttype{
+  height: 50px;
+  padding: 0 10px;
+  line-height: 50px;
+  font-size: 14px;
+}
+.producttype image{
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+}
+.productlists{
+  padding: 5px 10px;
+  background-color: #f5f5f5;
+  display: flex;
+}
+.listleft image{
+  width: 80px;
+  height: 80px;
+}
+.listright{
+  display: block;
+  width: calc(100% - 80px);
+}
+
+.productname{
+  width: calc(100% - 70px);
+  padding-left: 15px;
+  line-height:23px;
+  margin-top:5px;
+}
+.productmodel{
+  padding-left: 15px;
+}
+
+.changenum{
+  padding: 10px 0;
+  position: absolute;
+  right: 0;
+  display: flex;
+}
+.changenum view{
+  width: 30px;
+  height: 29px;
+  line-height: 26px;
+  text-align: center;
+  
+  background-color: white;
+  display: inline-block;
+}
+.changenum input{
+  display: inline-block;
+  width: 30px;
+  height: 25px;
+  text-align: center;
+}
+
+.listtop{
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+}
+.listbottom{
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+}
+.productmodel{
+  width: 60%;
+}
+.paymoney{
+  height: 50px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  justify-content: space-between; 
+}
+.paymoney image{
+  width: 15px;
+  height: 15px;
+}
+.paydetail{
+  padding: 0 10px;
+}
+.border-bottom{
+  display: flex;
+  border-bottom: 2px solid #ccc;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+.blank-short{
+  height: 5px;
+}
+.payway{
+  display: flex;
+  padding: 0 10px;
+  height: 50px;
+  justify-content: space-between;  
+  align-items: center;
+}
+.message{
+  height: 50px;
+  padding: 0 10px;
+  align-items: center;
+  display: flex;
+}
+.footer{
+  position: fixed;
+  bottom: 0;
+}
+.pay{
+  width: 100%;
+  background-color: #f5f5f5;
+  padding: 0 10px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+.paybtn{
+  height: 50px;
+  display: flex;
+  background-color: #ff2742;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+  padding:0 50px;
+  font-size:16px;
+}
+.paybtn image{
+  width: 15px;
+  height: 15px;
+}

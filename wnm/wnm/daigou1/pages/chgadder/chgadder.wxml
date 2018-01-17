@@ -1,0 +1,29 @@
+<view class='addrlis' wx:for="{{address}}">
+  <view class='addrdes'>
+    <text>{{item.username}}，{{item.phone}}</text>
+    <text>收货地址：{{item.province}}{{item.city}}{{item.area}}{{address}}</text>
+  </view>
+  <view class='addrbom'>
+    <view style='width:calc(100% - 140px);' wx:if="{{item.is_state == '1'}}">
+      <image class='addrs' src='../../images/change.png'></image>
+      <text class='bomtit'>选择</text>
+    </view>
+    <view style='width:calc(100% - 140px);' wx:else>
+      <image class='addrs' src='../../images/onchange.png'></image>
+      <text class='bomtit'>选择</text>
+    </view>
+    <view style='width: 70px;'>
+      <image style='width: 17px;height:17px;;margin-top:10px;' src='../../images/gai.png'></image>
+      <text class='bonexit'>编辑</text>
+    </view>
+    <view style='width: 70px;'>
+      <image style='width: 17px;height:17px;margin-top:10px;' src='../../images/ljt.png'></image>
+      <text class='bonexit'>删除</text>
+    </view>
+  </view>
+</view>
+<view class='addrbotm' bindtap='addrbotm'>
+  <image style='width: 20px;height: 20px;margin:15px;' src='../../images/jr.png'></image>
+  <text class='tbomtit'>新增收货地址</text>
+  <image style='width: 20px;height: 20px;margin:15px;' src='../../images/arrow_right.png'></image>
+</view>

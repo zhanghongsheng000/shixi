@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#FF2740",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "商铺主页",
+  "backgroundColor": "#ccc",
+  "backgroundTextStyle": "",
+  "enablePullDownRefresh": "false",
+  "disableScroll": ""
+}

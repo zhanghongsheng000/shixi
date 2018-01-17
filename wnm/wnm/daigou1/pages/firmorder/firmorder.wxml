@@ -1,0 +1,156 @@
+<!--pages/firmorder/firmorder.wxml-->
+  <!-- 收货人信息 -->
+  <view class='consigneemess' bindtap='selectAddress'>
+    <image src='../../images/dza.png' style="width: 30px;height: 30px;margin: 20px 5px;"></image>
+    
+    <view class='consignee'>
+      <view style='width:100%'>
+        <view class='consignee_name'>
+          收货人：{{address.username}}
+        </view>
+        <view class='consignee_phone'>
+          {{address.phone}}
+        </view>
+      </view>
+      <view style="margin-bottom: 10px;">
+        <text class='f-g' style='width:100%;'>收货地址：{{address.province}}{{address.city}}{{address.area}}{{address.address}}</text>
+      </view>
+    </view>
+    <image class="selectimg" src='../../images/arrow_right.png'></image>
+  </view>
+  <!-- 彩色边框 -->
+  <view class='colorborder'>
+    <view></view>
+    <view></view>
+
+    <view></view>
+    <view></view>
+
+    <view></view>
+    <view></view>
+
+    <view></view>
+    <view></view>
+
+    <view></view>
+    <view></view>
+
+    <view></view>
+    <view></view>
+
+    <view></view>
+    <view></view>
+
+    <view></view>
+    <view></view>
+
+    <view></view>
+    <view></view>
+    
+    <view></view>
+    <view></view>
+  </view>
+
+  <!-- 灰色背景 -->
+  <view class='blank'>
+  </view>
+
+  <!-- 产品类型 -->
+  <view class='producttype'>
+      <image style='width: 20px;height:20px;margin-right:10px;' src='../../images/16.png'></image>   商家名称
+  </view>
+  <!-- 产品列表 -->
+  <view class='productlists'>
+    <view class='listleft'>
+      <!-- 缩略图 -->
+      <image src='../../images/toux.jpg'></image>
+      
+    </view>
+    <view class='listright'>
+      <view class='listtop'>
+        <!-- 产品名称 -->
+        <view class='productname'>
+          {{goods.goods_name}}
+        </view>
+        <!-- 产品价格 -->
+        <view class='productprice' style='margin-right:15px;'>
+          ￥{{mode.money}}
+        </view>
+      </view>
+        
+      <view class='listbottom'>
+          <!-- 产品参数型号 -->
+          <view style='font-size: 13px;' class='productmodel f-a'>
+            {{mode.mode_name}}
+          </view>
+          <!-- 产品数量 -->
+          <view style='font-size: 13px; margin-right:15px;' class='productnumber f-a'>
+            ×{{num}}
+          </view>
+      </view>
+      
+    </view>
+  </view>
+
+  <!-- 支付金额 -->
+  <view class="paydetail">
+    <view class='paymoney' style='border-bottom: 2px solid #ccc;'>
+      <view class='f-a'>
+        支付金额
+      </view>
+      <view class='f-a'>
+        <text class='f-r'>￥{{price}}</text>(免运费)  
+      </view>
+      <view style='font-size: 15px;'>
+        查看明细
+        <image src='../../images/arrow_lower.png'></image>
+      </view> 
+    </view>
+  </view>
+  <!-- 支付明细 -->
+    <view class='paydetail'>
+      <view class='border-bottom' >
+        <view style='margin-left: 7px;'>数量</view>
+        <view class='changenum'>
+          <view bindtap='reducenum' class='{{num < 2? "numoff" : "numon"}}'>-</view>
+          <input type='number' bindblur='getNum' value='{{num}}' />
+          <view bindtap='addnum' class='{{num==100 ? "numoff" : "numon"}}'>+</view>
+        </view>
+      </view>
+      <view class='border-bottom'>
+        <view style='margin-left: 7px;'>运费</view>
+        <view style='margin-right: 10px;'>免运费</view>
+      </view>
+      <view class='border-bottom'>
+        <view style='margin-left: 7px;'>总计</view>
+        <view style='margin-right: 10px;' class='f-r'>￥{{price}}</view>
+      </view>
+    </view>
+    <!-- 空白 -->
+    <view class='blank blank-short'>
+    </view>
+  <!-- 支付方式 -->
+  <view class='payway'>
+    <view style='margin-left: 7px;'>支付方式</view>
+    <view style='margin-right: 10px;'>微信</view>
+  </view>
+  <!-- 空白 -->
+    <view class='blank blank-short'>
+    </view>
+  <!-- 商家留言 -->
+  <view style='margin-left: 7px;' class='message'>
+    给商家留言
+  </view>
+  <view class="paydetail" style="padding: 0 15px;">
+    <textarea style="border: 1px solid rgb(204, 204, 204);width: 100%;height: 60px;margin-bottom: 100px;border-radius: 5px;padding:5px;" bindinput="bindTextAreaBlur" placeholder="自动变高" value='{{message}}' />
+  </view>
+
+  <!-- 支付栏（固定底部） -->
+  <view class='footer pay' style='font-size:16px;'>
+    <view>
+      总计:<text class='f-r'>￥309</text>
+    </view>
+    <view class='paybtn' bindtap='wxpay'>
+      <view>支付</view>
+    </view>
+  </view>

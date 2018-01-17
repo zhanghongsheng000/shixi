@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#FF2740",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "我的地址",
+  "backgroundColor": "#ccc",
+  "backgroundTextStyle": "",
+  "enablePullDownRefresh": "false",
+  "disableScroll": ""
+}

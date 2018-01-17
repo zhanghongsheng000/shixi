@@ -1,0 +1,11 @@
+<!--pages/problemdetail/problemdetail.wxml-->
+<view class='problemdetail'>
+  <!-- 标题 -->
+  <view class='title'>
+    手把手教你玩转APP
+  </view>
+  <!-- 内容 -->
+  <view class='content'>
+    这是常见问题详细啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+  </view>
+</view>

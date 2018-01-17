@@ -1,0 +1,25 @@
+<!--pages/shop/shop.wxml-->
+<view class='header' wx:for="{{arrShop}}">
+  <view><image class='logo'   mode='aspectFit' src='../../images/toux.jpg'></image></view>
+  <view class='name'><text >{{item.shop_name}}</text></view>
+  <view><button class='follow {{turn}}'  size='mini' bindtap="setDisabled">+关注</button></view>
+  <view class='des'><text>{{item.intudr}}</text></view> 
+</view>
+
+<view class="show">
+  <text >产品展示</text>
+</view>
+
+<view class='list'>
+
+ <view class='content' bindtap='gotoproduct' data-id='{{item.id}}' wx:for="{{arrProduct}}">
+  <view class='productImage'><image  mode='aspectFit' src='../../images/toux.jpg'></image></view>
+  <view><image class='discount'  mode='scaleToFill' src='../../images/toux.jpg'></image></view>
+  <view class='productTitle'>{{item.goods_name}}</view>
+  <view class='productDes'>{{item.goods_dis}}</view>
+  <view class='price'><text class='productPrice'>￥53</text><text class='productOldPrice'>￥62</text></view>
+</view> 
+
+</view>
+
+

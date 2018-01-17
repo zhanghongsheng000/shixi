@@ -1,0 +1,153 @@
+<!--pages/firmorder/firmorder.wxml-->
+  <!-- 收货人信息 -->
+  <view class='consigneemess' bindtap='selectAddress'>
+    <image class="selectimg" src='../../images/arrow_right.png'></image>
+    <!-- 收货人 -->
+    <view class='consignee'>
+      <!-- 名字 -->
+      <view class='consignee_name'>
+        收货人：{{username}}
+      </view>
+      <!-- 电话 -->
+      <view class='consignee_phone'>
+        {{phone}}
+      </view>
+    </view>
+    
+    <!-- 收货地址 -->
+    <view class='adress'>
+      <!-- 图标 -->
+      <image src='../../images/dza.png'></image>
+      <text class='f-g'>收货地址：{{province}}{{city}}{{area}}{{address}}</text>      
+    </view>
+  </view>
+
+  <!-- 彩色边框 -->
+  <view class='colorborder'>
+    <view></view>
+    <view></view>
+
+    <view></view>
+    <view></view>
+
+    <view></view>
+    <view></view>
+
+    <view></view>
+    <view></view>
+
+    <view></view>
+    <view></view>
+
+    <view></view>
+    <view></view>
+
+    <view></view>
+    <view></view>
+
+    <view></view>
+    <view></view>
+
+    <view></view>
+    <view></view>
+    
+    <view></view>
+    <view></view>
+  </view>
+
+  <!-- 灰色背景 -->
+  <view class='blank'>
+  </view>
+
+  <!-- 产品类型 -->
+  <view class='producttype'>
+      <image src='../../images/16.png'></image>   洗护系列
+  </view>
+  <!-- 产品列表 -->
+  <view class='productlists'>
+    <view class='listleft'>
+      <!-- 缩略图 -->
+      <image src='../../images/toux.jpg'></image>
+      
+    </view>
+    <view class='listright'>
+      <view class='listtop'>
+        <!-- 产品名称 -->
+        <view class='productname'>
+          博士代购新加坡直邮包税包清关COSME DECORTEEEEEEEEEEEEEEE
+        </view>
+        <!-- 产品价格 -->
+        <view class='productprice'>
+          ￥309
+        </view>
+      </view>
+        
+      <view class='listbottom'>
+          <!-- 产品参数型号 -->
+          <view class='productmodel f-g'>
+            原味
+          </view>
+          <!-- 产品数量 -->
+          <view class='productnumber f-g'>
+            ×1
+          </view>
+      </view>
+      
+    </view>
+  </view>
+
+  <!-- 支付金额 -->
+  <view class='paymoney'>
+    <view class='f-g'>
+      支付金额
+    </view>
+    <view class='f-g'>
+      <text class='f-r'>￥309</text>(免运费)  
+    </view>
+    <view>
+      查看明细
+      <image src='../../images/arrow_lower.png'></image>
+    </view> 
+  </view>
+  <!-- 支付明细 -->
+    <view class='paydetail'>
+      <view class='border-bottom' >
+        <view>商品金额</view>
+        <view>￥308</view>   
+      </view>
+      <view class='border-bottom'>
+        <view>运费</view>
+        <view>免运费</view>
+      </view>
+      <view class='border-bottom'>
+        <view>总计</view>
+        <view class='f-r'>￥308</view>
+      </view>
+    </view>
+    <!-- 空白 -->
+    <view class='blank blank-short'>
+    </view>
+  <!-- 支付方式 -->
+  <view class='payway'>
+    <view>支付方式</view>
+    <view>微信</view>
+  </view>
+  <!-- 空白 -->
+    <view class='blank blank-short'>
+    </view>
+  <!-- 商家留言 -->
+  <view class='message'>
+    给商家留言
+  </view>
+
+  <!-- 支付栏（固定底部） -->
+  <view class='footer pay'>
+    <view>
+      总计:<text class='f-r'>￥309</text>
+    </view>
+    <view class='paybtn'>
+      <view>支付</view>
+      <image src='../../images/change.png'></image>
+      <view>15:25</view>
+    </view>
+  </view>

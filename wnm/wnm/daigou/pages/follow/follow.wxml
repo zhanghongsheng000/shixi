@@ -1,0 +1,7 @@
+<!--follow.wxml-->
+<view class='guanlis' data-id='{{item.id}}' bindtap="gotoshop" wx:for="{{arr}}">
+  <image class='guanimg' src='{{item.shop_url}}'></image>
+  <view class='guantit'> {{item.intudr}}</view>
+  <image class='guanti' src='../../images/{{item.is_new== 1?"kon.png":"dian.png"}}'></image>
+  <image class='gundel' src='../../images/ljt.png'></image>
+</view>

@@ -1,0 +1,112 @@
+/* pages/shop/shop.wxss */
+page{
+  background-color:#f2f2f2;
+}
+.header{
+  text-align: center;
+  background-color:#FFFFFF;
+  padding:10px 0px;
+}
+.logo{
+   height: 70px;
+   margin-top: 15px; 
+}
+.name{
+    margin-top: 15px; 
+    font-family: '微软雅黑';
+   
+}
+.price{
+    margin-bottom: 5px;
+}
+.follow{
+  margin-top: 15px; 
+  width: 30%;
+  height: 30px;
+  color: #ff2941;
+  background-color: white;
+  border: 1px solid #ff2941;
+}
+.discount{
+  width: 50%;
+  height: 20px;
+}
+.on{
+  color: #ff2941;
+  border: 1px solid #ff2941;
+}
+.off{
+  color: #f2f2f2;
+  border: 1px solid #f2f2f2;
+}
+ 
+.des{
+  padding:  0 15px;
+  text-align: center;
+  margin:2px 5px 5px 5px;
+  font-size: 15px;
+}
+.show{
+  height: 55px;
+  text-align: center;
+  background-color: #f2f2f2;
+  margin-top: 20px;
+}
+.show text{
+   line-height: 50px;
+}
+.list{
+  background-color: #f2f2f2;
+}
+.content{
+  position: relative;
+  background-color: #ffffff;
+  display: inline-block;
+  width: calc(50% - 20px);
+  margin: 10px; 
+}
+.productImage{
+  text-align: center;
+  margin-top:15px;
+}
+.productImage image{
+   height: 150px;
+   width: 80%;
+}
+.productTitle{
+  width: calc(100% - 16px); 
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  padding: 4px 8px;
+  font-size: 15px;
+  line-height: 15px;
+  margin-top: 5px;
+}
+.productDes{
+  width: calc(100% - 16px);
+  color: gray;
+  flex-direction:row;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  overflow:hidden;
+  font-size:12px;
+  margin:5px;
+  height:31px;
+  padding:1px 4px;
+}
+.productPrice{
+  padding: 5px 10px;
+  font-size: 17px;
+  color: red;
+}
+.productOldPrice{
+   color: #cccccc; 
+  text-decoration: line-through;
+  font-size: 12px;
+  padding: 5px 10px;
+}
+.hid{
+  display: none;
+}

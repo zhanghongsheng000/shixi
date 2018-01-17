@@ -1,0 +1,221 @@
+<!-- 头部订单状态和倒计时 -->
+<view class='header'>
+  <!-- 订单状态 -->
+  <view class='state'>
+      买家已付款
+      <!-- 发货倒计时 -->
+      <view class='countdown'>
+      发货倒计时2天3小时20分
+      </view>
+  </view>
+  <view class='bg'>
+    <image src='../../images/xxxx.png'></image>
+  </view>
+</view>
+<!-- 订单详情 -->
+<view class='detail'>
+  <view class='blank1'></view>
+  <!-- 订单处理时间 -->
+  <view class='begin'>
+    <image src='../../images/{{status}}.png'></image>
+    <view class='begin_right'>
+      <view class='f-r'>
+      你的订单开始处理
+      </view>
+      <view class='f-g'>
+      2017-07-22 22：06：30
+      </view>    
+    </view>
+    
+  </view>
+  <!-- 收货人信息 -->
+  <view class='consigneemess'>
+    <!-- 收货人 -->
+    <view class='consignee'>
+      <!-- 名字 -->
+      <view class='consignee_name'>
+        收货人：爱丽
+      </view>
+      <!-- 电话 -->
+      <view class='consignee_phone'>
+        15871113265
+      </view>
+    </view>
+    
+    <!-- 收货地址 -->
+    <view class='adress'>
+      <!-- 图标 -->
+      <image src='../../images/dza.png'></image>
+      <text>收货地址：深圳市罗湖区国贸大厦C503</text>      
+    </view>
+  </view>
+  <view class='blank1'></view>
+  <!-- 商品列表 -->
+  <view class='lists'>
+    <!-- 店家名称 -->
+    <view class='shopname'>
+      小森森的店铺
+    </view>
+    <view class='list' bindtap='order'>
+      <!-- 头像 -->
+      <view class='toux'>
+        <image src='../../images/toux.jpg'></image>
+      </view>
+      <!-- 商品介绍 -->
+      <view class='intro'>
+        <!-- 产品名称 -->
+        <view class='name'>
+          博士代购新加坡进口厂家直邮包税包清关COSME DECORTEEEEEEEEEEEEE
+        </view>
+        <!-- 商品类型 -->
+        <view class='type'>
+          商品类型：乳液
+        </view>
+      </view>
+      <!-- 价格 -->
+      <view class='priceAndNum' >
+        <!-- 价格 -->
+        <view class='price'>
+        ￥309
+        </view>
+        <!-- 数量 -->
+        <view class='num'>
+          ×1
+        </view>
+      </view>
+    </view>
+    <view class='list' bindtap='order'>
+      <!-- 头像 -->
+      <view class='toux'>
+        <image src='../../images/toux.jpg'></image>
+      </view>
+      <!-- 商品介绍 -->
+      <view class='intro'>
+        <!-- 产品名称 -->
+        <view class='name'>
+          博士代购新加坡进口厂家直邮包税包清关COSME DECORTEEEEEEEEEEEEE
+        </view>
+        <!-- 商品类型 -->
+        <view class='type'>
+          商品类型：乳液
+        </view>
+      </view>
+      <!-- 价格 -->
+      <view class='priceAndNum' >
+        <!-- 价格 -->
+        <view class='price'>
+        ￥309
+        </view>
+        <!-- 数量 -->
+        <view class='num'>
+          ×1
+        </view>
+      </view>
+    </view>
+    <view class='list' bindtap='order'>
+      <!-- 头像 -->
+      <view class='toux'>
+        <image src='../../images/toux.jpg'></image>
+      </view>
+      <!-- 商品介绍 -->
+      <view class='intro'>
+        <!-- 产品名称 -->
+        <view class='name'>
+          博士代购新加坡进口厂家直邮包税包清关COSME DECORTEEEEEEEEEEEEE
+        </view>
+        <!-- 商品类型 -->
+        <view class='type'>
+          商品类型：乳液
+        </view>
+      </view>
+      <!-- 价格 -->
+      <view class='priceAndNum' >
+        <!-- 价格 -->
+        <view class='price'>
+        ￥309
+        </view>
+        <!-- 数量 -->
+        <view class='num'>
+          ×1
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 价格详情 -->
+  <view class='pricedetail '>
+    <!-- 商品总价 -->
+    <view class='proprice f-g'>
+      <view>
+      商品总价
+      </view>
+      <view>
+        ￥618
+      </view>
+    </view>
+    <!-- 运费（快递） -->
+    <view class='fare f-g'>
+      <view>
+      运费（快递）
+      </view>
+      <view>
+        ￥0.00
+      </view>
+    </view>
+    <!-- 订单总价 -->
+    <view class='allprice'>
+      <view>
+      订单总价
+      </view>
+      <view>
+        ￥618
+      </view>
+    </view>
+  </view>
+    <!-- 实付款 -->
+    <view class='payprice'>
+      <view>
+      实付款
+      </view>
+      <view class='f-r'>
+        ￥618
+      </view>
+    </view>
+    <view class='blank1'></view>
+    <!-- 投诉商家 -->
+    <view class='complain'>
+      投诉商家
+      <!-- 投诉按钮 -->
+      <view class='btn'>
+        <!-- 联系卖家 -->
+        <view class='wechat'>
+          <image src='../../images/dhh.png'></image>
+          联系卖家
+        </view>
+        <!-- 拨打电话 -->
+        <view class='phone'>
+          <image src='../../images/kef.png'></image>
+          拨打电话
+        </view>
+      </view>
+    </view>
+    <view class='blank1'></view>
+    <!-- 订单信息 -->
+    <view class='orderdetail'>
+      <view>
+        订单编号：1111111
+      </view>
+      <view>
+        交易号：222222222222222
+      </view>
+      <view>
+        创建时间：2017-05-12 10:25:33
+      </view>
+      <view>
+        付款时间：2017-05-12 14:25:33
+      </view>
+      <!-- 复制按钮 -->
+      <view class='copy'>
+        复制
+      </view>
+    </view>
+</view>

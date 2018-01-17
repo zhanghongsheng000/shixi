@@ -1,0 +1,11 @@
+<view class='contact' bindtap='contact'>
+  <image src='../../images/resizeApi.png'></image>
+  <view class='phone'>
+    <view class='txt'>
+      客服电话
+    </view>
+    <view class='num'>
+      400-800-6000
+    </view>
+  </view>
+</view>

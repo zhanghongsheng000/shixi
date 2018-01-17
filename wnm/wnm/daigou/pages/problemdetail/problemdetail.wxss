@@ -1,0 +1,19 @@
+/* pages/problemdetail/problemdetail.wxss */
+.problemdetail{
+  padding: 0 10px;
+  box-sizing: border-box;
+  width: 100%;
+}
+.title{
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-bottom: 1px solid #d6d6d6;
+  font-size: 16px;
+}
+.content{
+  margin-top: 10px;
+  font-size: 12px;
+  text-indent:2em;
+  line-height: 20px;
+}

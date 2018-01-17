@@ -1,0 +1,113 @@
+<import src="../..//wxParse/wxParse.wxml"/>
+<view class='img'>
+  <image  src="../../images/toux.jpg"></image>
+</view>
+
+<view class='pro'>
+    <view class='name'>博士代购新加坡直邮包税包清关COSME DECORTE黛珂</view>
+    <view class='origin'> <text class='color-gray'>来自</text><text class='color-blue'>LOVEW CRAZY STAR</text></view>
+</view>
+
+<view class='price'>
+    <view><text class='nowprice'>{{arrProductModel[index].money}}</text></view>
+    <view><text class='shoppeprice'>专柜价：{{arrProductModel[index].old_money}}</text></view>
+</view>
+<view class='countdown'>
+    还剩{{h}}小时{{m}}分{{s}}秒 
+    <!-- 恢复平日价  <text class='commonprice'>￥55</text>  -->
+</view>
+<view class='empty'>
+</view>
+<view class="section">
+  <!-- <view class="section__title">普通选择器</view> -->
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      已选：{{array[index]}}
+      <image class='list' src="../../images/arrow_right.png"></image>
+    </view>
+  </picker>
+</view>
+<view class='empty'>
+</view>
+<view class='shop'>
+love crazy star官方旗舰店
+<!-- <button class='follow {{turn}}'  size='mini' bindtap="setDisabled">+关注</button> -->
+<image class='gz' src='../../images/gzz.png'></image>
+</view>
+<view class='empty'>
+</view>
+<view class='tap'>
+  <view bindtap='showDet' class='{{flag?"off":"on"}}'>商品详情</view>
+  <view bindtap='showSpec' class='{{flag?"on":"off"}}'>规格参数</view>
+</view>
+<view class='empty'>
+</view>
+<view hidden="{{showDet ? false : true}}" class='details'>
+  <view>商品详情</view>  
+  <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view>
+<view hidden="{{showSpec ? false : true}}" class='spec'>
+  <view wx:for="{{arrProductpara}}">
+    {{item.para_name}}:{{item.para}}
+  </view>
+  
+</view>
+
+<view class='footer'>
+  <view class='nav'>
+    <image src="../../images/e.png"></image>
+    <text>客服</text>
+  </view>
+  <view class='nav'>
+    <image src="../../images/cart.png"></image>
+    <text>购物车</text>
+  </view>
+  <view class='nav add' bindtap='popshow'>
+    <text>加入购物车</text>
+  </view>
+  <view class='nav buy'>
+    <text>立即购买</text>
+  </view>
+
+</view>
+<view class='popup popup-pos' hidden='{{popshow?false:true}}'>
+<view class='popup-header'>
+  <view><image class='popup-img' src='../../images/toux.jpg'></image></view>
+  
+  <view class='popup-txt'>
+    <view class='popup-txt-name'>    
+      博士代购新加坡直邮包税包清关COSME DECORTE黛珂
+    </view>
+    <view class='popup-txt-discount'>
+      该规格参与 <text class='discount'>限时6折</text> 
+    </view>
+    <view class='popup-txt-price'>
+      ￥309
+    </view>
+  </view>
+</view>
+<view class='popup-spec'>
+  <view>规格:</view>
+  <view class='{{sel1show?"select":"noselect"}}' bindtap='sel1show'>洗面奶</view>
+  <view class='{{sel2show?"select":"noselect"}}' bindtap='sel2show'>乳液</view>
+</view>
+<view class='popup-num'>
+  <view class='popup-num-num'>数量</view> 
+  <view class='changenum'>
+
+    <view bindtap='reducenum' class='{{num < 2? "numoff" : "numon"}}'>-</view>
+    <input type='number' bindblur='getNum' value='{{num}}' />
+    <view bindtap='addnum' class='{{num==100 ? "numoff" : "numon"}}'>+</view>
+  </view>
+  <view class='clear'>
+  </view>
+</view>
+<view class='popup-add' bindtap='gofirmorder'>
+  加入购物车
+</view>
+</view>
+
+<view class='empty1'>
+</view>
+<view hidden='{{popshow?false:true}}' class='zhezhao' bindtap='close'>
+</view>
