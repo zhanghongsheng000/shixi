@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+ul, ol, dl, li, dt, dd, blockquote, pre, form, fieldset, table, th, td, span{padding:0;margin:0;}
+body {
+	margin:0px auto;
+	font-size:14px;
+	color:#8a8a8a;
+	font-family: "微软雅黑","宋体";
+	background:#FFF;
+}
+body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol,
+li, dl, dt, dd, form, a, fieldset, input, th, td, i, em{-webkit-box-sizing: border-box;-moz-box-sizing: border-box;-ms-box-sizing: border-box;box-sizing: border-box;}
+div,dl,dt,dd,h1,h2,h3,h4,h5,h6,ul,pre,form,fieldset,input,textarea,p,blockquote{margin:0;padding:0;}
+img {border:0;}
+a{text-decoration: none;color:#666;}
+ol,li{margin:0;padding:0; list-style-type:none;}

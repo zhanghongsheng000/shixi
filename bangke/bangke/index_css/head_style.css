@@ -1,0 +1,366 @@
+@charset "UTF-8";
+
+ .clear:after{
+ 	content: '';
+ 	display: block;
+ 	clear: both;
+}
+.top_head_nav_box{
+  width: 100%;
+  background: #FFF;
+}
+.top_head_box{
+  width: 100%;
+  height: 40px;
+  background: #e5e5e5;
+  border-bottom: 1px solid #bababa;
+}
+.top_head{
+	width: 1200px;
+	margin: 0 auto;
+}
+.head_left{
+	float: left;
+}
+.head_right{
+	float: right;
+}
+.head_left ul{
+	padding: 10px 0;
+}
+.head_left ul li{
+	color: #999;
+	float: left;
+	font-size: 12px;
+	cursor: pointer;
+}
+.head_left ul li span{
+  color: #169bd5;
+}
+.head_left ul li:nth-child(2){
+	margin-left: 10px;
+}
+.head_left ul li:nth-child(3){
+	padding-left: 10px;
+	margin-left: 10px;
+	border-left: 1px solid #999;
+}
+
+.bk-font{
+	width: 20px;
+	height: 20px;
+	background: url("../index_img/kefu_phone.png") no-repeat center top;
+	background-size: 100%;
+}
+.head_right{
+	width: 338px;
+	padding: 10px 0;
+}
+.right_navs li:nth-child(1){
+	position: relative;
+}
+.right_navs li:nth-child(2){
+  padding-right: 10px;
+	border-right: 1px solid #939297;
+}
+.right_navs li:nth-child(3){
+	margin-left: 10px;
+}
+.right_navs li{
+	float: left;
+	cursor: pointer;
+}
+.right_navs li:hover{
+  color: #169bd5;
+}
+.right_navs li:hover a{
+  color: #169bd5;
+}
+.weixin_erweima{
+	width: 162px;
+	height: 0;
+  overflow: hidden;
+	position: absolute;
+	top: 20px;
+	left: -60px;
+  z-index: 99999;
+  -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    transition: all .5s;
+}
+.right_navs li{
+	margin-left: 24px;
+}
+.right_navs li a{
+	color: #999;
+}
+.right_navs li:nth-child(1):hover .weixin_erweima{
+	display: block;
+	height: 164px;
+	-webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    transition: all .5s;
+}
+.right_navs li:nth-child(1){
+  width: 26px;
+  height: 20px;
+  background: url("../index_img/weixin_logo.png") no-repeat center;
+  background-size: 100%;
+}
+.top_head_nav{
+	width: 1200px;
+	height: 108px;
+	margin: 0 auto;
+}
+.fl{
+	float: left;
+}
+.nav_left-logo{
+	width: 136px;
+	height: 45px;
+	margin-top: 32px;
+}
+.logo_right_nav{
+  height: 66px;
+  margin-top: 40px;
+}
+.logo_right_nav>li{
+	float: left;
+  text-align: center;
+	font-size: 16px;
+	margin-left: 40px;
+  height: 66px;
+	padding: 5px 15px;
+	position: relative;
+}
+.logo_right_nav li:nth-child(2){
+  width: 130px;
+}
+.logo_right_nav li:nth-child(4){
+  width: 130px;
+}
+.logo_right_nav li a{
+	color: #666666;
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+}
+.logo_right_nav li:hover>a{
+	color: #55bbfe;
+}
+
+.logo_right_nav>li:hover .nav_level{
+	height: 188px;
+  -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    transition: all .5s;
+}
+.logo_right_nav>li:nth-child(2):hover{
+  border-bottom: 5px solid #169bd5;
+}
+.logo_right_nav>li:nth-child(4):hover{
+  border-bottom: 5px solid #169bd5;
+}
+.logo_right_nav>li:hover .hei270{
+  height: 270px;
+  padding-bottom: 15px;
+  -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    transition: all .5s;
+}
+.nav_level{
+	width: 130px;
+  height: 0;
+	position: absolute;
+	top: 65px;
+	left: 0px;
+  overflow: hidden;
+  z-index: 88888;
+  background: #FFF;
+  -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    transition: all .5s;
+  -webkit-box-shadow: 0 0px 20px 0px rgba(213, 211, 212, .8);
+-moz-box-shadow: 0 0px 20px 0px rgba(213, 211, 212, .8);
+box-shadow: 0 0px 20px 0px rgba(213, 211, 212, .8);
+}
+.nav_level>li{
+	text-align: center;
+	height: 30px;
+	line-height: 30px;
+	margin-top: 14px;
+}
+.logo_right_nav>li:last-of-type{
+  border: 2px solid #17a1ce;
+  border-radius: 4px;
+  height: 36px;
+  }
+.mar20{
+  margin-left: 20px;
+}
+.mart20{
+  margin-top: 36px;
+  padding-left: 20px;
+}
+.bord_left{
+  width: 166px;
+  height: 40px;
+  border-left:1px solid #949393;
+}
+
+
+
+
+
+/*底部*/
+.bk_foot_box{
+  width: 100%;
+  height: auto;
+  padding-bottom: 10px;
+  background:#000;
+}
+.foot_box{
+  width: 1200px;
+  height: 210px;
+  margin:0 auto;
+  padding-top: 50px;
+}
+.foot_nav{
+  float: left;
+}
+.foot_nav_list>li{
+  float: left;
+  color: #f7f7f7;
+  font-size: 14px;
+  font-weight: bold;
+  margin-right:114px;
+}
+.fo_nav_list>li{
+  height: 26px;
+  line-height: 26px;
+}
+.fo_nav_list>li a{
+  color: #929292;
+  font-size: 12px;
+}
+.service{
+  float: left;
+}
+.service>:nth-child(1){
+  color: #000;
+  font-weight: bold;
+}
+.service>div:nth-child(1) span a{
+  color: #000;
+}
+.service>:nth-child(2){
+  margin-top: 6px;
+}
+.service>:nth-child(3){
+  cursor: pointer;
+  margin-top: 6px;
+  line-height: 30px;
+  padding-left: 30px;
+  background: url(../index_img/customer.png) no-repeat left;
+  background-size: 17% 94%;
+}
+.weixin_gongzhonghao{
+  float: right;
+  margin-left: 80px;
+}
+.weixin_gongzhonghao>div{
+  width: 106px;
+  height: 106px;
+}
+.weixin_gongzhonghao p{
+  text-align: center;
+  margin-bottom: 6px;
+}
+.bk_links{
+  width: 1200px;
+  margin: 0 auto;
+  border-top: 1px solid #909192;
+  padding-top: 30px;
+}
+.foot_links a{
+  color: #909192;
+  margin-left:10px;
+}
+.foot_links a:hover{
+  color: #f7f7f7;
+}
+.bk_beian{
+  color: #666;
+  text-align: center;
+}
+.bk_approve{
+  width: 1200px;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.bk_approve ul{
+  width: 660px;
+  margin:0 auto;
+}
+.bk_approve ul li{
+  float: left;
+  margin-left: 50px;
+}
+.bk_approve ul li:nth-child(1){
+  width: 78px;
+  height: 32px;
+  background: url("../index_img/renzheng_ico.png") no-repeat center top;
+  background-position: 0 -99px;
+}
+.bk_approve ul li:nth-child(2){
+  width: 78px;
+  height: 32px;
+  background: url("../index_img/renzheng_ico.png") no-repeat center top;
+  background-position: 0 -32px;
+}
+.bk_approve ul li:nth-child(3){
+  width: 78px;
+  height: 32px;
+  background: url(../index_img/renzheng_ico.png) no-repeat center top;
+  background-position: 0 -130px;
+}
+.bk_approve ul li:nth-child(4){
+  width: 78px;
+  height: 32px;
+  background: url(../index_img/renzheng_ico.png) no-repeat center top;
+  background-position: 0 -65px;
+}
+.bk_approve ul li:nth-child(5){
+  width: 78px;
+  height: 32px;
+  background: url(../index_img/renzheng_ico.png) no-repeat center top;
+  background-position: 0 0;
+}
+
+.nav_right_ico{
+  width: 236px;
+  height: 42px;
+  float: right;
+  margin-top: 33px;
+  background: url(../index_img/bangke_chuangfu.png) no-repeat center top;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.
